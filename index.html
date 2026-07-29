@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Barsion — IT Solutions &amp; Services | Estonia</title>
+<title>Barsion | IT Solutions &amp; Services, Estonia</title>
 <meta name="description" content="Barsion OÜ is a Tallinn-based IT company: managed IT, technology consulting, security, web & mobile development, cloud and custom software for businesses across Europe.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2301043D'/%3E%3Ctext x='32' y='44' font-family='Arial,sans-serif' font-size='34' font-weight='800' fill='%23A5ECF4' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,6 +36,7 @@
 
   .btn{display:inline-block;font-family:var(--fh);font-weight:600;font-size:15px;background:var(--cyan);color:var(--navy);padding:16px 34px;border:0;cursor:pointer;transition:background .2s,color .2s}
   .btn:hover{background:var(--navy);color:#fff}
+  .btn:active{transform:scale(.98)}
   .btn.line{background:#fff;color:var(--ink);border:1px solid var(--ink);padding:15px 33px}
   .btn.line:hover{background:var(--ink);color:#fff}
 
@@ -109,7 +110,7 @@
   .ind-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
   .ind-grid h2{font-size:clamp(32px,4vw,52px);font-weight:700;margin-bottom:30px}
   .ind-grid p{font-size:19px;line-height:1.7;max-width:640px}
-  .ind-ill{justify-self:end;width:min(400px,100%)}
+  .ind-ill{justify-self:end;width:min(440px,100%);aspect-ratio:4/5;object-fit:cover}
   .who-quote{margin-top:36px;font-family:var(--fh);font-weight:500;font-size:20px;color:var(--ink);border-left:4px solid var(--cyan);padding-left:20px}
 
   /* values */
@@ -119,15 +120,17 @@
   .val h3{font-size:18px;margin-bottom:10px}
   .val p{font-size:14px}
 
-  /* thinking */
+  /* thinking: stacked editorial rows (distinct layout family) */
   .think{padding-top:0}
-  .think-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0 64px}
-  .think-item{border-top:1px solid var(--line);padding:24px 0 8px}
-  .think-item h3{font-size:19px;font-weight:500;margin-bottom:12px}
-  .think-item h3 .arr{color:var(--cyan);margin-left:8px}
-  .think-item .meta{font-size:13.5px;color:#9094a8}
+  .think h2{font-size:clamp(28px,3.4vw,42px);font-weight:700;margin-bottom:34px}
+  .think-item{display:flex;justify-content:space-between;align-items:baseline;gap:28px;border-top:1px solid var(--line);padding:26px 0;transition:padding-left .25s}
+  .think-item:last-child{border-bottom:1px solid var(--line)}
+  .think-item:hover{padding-left:14px}
+  .think-item h3{font-size:clamp(19px,2vw,26px);font-weight:500;max-width:760px}
+  .think-item h3 .arr{color:var(--cyan);margin-left:10px}
+  .think-item .meta{font-size:14px;color:#9094a8;flex:none;font-family:var(--fh)}
 
-  /* faq — card style */
+  /* faq: card style. Shape rule: page is sharp-cornered; FAQ cards are the ONE rounded exception (user-approved pattern) */
   .faq{background:#F4F6FB}
   .faq-list{max-width:880px}
   details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:14px;overflow:hidden;transition:border-color .25s,box-shadow .25s}
@@ -144,8 +147,7 @@
   .contact h2{font-size:clamp(34px,4.6vw,58px);font-weight:700;max-width:760px;margin-bottom:24px;position:relative}
   .ct-quote{font-family:var(--fh);font-size:17px;color:var(--text);max-width:560px;margin-bottom:56px;position:relative}
   .ct-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:start}
-  .ct-ill{width:min(360px,100%);margin-bottom:26px}
-  .ct-left p{font-size:15.5px;max-width:360px}
+  .ct-left p{font-size:16.5px;max-width:380px}
   .ct-addr{margin-top:18px;font-size:14px;color:#9094a8}
   .form label{display:block;font-family:var(--fh);font-size:13px;font-weight:500;color:var(--ink);margin-bottom:6px}
   .form input,.form textarea{width:100%;border:0;border-bottom:1px solid #c9ccd8;padding:10px 2px 12px;font:inherit;font-size:16px;color:var(--ink);margin-bottom:30px;background:transparent;transition:border-color .2s}
@@ -221,8 +223,8 @@
 <!-- hero -->
 <div class="hero" id="top">
   <div class="wrap">
-    <h1 data-i18n="hero_h1">Technology should power your business — never slow it down.</h1>
-    <p class="sub" data-i18n="hero_sub">Barsion keeps your systems running, your data safe and your ideas shipping — from Tallinn, for all of Europe.</p>
+    <h1 data-i18n="hero_h1">Technology should power your business, never slow it down.</h1>
+    <p class="sub" data-i18n="hero_sub">Barsion keeps your systems running, your data safe and your ideas shipping. From Tallinn, for all of Europe.</p>
     <a href="#contact" class="btn" data-i18n="hero_cta">Book a free consultation</a>
   </div>
 </div>
@@ -306,14 +308,14 @@
   <div class="wrap">
     <div class="label"><span data-i18n="sol_label">Solutions</span></div>
     <div class="sol-grid">
-      <div class="sol reveal"><h3><span data-i18n="s1_h">Managed IT</span><span class="arr">&#9656;</span></h3><p data-i18n="s1_p">We run your day-to-day IT — support, administration and round-the-clock monitoring — so your team can stay focused on the business.</p></div>
-      <div class="sol reveal"><h3><span data-i18n="s2_h">Technology Consulting</span><span class="arr">&#9656;</span></h3><p data-i18n="s2_p">Independent advice on what to build, what to buy and what to retire — so every technology decision moves the business forward.</p></div>
-      <div class="sol reveal"><h3><span data-i18n="s3_h">Security &amp; Compliance</span><span class="arr">&#9656;</span></h3><p data-i18n="s3_p">From vulnerability audits to hardened infrastructure and GDPR alignment — we keep your data and your reputation safe.</p></div>
+      <div class="sol reveal"><h3><span data-i18n="s1_h">Managed IT</span><span class="arr">&#9656;</span></h3><p data-i18n="s1_p">We run your day-to-day IT: support, administration and round-the-clock monitoring. Your team stays focused on the business.</p></div>
+      <div class="sol reveal"><h3><span data-i18n="s2_h">Technology Consulting</span><span class="arr">&#9656;</span></h3><p data-i18n="s2_p">Independent advice on what to build, what to buy and what to retire, so every technology decision moves the business forward.</p></div>
+      <div class="sol reveal"><h3><span data-i18n="s3_h">Security &amp; Compliance</span><span class="arr">&#9656;</span></h3><p data-i18n="s3_p">From vulnerability audits to hardened infrastructure and GDPR alignment. We keep your data and your reputation safe.</p></div>
       <div class="sol reveal"><h3><span data-i18n="s4_h">Web Platforms</span><span class="arr">&#9656;</span></h3><p data-i18n="s4_p">Fast, reliable websites and web applications that turn visitors into customers.</p></div>
-      <div class="sol reveal"><h3><span data-i18n="s5_h">Mobile Apps</span><span class="arr">&#9656;</span></h3><p data-i18n="s5_p">Native and cross-platform apps your customers will actually enjoy using — on iOS and Android alike.</p></div>
+      <div class="sol reveal"><h3><span data-i18n="s5_h">Mobile Apps</span><span class="arr">&#9656;</span></h3><p data-i18n="s5_p">Native and cross-platform apps your customers will actually enjoy using, on iOS and Android alike.</p></div>
       <div class="sol reveal"><h3><span data-i18n="s6_h">Cloud &amp; Infrastructure</span><span class="arr">&#9656;</span></h3><p data-i18n="s6_p">Migration, architecture and cost optimisation across AWS, Azure and Google Cloud.</p></div>
-      <div class="sol reveal"><h3><span data-i18n="s7_h">Business Continuity</span><span class="arr">&#9656;</span></h3><p data-i18n="s7_p">We find the weak points in your IT before they find you — and build a recovery plan that actually works.</p></div>
-      <div class="sol reveal"><h3><span data-i18n="s8_h">Custom Software</span><span class="arr">&#9656;</span></h3><p data-i18n="s8_p">Internal tools, integrations and full products — designed around the way your company really works.</p></div>
+      <div class="sol reveal"><h3><span data-i18n="s7_h">Business Continuity</span><span class="arr">&#9656;</span></h3><p data-i18n="s7_p">We find the weak points in your IT before they find you, and build a recovery plan that actually works.</p></div>
+      <div class="sol reveal"><h3><span data-i18n="s8_h">Custom Software</span><span class="arr">&#9656;</span></h3><p data-i18n="s8_p">Internal tools, integrations and full products, designed around the way your company really works.</p></div>
     </div>
   </div>
 </section>
@@ -322,8 +324,8 @@
 <div class="quote">
   <div class="wrap reveal">
     <span class="qmark">“</span>
-    <p data-i18n="quote1">We treat your infrastructure as if our own business ran on it. Because in a way — it does.</p>
-    <div class="by" data-i18n="quote1_by">— the Barsion team</div>
+    <p data-i18n="quote1">We treat your infrastructure as if our own business ran on it. Because in a way, it does.</p>
+    <div class="by" data-i18n="quote1_by">The Barsion team</div>
   </div>
   <div class="chip"></div>
 </div>
@@ -337,32 +339,11 @@
     <div class="ind-grid">
       <div class="reveal">
         <h2 data-i18n="ind_h">Every sector runs on IT. We keep it running.</h2>
-        <p data-i18n="ind_p">In a market that moves this fast, success depends on how reliably your systems perform every single day. We help you scale, optimise and stay ahead — with the tools, strategy and support that keep pace with your ambitions.</p>
-        <p style="margin-top:22px" data-i18n="who_p">Barsion is a Tallinn-based IT partner working with companies across the Nordics and Europe — one team covering everything from infrastructure to product development.</p>
+        <p data-i18n="ind_p">In a market that moves this fast, success depends on how reliably your systems perform every single day. We help you scale, optimise and stay ahead, with the tools, strategy and support that keep pace with your ambitions.</p>
+        <p style="margin-top:22px" data-i18n="who_p">Barsion is a Tallinn-based IT partner working with companies across the Nordics and Europe: one team covering everything from infrastructure to product development.</p>
         <div class="who-quote" data-i18n="quote2">“Small enough to care. Experienced enough to deliver.”</div>
       </div>
-      <!-- own flat illustration: engineer & racks -->
-      <svg class="ind-ill reveal" viewBox="0 0 460 380" role="img" aria-label="Engineer with servers illustration">
-        <g fill="#A5ECF4" opacity=".8"><circle cx="70" cy="40" r="3"/><path d="M420 40l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/><circle cx="440" cy="150" r="2.5"/></g>
-        <rect x="60" y="60" width="120" height="290" rx="10" fill="#1B1F45"/>
-        <g stroke="#3D4370" stroke-width="6" stroke-linecap="round">
-          <path d="M78 95h60M78 130h60M78 165h60M78 200h60M78 235h60M78 270h60M78 305h60"/>
-        </g>
-        <g fill="#A5ECF4"><circle cx="158" cy="95" r="4"/><circle cx="158" cy="165" r="4"/><circle cx="158" cy="235" r="4"/><circle cx="158" cy="305" r="4"/></g>
-        <rect x="200" y="110" width="100" height="240" rx="10" fill="#20265A"/>
-        <g stroke="#3D4370" stroke-width="6" stroke-linecap="round">
-          <path d="M216 145h52M216 180h52M216 215h52M216 250h52M216 285h52M216 315h52"/>
-        </g>
-        <g fill="#A5ECF4"><circle cx="282" cy="145" r="4"/><circle cx="282" cy="215" r="4"/><circle cx="282" cy="285" r="4"/></g>
-        <!-- engineer -->
-        <circle cx="375" cy="185" r="26" fill="#EEF0F6"/>
-        <path d="M362 176c4-10 22-10 26 0" stroke="#20243F" stroke-width="4" fill="none" stroke-linecap="round"/>
-        <path d="M348 350v-90c0-28 12-45 27-45s27 17 27 45v90z" fill="#01043D"/>
-        <rect x="330" y="240" width="34" height="14" rx="7" fill="#01043D" transform="rotate(-30 330 240)"/>
-        <rect x="316" y="212" width="42" height="28" rx="5" fill="#A5ECF4"/>
-        <path d="M322 222h30M322 230h20" stroke="#01043D" stroke-width="3" stroke-linecap="round"/>
-        <rect x="40" y="350" width="400" height="6" rx="3" fill="#E4E5EC"/>
-      </svg>
+      <img class="ind-ill reveal" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Team working together" loading="lazy">
     </div>
   </div>
 </section>
@@ -372,7 +353,7 @@
   <div class="wrap">
     <div class="label"><span data-i18n="val_label">Our values</span></div>
     <div class="val-grid">
-      <div class="val reveal"><h3 data-i18n="v1_h">Honesty</h3><p data-i18n="v1_p">We say what we do — and do what we say.</p></div>
+      <div class="val reveal"><h3 data-i18n="v1_h">Honesty</h3><p data-i18n="v1_p">We say what we do, and do what we say.</p></div>
       <div class="val reveal"><h3 data-i18n="v2_h">Craft</h3><p data-i18n="v2_p">Quality is not negotiable.</p></div>
       <div class="val reveal"><h3 data-i18n="v3_h">Partnership</h3><p data-i18n="v3_p">Your goals set our roadmap.</p></div>
       <div class="val reveal"><h3 data-i18n="v4_h">Focus</h3><p data-i18n="v4_p">Every decision starts with the client.</p></div>
@@ -388,8 +369,8 @@
 <!-- what we're thinking -->
 <section class="think" style="padding-top:90px">
   <div class="wrap">
-    <div class="label"><span data-i18n="think_label">What we're thinking</span></div>
-    <div class="think-grid">
+    <h2 class="reveal" data-i18n="think_h">What we're thinking</h2>
+    <div>
       <div class="think-item reveal"><h3><span data-i18n="i1_h">Where AI genuinely pays off in mid-sized companies</span><span class="arr">&#9656;</span></h3><div class="meta" data-i18n="i1_meta">July 2026 · AI</div></div>
       <div class="think-item reveal"><h3><span data-i18n="i2_h">Choosing your first step in digital transformation</span><span class="arr">&#9656;</span></h3><div class="meta" data-i18n="i2_meta">June 2026 · Strategy</div></div>
       <div class="think-item reveal"><h3><span data-i18n="i3_h">A security checklist every growing team should run</span><span class="arr">&#9656;</span></h3><div class="meta" data-i18n="i3_meta">May 2026 · Security</div></div>
@@ -402,14 +383,14 @@
   <div class="wrap">
     <div class="label"><span>FAQ</span></div>
     <div class="faq-list">
-      <details class="reveal"><summary><span data-i18n="q1">Who is Barsion?</span><span class="plus">+</span></summary><p class="faq-a" data-i18n="a1">Barsion OÜ is an Estonian IT company covering the full technology lifecycle — from advisory and infrastructure management to development, cloud and security.</p></details>
+      <details class="reveal"><summary><span data-i18n="q1">Who is Barsion?</span><span class="plus">+</span></summary><p class="faq-a" data-i18n="a1">Barsion OÜ is an Estonian IT company covering the full technology lifecycle: from advisory and infrastructure management to development, cloud and security.</p></details>
       <details class="reveal"><summary><span data-i18n="q2">What services do you offer?</span><span class="plus">+</span></summary><p class="faq-a" data-i18n="a2">Managed IT with 24/7 monitoring, technology consulting, security &amp; compliance, web and mobile development, cloud services, business continuity and custom software.</p></details>
-      <details class="reveal"><summary><span data-i18n="q3">Who do you work with?</span><span class="plus">+</span></summary><p class="faq-a" data-i18n="a3">Our clients work in finance, healthcare, commerce, manufacturing, logistics and tourism — in Estonia and across Europe.</p></details>
-      <details class="reveal"><summary><span data-i18n="q4">How does a project start?</span><span class="plus">+</span></summary><p class="faq-a" data-i18n="a4">Write to us through the form and we'll set up a free intro call. We then agree on scope, pricing and timeline — and get to work.</p></details>
+      <details class="reveal"><summary><span data-i18n="q3">Who do you work with?</span><span class="plus">+</span></summary><p class="faq-a" data-i18n="a3">Our clients work in finance, healthcare, commerce, manufacturing, logistics and tourism, in Estonia and across Europe.</p></details>
+      <details class="reveal"><summary><span data-i18n="q4">How does a project start?</span><span class="plus">+</span></summary><p class="faq-a" data-i18n="a4">Write to us through the form and we'll set up a free intro call. We then agree on scope, pricing and timeline, and get to work.</p></details>
       <details class="reveal"><summary><span data-i18n="q5">How do you price your work?</span><span class="plus">+</span></summary><p class="faq-a" data-i18n="a5">Depending on the project: fixed price, time &amp; materials, or a monthly subscription. You always know exactly what you're paying for before we start.</p></details>
-      <details class="reveal"><summary><span data-i18n="q6">How do you protect our data?</span><span class="plus">+</span></summary><p class="faq-a" data-i18n="a6">We work to ISO/IEC 27001 principles and in full compliance with the GDPR. As an EU company, your data stays in Europe — under European rules.</p></details>
-      <details class="reveal"><summary><span data-i18n="q7">Which technologies do you work with?</span><span class="plus">+</span></summary><p class="faq-a" data-i18n="a7">Node.js, Python, Java and .NET; React, Vue and Flutter; AWS, Azure and Google Cloud; PostgreSQL, MongoDB and Redis — the choice always follows your needs.</p></details>
-      <details class="reveal"><summary><span data-i18n="q8">Why choose Barsion?</span><span class="plus">+</span></summary><p class="faq-a" data-i18n="a8">One partner for all of your IT, transparent pricing and the experience of Estonia's digital state — without big-firm bureaucracy.</p></details>
+      <details class="reveal"><summary><span data-i18n="q6">How do you protect our data?</span><span class="plus">+</span></summary><p class="faq-a" data-i18n="a6">We work to ISO/IEC 27001 principles and in full compliance with the GDPR. As an EU company, your data stays in Europe, under European rules.</p></details>
+      <details class="reveal"><summary><span data-i18n="q7">Which technologies do you work with?</span><span class="plus">+</span></summary><p class="faq-a" data-i18n="a7">Node.js, Python, Java and .NET; React, Vue and Flutter; AWS, Azure and Google Cloud; PostgreSQL, MongoDB and Redis. The choice always follows your needs.</p></details>
+      <details class="reveal"><summary><span data-i18n="q8">Why choose Barsion?</span><span class="plus">+</span></summary><p class="faq-a" data-i18n="a8">One partner for all of your IT, transparent pricing and the experience of Estonia's digital state, without big-firm bureaucracy.</p></details>
     </div>
   </div>
 </section>
@@ -419,26 +400,10 @@
   <div class="shape"></div>
   <div class="wrap">
     <h2 data-i18n="ct_h">Have a project in mind? Let's make it happen.</h2>
-    <p class="ct-quote" data-i18n="quote3">“Good IT is invisible — you only notice it when it's missing. Our job is making sure you never do.”</p>
+    <p class="ct-quote" data-i18n="quote3">“Good IT is invisible. You only notice it when it's missing. Our job is making sure you never do.”</p>
     <div class="ct-grid">
       <div class="ct-left reveal">
-        <!-- own flat illustration: person with laptop on servers -->
-        <svg class="ct-ill" viewBox="0 0 420 320" role="img" aria-label="Support engineer illustration">
-          <g fill="#A5ECF4" opacity=".8"><circle cx="40" cy="30" r="3"/><path d="M380 30l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/></g>
-          <rect x="70" y="60" width="280" height="200" rx="12" fill="#1B1F45"/>
-          <g stroke="#3D4370" stroke-width="7" stroke-linecap="round">
-            <path d="M95 95h100M95 130h100M95 165h100M95 200h100M95 230h100"/>
-            <path d="M225 95h100M225 130h100M225 165h100M225 200h100M225 230h100"/>
-          </g>
-          <g fill="#A5ECF4"><circle cx="205" cy="95" r="4.5"/><circle cx="205" cy="165" r="4.5"/><circle cx="335" cy="130" r="4.5"/><circle cx="335" cy="230" r="4.5"/></g>
-          <circle cx="210" cy="120" r="24" fill="#EEF0F6"/>
-          <path d="M198 113c4-9 20-9 24 0" stroke="#20243F" stroke-width="4" fill="none" stroke-linecap="round"/>
-          <path d="M168 260c0-40 18-64 42-64s42 24 42 64z" fill="#01043D"/>
-          <rect x="178" y="218" width="64" height="40" rx="6" fill="#A5ECF4"/>
-          <path d="M186 230h48M186 240h34" stroke="#01043D" stroke-width="4" stroke-linecap="round"/>
-          <rect x="40" y="260" width="340" height="8" rx="4" fill="#E4E5EC"/>
-        </svg>
-        <p data-i18n="ct_p">Tell us about your challenge — we'll come back with a solution and a clear next step.</p>
+        <p data-i18n="ct_p">Tell us about your challenge. We'll come back with a solution and a clear next step.</p>
         <p class="ct-addr" data-i18n="ct_addr">Barsion OÜ · Narva mnt 5, Tallinn 10117, Harju County, Estonia</p>
       </div>
       <div class="reveal">
@@ -449,11 +414,11 @@
           <input id="fEmail" type="email" required>
           <label for="fMsg" data-i18n="f_msg">What are you working on?</label>
           <textarea id="fMsg" required></textarea>
-          <button class="btn line" type="submit" data-i18n="f_send">Start the conversation</button>
+          <button class="btn line" type="submit" data-i18n="f_send">Send message</button>
         </form>
         <div class="sent" id="sentBox">
           <h3 data-i18n="f_sent_h">Thank you!</h3>
-          <p data-i18n="f_sent_p">Your message is on its way — we'll get back to you within one business day.</p>
+          <p data-i18n="f_sent_p">Your message is on its way. We'll get back to you within one business day.</p>
         </div>
       </div>
     </div>
@@ -494,59 +459,59 @@ const T = {
 en:{
   logo_s:"IT services",
   nav_solutions:"Solutions", nav_about:"Who We Are", nav_faq:"FAQ", nav_contact:"Contacts",
-  hero_h1:"Technology should power your business — never slow it down.",
-  hero_sub:"Barsion keeps your systems running, your data safe and your ideas shipping — from Tallinn, for all of Europe.",
+  hero_h1:"Technology should power your business, never slow it down.",
+  hero_sub:"Barsion keeps your systems running, your data safe and your ideas shipping. From Tallinn, for all of Europe.",
   hero_cta:"Book a free consultation",
   dark_h:"Complex technology. Simple outcomes.",
   ben1:"Transparent, predictable costs", ben2:"Modern, proven technology", ben3:"Deep sector know-how", ben4:"Built to scale with you",
   sol_label:"Solutions",
-  s1_h:"Managed IT", s1_p:"We run your day-to-day IT — support, administration and round-the-clock monitoring — so your team can stay focused on the business.",
-  s2_h:"Technology Consulting", s2_p:"Independent advice on what to build, what to buy and what to retire — so every technology decision moves the business forward.",
-  s3_h:"Security & Compliance", s3_p:"From vulnerability audits to hardened infrastructure and GDPR alignment — we keep your data and your reputation safe.",
+  s1_h:"Managed IT", s1_p:"We run your day-to-day IT: support, administration and round-the-clock monitoring. Your team stays focused on the business.",
+  s2_h:"Technology Consulting", s2_p:"Independent advice on what to build, what to buy and what to retire, so every technology decision moves the business forward.",
+  s3_h:"Security & Compliance", s3_p:"From vulnerability audits to hardened infrastructure and GDPR alignment. We keep your data and your reputation safe.",
   s4_h:"Web Platforms", s4_p:"Fast, reliable websites and web applications that turn visitors into customers.",
-  s5_h:"Mobile Apps", s5_p:"Native and cross-platform apps your customers will actually enjoy using — on iOS and Android alike.",
+  s5_h:"Mobile Apps", s5_p:"Native and cross-platform apps your customers will actually enjoy using, on iOS and Android alike.",
   s6_h:"Cloud & Infrastructure", s6_p:"Migration, architecture and cost optimisation across AWS, Azure and Google Cloud.",
-  s7_h:"Business Continuity", s7_p:"We find the weak points in your IT before they find you — and build a recovery plan that actually works.",
-  s8_h:"Custom Software", s8_p:"Internal tools, integrations and full products — designed around the way your company really works.",
-  quote1:"We treat your infrastructure as if our own business ran on it. Because in a way — it does.",
-  quote1_by:"— the Barsion team",
+  s7_h:"Business Continuity", s7_p:"We find the weak points in your IT before they find you, and build a recovery plan that actually works.",
+  s8_h:"Custom Software", s8_p:"Internal tools, integrations and full products, designed around the way your company really works.",
+  quote1:"We treat your infrastructure as if our own business ran on it. Because in a way, it does.",
+  quote1_by:"The Barsion team",
   ind_h:"Every sector runs on IT. We keep it running.",
-  ind_p:"In a market that moves this fast, success depends on how reliably your systems perform every single day. We help you scale, optimise and stay ahead — with the tools, strategy and support that keep pace with your ambitions.",
-  who_p:"Barsion is a Tallinn-based IT partner working with companies across the Nordics and Europe — one team covering everything from infrastructure to product development.",
+  ind_p:"In a market that moves this fast, success depends on how reliably your systems perform every single day. We help you scale, optimise and stay ahead, with the tools, strategy and support that keep pace with your ambitions.",
+  who_p:"Barsion is a Tallinn-based IT partner working with companies across the Nordics and Europe: one team covering everything from infrastructure to product development.",
   quote2:"“Small enough to care. Experienced enough to deliver.”",
   val_label:"Our values",
-  v1_h:"Honesty", v1_p:"We say what we do — and do what we say.",
+  v1_h:"Honesty", v1_p:"We say what we do, and do what we say.",
   v2_h:"Craft", v2_p:"Quality is not negotiable.",
   v3_h:"Partnership", v3_p:"Your goals set our roadmap.",
   v4_h:"Focus", v4_p:"Every decision starts with the client.",
   v5_h:"Agility", v5_p:"We adapt as fast as your market does.",
   v6_h:"Trust", v6_p:"Your data stays yours. Always.",
-  think_label:"What we're thinking",
+  think_h:"What we're thinking",
   i1_h:"Where AI genuinely pays off in mid-sized companies", i1_meta:"July 2026 · AI",
   i2_h:"Choosing your first step in digital transformation", i2_meta:"June 2026 · Strategy",
   i3_h:"A security checklist every growing team should run", i3_meta:"May 2026 · Security",
   q1:"Who is Barsion?",
-  a1:"Barsion OÜ is an Estonian IT company covering the full technology lifecycle — from advisory and infrastructure management to development, cloud and security.",
+  a1:"Barsion OÜ is an Estonian IT company covering the full technology lifecycle: from advisory and infrastructure management to development, cloud and security.",
   q2:"What services do you offer?",
   a2:"Managed IT with 24/7 monitoring, technology consulting, security & compliance, web and mobile development, cloud services, business continuity and custom software.",
   q3:"Who do you work with?",
-  a3:"Our clients work in finance, healthcare, commerce, manufacturing, logistics and tourism — in Estonia and across Europe.",
+  a3:"Our clients work in finance, healthcare, commerce, manufacturing, logistics and tourism, in Estonia and across Europe.",
   q4:"How does a project start?",
-  a4:"Write to us through the form and we'll set up a free intro call. We then agree on scope, pricing and timeline — and get to work.",
+  a4:"Write to us through the form and we'll set up a free intro call. We then agree on scope, pricing and timeline, and get to work.",
   q5:"How do you price your work?",
   a5:"Depending on the project: fixed price, time & materials, or a monthly subscription. You always know exactly what you're paying for before we start.",
   q6:"How do you protect our data?",
-  a6:"We work to ISO/IEC 27001 principles and in full compliance with the GDPR. As an EU company, your data stays in Europe — under European rules.",
+  a6:"We work to ISO/IEC 27001 principles and in full compliance with the GDPR. As an EU company, your data stays in Europe, under European rules.",
   q7:"Which technologies do you work with?",
-  a7:"Node.js, Python, Java and .NET; React, Vue and Flutter; AWS, Azure and Google Cloud; PostgreSQL, MongoDB and Redis — the choice always follows your needs.",
+  a7:"Node.js, Python, Java and .NET; React, Vue and Flutter; AWS, Azure and Google Cloud; PostgreSQL, MongoDB and Redis. The choice always follows your needs.",
   q8:"Why choose Barsion?",
-  a8:"One partner for all of your IT, transparent pricing and the experience of Estonia's digital state — without big-firm bureaucracy.",
+  a8:"One partner for all of your IT, transparent pricing and the experience of Estonia's digital state, without big-firm bureaucracy.",
   ct_h:"Have a project in mind? Let's make it happen.",
-  quote3:"“Good IT is invisible — you only notice it when it's missing. Our job is making sure you never do.”",
-  ct_p:"Tell us about your challenge — we'll come back with a solution and a clear next step.",
+  quote3:"“Good IT is invisible. You only notice it when it's missing. Our job is making sure you never do.”",
+  ct_p:"Tell us about your challenge. We'll come back with a solution and a clear next step.",
   ct_addr:"Barsion OÜ · Narva mnt 5, Tallinn 10117, Harju County, Estonia",
-  f_name:"Name", f_email:"Email", f_msg:"What are you working on?", f_send:"Start the conversation",
-  f_sent_h:"Thank you!", f_sent_p:"Your message is on its way — we'll get back to you within one business day.",
+  f_name:"Name", f_email:"Email", f_msg:"What are you working on?", f_send:"Send message",
+  f_sent_h:"Thank you!", f_sent_p:"Your message is on its way. We'll get back to you within one business day.",
   ft_tag:"Stronger side by side.", ft_touch:"Get in touch",
   ft_addr:"Narva mnt 5, Tallinn 10117, Harju County, Estonia",
   ft_copy:"© 2026 Barsion OÜ. All rights reserved.", ft_loc:"Estonia · European Union"
@@ -554,59 +519,59 @@ en:{
 et:{
   logo_s:"IT-teenused",
   nav_solutions:"Lahendused", nav_about:"Meist", nav_faq:"KKK", nav_contact:"Kontakt",
-  hero_h1:"Tehnoloogia peab teie äri edasi viima — mitte pidurdama.",
-  hero_sub:"Barsion hoiab teie süsteemid töös, andmed kaitstuna ja ideed liikumas — Tallinnast, kogu Euroopa jaoks.",
+  hero_h1:"Tehnoloogia peab teie äri edasi viima, mitte pidurdama.",
+  hero_sub:"Barsion hoiab teie süsteemid töös, andmed kaitstuna ja ideed liikumas. Tallinnast, kogu Euroopa jaoks.",
   hero_cta:"Broneeri tasuta konsultatsioon",
   dark_h:"Keeruline tehnoloogia. Selged tulemused.",
   ben1:"Läbipaistvad ja prognoositavad kulud", ben2:"Kaasaegne, end tõestanud tehnoloogia", ben3:"Põhjalik valdkonnatundmine", ben4:"Valmis teiega koos kasvama",
   sol_label:"Lahendused",
-  s1_h:"IT haldus", s1_p:"Hoolitseme teie igapäevase IT eest — tugi, haldus ja ööpäevaringne seire —, et teie meeskond saaks keskenduda ärile.",
-  s2_h:"Tehnoloogianõustamine", s2_p:"Sõltumatu nõu, mida ehitada, mida osta ja millest loobuda — et iga tehnoloogiaotsus viiks äri edasi.",
-  s3_h:"Turvalisus ja vastavus", s3_p:"Haavatavusauditist tugevdatud taristu ja GDPR-i vastavuseni — hoiame teie andmed ja maine kaitstuna.",
+  s1_h:"IT haldus", s1_p:"Hoolitseme teie igapäevase IT eest: tugi, haldus ja ööpäevaringne seire. Nii saab teie meeskond keskenduda ärile.",
+  s2_h:"Tehnoloogianõustamine", s2_p:"Sõltumatu nõu, mida ehitada, mida osta ja millest loobuda, et iga tehnoloogiaotsus viiks äri edasi.",
+  s3_h:"Turvalisus ja vastavus", s3_p:"Haavatavusauditist tugevdatud taristu ja GDPR-i vastavuseni. Hoiame teie andmed ja maine kaitstuna.",
   s4_h:"Veebiplatvormid", s4_p:"Kiired ja töökindlad veebilehed ning -rakendused, mis muudavad külastajad klientideks.",
-  s5_h:"Mobiilirakendused", s5_p:"Natiivsed ja platvormiülesed rakendused, mida teie kliendid päriselt kasutada tahavad — nii iOS-il kui Androidil.",
+  s5_h:"Mobiilirakendused", s5_p:"Natiivsed ja platvormiülesed rakendused, mida teie kliendid päriselt kasutada tahavad, nii iOS-il kui Androidil.",
   s6_h:"Pilv ja taristu", s6_p:"Migratsioon, arhitektuur ja kulude optimeerimine AWS-is, Azure'is ja Google Cloudis.",
-  s7_h:"Äri järjepidevus", s7_p:"Leiame teie IT nõrgad kohad enne, kui need end ise näitavad — ja koostame taasteplaani, mis päriselt toimib.",
-  s8_h:"Eritarkvara", s8_p:"Sisetööriistad, liidestused ja terviklikud tooted — loodud selle järgi, kuidas teie ettevõte päriselt töötab.",
+  s7_h:"Äri järjepidevus", s7_p:"Leiame teie IT nõrgad kohad enne, kui need end ise näitavad, ja koostame taasteplaani, mis päriselt toimib.",
+  s8_h:"Eritarkvara", s8_p:"Sisetööriistad, liidestused ja terviklikud tooted, loodud selle järgi, kuidas teie ettevõte päriselt töötab.",
   quote1:"Hoolitseme teie taristu eest nii, nagu töötaks sellel meie enda äri. Sest teatud mõttes töötabki.",
-  quote1_by:"— Barsioni meeskond",
+  quote1_by:"Barsioni meeskond",
   ind_h:"Iga valdkond töötab IT peal. Meie hoiame selle töös.",
-  ind_p:"Nii kiiresti liikuval turul sõltub edu sellest, kui kindlalt teie süsteemid iga päev toimivad. Aitame teil kasvada, optimeerida ja ees püsida — tööriistade, strateegia ja toega, mis käivad teie ambitsioonidega ühte sammu.",
-  who_p:"Barsion on Tallinnas asuv IT-partner, kes töötab ettevõtetega üle Põhjamaade ja Euroopa — üks meeskond, mis katab kõik taristust tootearenduseni.",
+  ind_p:"Nii kiiresti liikuval turul sõltub edu sellest, kui kindlalt teie süsteemid iga päev toimivad. Aitame teil kasvada, optimeerida ja ees püsida, tööriistade, strateegia ja toega, mis käivad teie ambitsioonidega ühte sammu.",
+  who_p:"Barsion on Tallinnas asuv IT-partner, kes töötab ettevõtetega üle Põhjamaade ja Euroopa: üks meeskond, mis katab kõik taristust tootearenduseni.",
   quote2:"„Piisavalt väikesed, et hoolida. Piisavalt kogenud, et tulemusi anda.“",
   val_label:"Meie väärtused",
-  v1_h:"Ausus", v1_p:"Ütleme, mida teeme — ja teeme, mida ütleme.",
+  v1_h:"Ausus", v1_p:"Ütleme, mida teeme, ja teeme, mida ütleme.",
   v2_h:"Meisterlikkus", v2_p:"Kvaliteedis me ei kauple.",
   v3_h:"Partnerlus", v3_p:"Teie eesmärgid on meie teekaart.",
   v4_h:"Fookus", v4_p:"Iga otsus algab kliendist.",
   v5_h:"Paindlikkus", v5_p:"Kohandume sama kiiresti kui teie turg.",
   v6_h:"Usaldus", v6_p:"Teie andmed jäävad teie omaks. Alati.",
-  think_label:"Millest me mõtleme",
+  think_h:"Millest me mõtleme",
   i1_h:"Kus tehisintellekt end keskmise suurusega ettevõttes päriselt ära tasub", i1_meta:"Juuli 2026 · AI",
   i2_h:"Kuidas valida digipöörde esimest sammu", i2_meta:"Juuni 2026 · Strateegia",
   i3_h:"Turvakontrollnimekiri, mille iga kasvav meeskond peaks läbi käima", i3_meta:"Mai 2026 · Turvalisus",
   q1:"Kes on Barsion?",
-  a1:"Barsion OÜ on Eesti IT-ettevõte, mis katab kogu tehnoloogia elukaare — nõustamisest ja taristu haldusest kuni arenduse, pilve ja turvalisuseni.",
+  a1:"Barsion OÜ on Eesti IT-ettevõte, mis katab kogu tehnoloogia elukaare: nõustamisest ja taristu haldusest kuni arenduse, pilve ja turvalisuseni.",
   q2:"Milliseid teenuseid pakute?",
   a2:"IT haldus ööpäevaringse seirega, tehnoloogianõustamine, turvalisus ja vastavus, veebi- ja mobiiliarendus, pilveteenused, äri järjepidevus ning eritarkvara.",
   q3:"Kellega te töötate?",
-  a3:"Meie kliendid tegutsevad rahanduses, tervishoius, kaubanduses, tootmises, logistikas ja turismis — nii Eestis kui mujal Euroopas.",
+  a3:"Meie kliendid tegutsevad rahanduses, tervishoius, kaubanduses, tootmises, logistikas ja turismis, nii Eestis kui mujal Euroopas.",
   q4:"Kuidas koostöö algab?",
-  a4:"Kirjutage meile vormi kaudu ja lepime kokku tasuta tutvumiskõne. Seejärel täpsustame töömahu, hinna ja ajakava — ning asume tööle.",
+  a4:"Kirjutage meile vormi kaudu ja lepime kokku tasuta tutvumiskõne. Seejärel täpsustame töömahu, hinna ja ajakava ning asume tööle.",
   q5:"Kuidas te oma tööd hinnastate?",
   a5:"Sõltuvalt projektist: fikseeritud hind, tunnipõhine arveldus või kuutasu. Enne alustamist teate alati täpselt, mille eest maksate.",
   q6:"Kuidas te meie andmeid kaitsete?",
-  a6:"Töötame ISO/IEC 27001 põhimõtete järgi ja täies vastavuses GDPR-iga. EL-i ettevõttena püsivad teie andmed Euroopas — Euroopa reeglite järgi.",
+  a6:"Töötame ISO/IEC 27001 põhimõtete järgi ja täies vastavuses GDPR-iga. EL-i ettevõttena püsivad teie andmed Euroopas, Euroopa reeglite järgi.",
   q7:"Milliste tehnoloogiatega te töötate?",
-  a7:"Node.js, Python, Java ja .NET; React, Vue ja Flutter; AWS, Azure ja Google Cloud; PostgreSQL, MongoDB ja Redis — valik lähtub alati teie vajadustest.",
+  a7:"Node.js, Python, Java ja .NET; React, Vue ja Flutter; AWS, Azure ja Google Cloud; PostgreSQL, MongoDB ja Redis. Valik lähtub alati teie vajadustest.",
   q8:"Miks valida just Barsion?",
-  a8:"Üks partner kogu teie IT jaoks, läbipaistev hinnastus ja Eesti digiriigi kogemus — ilma suurfirma bürokraatiata.",
+  a8:"Üks partner kogu teie IT jaoks, läbipaistev hinnastus ja Eesti digiriigi kogemus, ilma suurfirma bürokraatiata.",
   ct_h:"On teil projekt mõttes? Viime selle ellu.",
-  quote3:"„Hea IT on nähtamatu — seda märkad alles siis, kui see puudub. Meie töö on hoolitseda, et te seda kunagi ei märkaks.“",
-  ct_p:"Kirjeldage oma väljakutset — pakume välja lahenduse ja selge järgmise sammu.",
+  quote3:"„Hea IT on nähtamatu. Seda märkad alles siis, kui see puudub. Meie töö on hoolitseda, et te seda kunagi ei märkaks.“",
+  ct_p:"Kirjeldage oma väljakutset. Pakume välja lahenduse ja selge järgmise sammu.",
   ct_addr:"Barsion OÜ · Narva mnt 5, Tallinn 10117, Harju maakond, Eesti",
-  f_name:"Nimi", f_email:"E-post", f_msg:"Millega te parasjagu tegelete?", f_send:"Alusta vestlust",
-  f_sent_h:"Aitäh!", f_sent_p:"Teie sõnum on teel — vastame ühe tööpäeva jooksul.",
+  f_name:"Nimi", f_email:"E-post", f_msg:"Millega te parasjagu tegelete?", f_send:"Saada sõnum",
+  f_sent_h:"Aitäh!", f_sent_p:"Teie sõnum on teel. Vastame ühe tööpäeva jooksul.",
   ft_tag:"Üheskoos tugevamad.", ft_touch:"Võta ühendust",
   ft_addr:"Narva mnt 5, Tallinn 10117, Harju maakond, Eesti",
   ft_copy:"© 2026 Barsion OÜ. Kõik õigused kaitstud.", ft_loc:"Eesti · Euroopa Liit"
