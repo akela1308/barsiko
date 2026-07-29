@@ -12,7 +12,7 @@
 <style>
   :root{
     --navy:#01043D;
-    --dark:#12142F;
+    --dark:#0B1129;
     --cyan:#A5ECF4;
     --ink:#161616;
     --text:#4C4F65;
@@ -81,19 +81,13 @@
   .on .dark-list li:nth-child(3){transition-delay:.4s}
   .on .dark-list li:nth-child(4){transition-delay:.55s}
   .dark-list .tick{flex:none;color:var(--cyan);font-size:16px}
-  .mascot{justify-self:end;width:min(440px,100%);animation:mfloat 7s ease-in-out infinite}
+  .mascot{justify-self:end;width:min(480px,100%);height:auto;animation:mfloat 7s ease-in-out infinite;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 9%,#000 91%,transparent 100%),linear-gradient(180deg,transparent 0,#000 9%,#000 93%,transparent 100%);
+    -webkit-mask-composite:source-in;
+    mask-image:linear-gradient(90deg,transparent 0,#000 9%,#000 91%,transparent 100%),linear-gradient(180deg,transparent 0,#000 9%,#000 93%,transparent 100%);
+    mask-composite:intersect}
   @keyframes mfloat{50%{transform:translateY(-12px)}}
-  .m-eye{transform-box:fill-box;transform-origin:center;animation:mblink 4.6s infinite}
-  .m-eye:nth-of-type(2){animation-delay:.05s}
-  @keyframes mblink{0%,92.5%,100%{transform:scaleY(1)}95.5%{transform:scaleY(.08)}}
-  .m-tail{transform-box:fill-box;transform-origin:8% 96%;animation:mtail 5.4s var(--ease-in-out,ease-in-out) infinite}
-  @keyframes mtail{50%{transform:rotate(6deg)}}
-  .m-paw{animation:mtype 2.6s ease-in-out infinite}
-  .m-paw.pr{animation-delay:.22s}
-  @keyframes mtype{0%,74%,100%{transform:none}78%,86%{transform:translateY(-3.5px)}82%,90%{transform:none}}
-  .m-glint{animation:mglint 7.5s infinite}
-  .m-glint:nth-of-type(2){animation-delay:.18s}
-  @keyframes mglint{0%,88%,100%{opacity:0}93%{opacity:.75}}
+
   .dark .corner{position:absolute;left:-14px;bottom:-20px;width:70px;height:110px;background:var(--cyan);transform:skewX(-16deg)}
 
   section{padding:90px 0}
@@ -278,67 +272,7 @@
         <li><span class="tick">✓</span><span data-i18n="ben4">Built to scale with you</span></li>
       </ul>
     </div>
-    <!-- Barsion mascot: snow leopard with laptop (own artwork) -->
-    <svg class="mascot" viewBox="0 0 520 500" role="img" aria-label="Barsion snow leopard mascot">
-      <g fill="#A5ECF4" opacity=".8">
-        <circle cx="60" cy="80" r="3"/><circle cx="470" cy="60" r="4"/><circle cx="440" cy="180" r="2.5"/><circle cx="40" cy="240" r="2.5"/>
-        <path d="M490 120l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/>
-        <path d="M80 30l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
-      </g>
-      <!-- tail -->
-      <g class="m-tail">
-        <path d="M395 385c60-10 85-60 60-95" stroke="#E8EAF2" stroke-width="26" fill="none" stroke-linecap="round"/>
-        <circle cx="415" cy="345" r="7" fill="#3A3F58" opacity=".55"/><circle cx="443" cy="322" r="6" fill="#3A3F58" opacity=".55"/>
-      </g>
-      <!-- body -->
-      <path d="M150 470c0-90 40-150 110-150s110 60 110 150z" fill="#E8EAF2"/>
-      <ellipse cx="205" cy="420" rx="9" ry="6" fill="#3A3F58" opacity=".5"/>
-      <ellipse cx="330" cy="430" rx="8" ry="5" fill="#3A3F58" opacity=".5"/>
-      <!-- ears -->
-      <path d="M165 130l18-52 44 34z" fill="#E8EAF2"/><path d="M182 122l10-28 24 19z" fill="#3A3F58" opacity=".35"/>
-      <path d="M355 130l-18-52-44 34z" fill="#E8EAF2"/><path d="M338 122l-10-28-24 19z" fill="#3A3F58" opacity=".35"/>
-      <!-- head -->
-      <circle cx="260" cy="205" r="112" fill="#EEF0F6"/>
-      <!-- spots -->
-      <g fill="#3A3F58" opacity=".55">
-        <ellipse cx="185" cy="150" rx="9" ry="6" transform="rotate(-20 185 150)"/>
-        <ellipse cx="335" cy="150" rx="9" ry="6" transform="rotate(20 335 150)"/>
-        <ellipse cx="160" cy="215" rx="8" ry="5"/>
-        <ellipse cx="360" cy="215" rx="8" ry="5"/>
-        <ellipse cx="225" cy="118" rx="8" ry="5" transform="rotate(-12 225 118)"/>
-        <ellipse cx="295" cy="118" rx="8" ry="5" transform="rotate(12 295 118)"/>
-        <ellipse cx="260" cy="105" rx="7" ry="4.5"/>
-      </g>
-      <!-- glasses -->
-      <g stroke="#A5ECF4" stroke-width="7" fill="rgba(165,236,244,.14)">
-        <circle cx="218" cy="205" r="38"/>
-        <circle cx="302" cy="205" r="38"/>
-        <path d="M256 205h8" stroke-linecap="round"/>
-      </g>
-      <!-- eyes -->
-      <g class="m-eye"><circle cx="218" cy="207" r="12" fill="#20243F"/><circle cx="222" cy="203" r="4" fill="#fff"/></g>
-      <g class="m-eye"><circle cx="302" cy="207" r="12" fill="#20243F"/><circle cx="306" cy="203" r="4" fill="#fff"/></g>
-      <path class="m-glint" d="M198 190a27 27 0 0 1 24-12" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" opacity="0"/>
-      <path class="m-glint" d="M282 190a27 27 0 0 1 24-12" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" opacity="0"/>
-      <!-- muzzle -->
-      <ellipse cx="260" cy="262" rx="46" ry="32" fill="#fff"/>
-      <path d="M250 250l10 9 10-9c0-8-20-8-20 0z" fill="#20243F"/>
-      <path d="M260 262v12M260 274c-6 8-16 9-22 3M260 274c6 8 16 9 22 3" stroke="#20243F" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-      <g stroke="#C9CCDD" stroke-width="3" stroke-linecap="round">
-        <path d="M196 252l-42 -6M198 264l-40 6"/>
-        <path d="M324 252l42 -6M322 264l40 6"/>
-      </g>
-      <!-- laptop -->
-      <g>
-        <path d="M170 470l16-92c1-7 7-12 14-12h120c7 0 13 5 14 12l16 92z" fill="#1B1F45"/>
-        <path d="M186 380c1-5 5-8 10-8h128c5 0 9 3 10 8l13 76H173z" fill="#20265A"/>
-        <text x="260" y="425" text-anchor="middle" font-family="Geologica,Arial,sans-serif" font-weight="700" font-size="21" letter-spacing="4" fill="#A5ECF4">BARSION</text>
-        <rect x="140" y="470" width="240" height="14" rx="4" fill="#A5ECF4"/>
-      </g>
-      <!-- paws -->
-      <g class="m-paw pl"><ellipse cx="180" cy="468" rx="26" ry="16" fill="#EEF0F6"/><path d="M172 462v10M188 462v10" stroke="#C9CCDD" stroke-width="3" stroke-linecap="round"/></g>
-      <g class="m-paw pr"><ellipse cx="340" cy="468" rx="26" ry="16" fill="#EEF0F6"/><path d="M332 462v10M348 462v10" stroke="#C9CCDD" stroke-width="3" stroke-linecap="round"/></g>
-    </svg>
+    <img class="mascot" src="mascot.jpg" width="1024" height="1024" alt="Barsion snow leopard mascot working on a laptop">
   </div>
   <div class="corner"></div>
 </div>
