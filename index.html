@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barsiko — IT Solutions & Consulting | Estonia</title>
+<meta name="description" content="Barsiko is an Estonian IT consultancy offering managed services, IT consulting, cyber security, web & mobile development, cloud services and software development.">
+<meta property="og:title" content="Barsiko — IT Solutions & Consulting | Estonia">
+<meta property="og:description" content="We manage your IT, so you can manage your business to successful growth. Built in Estonia, delivered across Europe.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232E7D43'/%3E%3Ctext x='32' y='44' font-family='Arial,sans-serif' font-size='36' font-weight='800' fill='white' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#8FD299;
+    --green-dark:#5FB56F;
+    --green-deep:#2E7D43;
+    --ink:#0C1F14;
+    --ink-soft:#3A4A40;
+    --mist:#F4F9F5;
+    --line:#E3EEE5;
+    --white:#FFFFFF;
+    --radius:20px;
+    --shadow:0 10px 40px rgba(12,31,20,.08);
+    --shadow-lg:0 24px 70px rgba(12,31,20,.14);
+    --font:'Inter','Segoe UI',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+    --font-display:'Space Grotesk','Inter','Segoe UI',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{max-width:100%}
+  a{color:inherit;text-decoration:none}
+  ul{list-style:none}
+  ::selection{background:var(--green);color:var(--ink)}
+  ::-webkit-scrollbar{width:11px}
+  ::-webkit-scrollbar-track{background:var(--mist)}
+  ::-webkit-scrollbar-thumb{background:#BFDCC5;border-radius:8px;border:2px solid var(--mist)}
+  ::-webkit-scrollbar-thumb:hover{background:var(--green-dark)}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  section{padding:100px 0}
+  h1,h2,h3{line-height:1.15;letter-spacing:-.02em;font-family:var(--font-display)}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--green-deep);margin-bottom:18px}
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--green);display:inline-block}
+  .h2{font-size:clamp(28px,4vw,46px);font-weight:700;margin-bottom:18px}
+  .lead{font-size:18px;color:var(--ink-soft);max-width:640px}
+
+  /* ---------- fixed ui ---------- */
+  #progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--green),var(--green-deep));z-index:300;transition:width .1s linear}
+  .totop{position:fixed;right:26px;bottom:26px;width:48px;height:48px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;cursor:pointer;opacity:0;pointer-events:none;transition:.3s;z-index:150;border:0;box-shadow:var(--shadow)}
+  .totop.show{opacity:1;pointer-events:auto}
+  .totop:hover{background:var(--green-deep);transform:translateY(-3px)}
+
+  /* ---------- header ---------- */
+  header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);transition:box-shadow .3s}
+  header.scrolled{box-shadow:0 8px 32px rgba(12,31,20,.07)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:78px;transition:height .3s}
+  header.scrolled .nav{height:64px}
+  .logo{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:700;letter-spacing:-.02em;font-family:var(--font-display)}
+  .logo-mark{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,var(--green) 0%,var(--green-deep) 100%);display:grid;place-items:center;color:#fff;font-size:18px;font-weight:700}
+  .nav-links{display:flex;gap:32px;font-size:15px;font-weight:500}
+  .nav-links a{color:var(--ink-soft);transition:color .2s;position:relative;padding:4px 0}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--green-deep);border-radius:2px;transition:width .25s}
+  .nav-links a:hover,.nav-links a.active{color:var(--green-deep)}
+  .nav-links a.active::after,.nav-links a:hover::after{width:100%}
+  .nav-right{display:flex;align-items:center;gap:16px}
+  .lang{display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden;font-size:13px;font-weight:600}
+  .lang button{border:0;background:transparent;padding:7px 14px;cursor:pointer;font:inherit;color:var(--ink-soft);transition:.2s}
+  .lang button.active{background:var(--ink);color:#fff}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;padding:13px 26px;border-radius:99px;font-size:15px;font-weight:600;border:0;cursor:pointer;transition:background .25s,transform .25s,color .25s;font-family:inherit;position:relative;overflow:hidden}
+  .btn::after{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);transition:left .55s ease}
+  .btn:hover{background:var(--green-deep);transform:translateY(-1px)}
+  .btn:hover::after{left:130%}
+  .btn.green{background:var(--green-deep)}
+  .btn.green:hover{background:var(--ink)}
+  .btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+  .btn.ghost:hover{background:var(--ink);color:#fff;transform:none}
+  .burger{display:none;border:0;background:none;cursor:pointer;padding:6px}
+  .burger span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;transition:.3s}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;background:var(--mist);padding:104px 0 110px}
+  .blob{position:absolute;border-radius:50%;filter:blur(75px);pointer-events:none}
+  .b1{width:520px;height:520px;background:rgba(143,210,153,.55);top:-160px;right:-90px;animation:blob 16s ease-in-out infinite}
+  .b2{width:420px;height:420px;background:rgba(95,181,111,.32);bottom:-140px;left:-120px;animation:blob 20s ease-in-out infinite reverse}
+  .b3{width:300px;height:300px;background:rgba(143,210,153,.28);top:30%;left:38%;animation:blob 24s ease-in-out infinite}
+  @keyframes blob{33%{transform:translate(34px,-22px) scale(1.08)}66%{transform:translate(-24px,26px) scale(.94)}}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(12,31,20,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(12,31,20,.045) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(900px 560px at 50% 40%,#000 30%,transparent 78%);-webkit-mask-image:radial-gradient(900px 560px at 50% 40%,#000 30%,transparent 78%)}
+  .hero .wrap{position:relative}
+  .hero-inner{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);padding:8px 16px;border-radius:99px;font-size:13px;font-weight:600;color:var(--ink-soft);box-shadow:var(--shadow);margin-bottom:26px}
+  .hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--green-dark);box-shadow:0 0 0 0 rgba(95,181,111,.5);animation:pulse 2.2s infinite}
+  @keyframes pulse{70%{box-shadow:0 0 0 9px rgba(95,181,111,0)}100%{box-shadow:0 0 0 0 rgba(95,181,111,0)}}
+  .hero h1{font-size:clamp(36px,5.2vw,62px);font-weight:700;max-width:820px;margin-bottom:22px}
+  .hero h1 em{font-style:normal;background:linear-gradient(100deg,var(--green-deep) 10%,var(--green-dark) 55%,#7CC98B);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{font-size:19px;color:var(--ink-soft);max-width:540px;margin-bottom:36px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:58px}
+  .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;max-width:760px;box-shadow:var(--shadow)}
+  .stat{background:rgba(255,255,255,.9);backdrop-filter:blur(6px);padding:20px 22px}
+  .stat b{display:block;font-size:27px;font-weight:800;color:var(--green-deep);font-family:var(--font-display);font-variant-numeric:tabular-nums}
+  .stat span{font-size:13px;color:var(--ink-soft)}
+
+  /* hero visual */
+  .hero-vis{position:relative;min-height:460px}
+  .hv-ring{position:absolute;top:50%;left:50%;width:400px;height:400px;margin:-200px 0 0 -200px;border:1.5px dashed rgba(46,125,67,.3);border-radius:50%;animation:spin 46s linear infinite}
+  .hv-ring::after{content:"";position:absolute;top:-6px;left:50%;width:11px;height:11px;border-radius:50%;background:var(--green-deep)}
+  .hv-ring2{position:absolute;top:50%;left:50%;width:290px;height:290px;margin:-145px 0 0 -145px;border:1px solid rgba(46,125,67,.16);border-radius:50%;animation:spin 30s linear infinite reverse}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .hv-core{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:118px;height:118px;border-radius:32px;background:linear-gradient(135deg,var(--green),var(--green-deep));display:grid;place-items:center;color:#fff;font-family:var(--font-display);font-size:52px;font-weight:700;box-shadow:0 24px 60px rgba(46,125,67,.35)}
+  .hv-card{position:absolute;background:rgba(255,255,255,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.95);border-radius:18px;padding:16px 19px;box-shadow:0 18px 50px rgba(12,31,20,.13);animation:hvfloat 7s ease-in-out infinite;min-width:205px}
+  .hv-card .hv-top{display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:600;color:var(--ink-soft);margin-bottom:7px}
+  .hv-card .hv-ico{width:28px;height:28px;border-radius:9px;background:rgba(143,210,153,.22);display:grid;place-items:center;color:var(--green-deep);flex:none}
+  .hv-card .hv-val{font-family:var(--font-display);font-size:23px;font-weight:700;color:var(--ink);line-height:1.1}
+  .hv-card .hv-val small{font-size:13px;font-weight:600;color:var(--green-deep)}
+  .hv-bar{height:5px;border-radius:4px;background:rgba(12,31,20,.08);margin-top:9px;overflow:hidden}
+  .hv-bar i{display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,var(--green),var(--green-deep));width:0;transition:width 1.4s cubic-bezier(.22,1,.36,1)}
+  .hv-1{top:2%;left:0;animation-delay:0s}
+  .hv-2{top:36%;right:-2%;animation-delay:-2.4s}
+  .hv-3{bottom:3%;left:9%;animation-delay:-4.8s}
+  @keyframes hvfloat{50%{transform:translateY(-13px)}}
+
+  /* ---------- tech marquee ---------- */
+  .tech{background:#fff;border-bottom:1px solid var(--line);padding:30px 0 34px}
+  .tech .tlabel{text-align:center;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#9AAca0;margin-bottom:20px}
+  .marq{display:flex;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+  .marq-track{display:flex;flex:none;align-items:center;gap:52px;padding-right:52px;animation:marq 32s linear infinite;font-family:var(--font-display);font-weight:600;font-size:17px;color:#5c6f63;white-space:nowrap}
+  .marq:hover .marq-track{animation-play-state:paused}
+  @keyframes marq{to{transform:translateX(-100%)}}
+  .titem{display:inline-flex;align-items:center;gap:14px}
+  .titem::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green);flex:none}
+
+  /* ---------- benefits ---------- */
+  .benefits{padding-top:92px}
+  .benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:48px}
+  .benefit{background:var(--mist);border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:transform .25s,box-shadow .25s,border-color .25s}
+  .benefit:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#CBE7D1}
+  .benefit .ico{width:46px;height:46px;border-radius:13px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;margin-bottom:18px;color:var(--green-deep);transition:.25s}
+  .benefit:hover .ico{background:var(--green);color:var(--ink);border-color:var(--green)}
+  .benefit h3{font-size:17px;margin-bottom:8px}
+  .benefit p{font-size:14.5px;color:var(--ink-soft)}
+
+  /* ---------- services (bento) ---------- */
+  .services{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+  .services::before{content:"";position:absolute;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(143,210,153,.17),transparent 65%);top:-220px;right:-160px}
+  .services::after{content:"";position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(143,210,153,.09),transparent 62%);bottom:-200px;left:-140px}
+  .services .wrap{position:relative;z-index:1}
+  .services .eyebrow{color:var(--green)}
+  .services .lead{color:rgba(255,255,255,.72)}
+  .svc-head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-bottom:54px}
+  .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .svc{position:relative;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:28px;transition:.3s;display:flex;flex-direction:column;gap:13px;overflow:hidden}
+  .svc::after{content:"";position:absolute;inset:0;border-radius:inherit;opacity:0;transition:opacity .35s;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(143,210,153,.16),transparent 65%);pointer-events:none}
+  .svc:hover{background:rgba(143,210,153,.07);border-color:rgba(143,210,153,.42);transform:translateY(-5px)}
+  .svc:hover::after{opacity:1}
+  .svc .ico{width:48px;height:48px;border-radius:13px;background:rgba(143,210,153,.14);display:grid;place-items:center;color:var(--green);transition:.3s}
+  .svc:hover .ico{background:var(--green);color:var(--ink)}
+  .svc h3{font-size:17.5px}
+  .svc p{font-size:14px;color:rgba(255,255,255,.68);flex:1}
+  .svc .num{font-size:12px;font-weight:700;letter-spacing:.14em;color:rgba(143,210,153,.75);font-family:var(--font-display)}
+  .svc .go{position:absolute;top:22px;right:22px;width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:grid;place-items:center;color:var(--green);opacity:0;transform:translate(-6px,6px);transition:.3s}
+  .svc:hover .go{opacity:1;transform:none}
+  @media(min-width:1021px){.span2{grid-column:span 2}}
+
+  /* ---------- why ---------- */
+  .why-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
+  .why-visual{position:relative;border-radius:28px;overflow:hidden;background:linear-gradient(150deg,#DFF2E3 0%,var(--green) 55%,var(--green-deep) 130%);min-height:440px;display:flex;align-items:flex-end;padding:30px}
+  .why-visual::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(12,31,20,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(12,31,20,.06) 1px,transparent 1px);background-size:44px 44px}
+  .why-card{position:relative;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-radius:16px;padding:22px 24px;box-shadow:var(--shadow);max-width:340px}
+  .why-card b{display:block;font-size:15px;margin-bottom:4px}
+  .why-card span{font-size:13.5px;color:var(--ink-soft)}
+  .check-list{margin-top:30px;display:grid;gap:14px}
+  .check-list li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;color:var(--ink-soft)}
+  .check-list .chk{flex:none;width:22px;height:22px;border-radius:7px;background:var(--green);color:var(--ink);display:grid;place-items:center;margin-top:2px}
+
+  /* ---------- industries ---------- */
+  .ind-strip{display:flex;flex-wrap:wrap;gap:14px;margin-top:44px}
+  .ind{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:99px;padding:12px 22px;font-size:15px;font-weight:500;color:var(--ink-soft);transition:.25s}
+  .ind:hover{border-color:var(--green-dark);color:var(--green-deep);transform:translateY(-2px);box-shadow:var(--shadow)}
+  .ind svg{color:var(--green-deep)}
+
+  /* ---------- values ---------- */
+  .values{background:var(--mist)}
+  .val-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:50px}
+  .val{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;gap:18px;align-items:flex-start;transition:.25s}
+  .val:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+  .val .ico{flex:none;width:44px;height:44px;border-radius:12px;background:rgba(143,210,153,.18);display:grid;place-items:center;color:var(--green-deep)}
+  .val h3{font-size:16.5px;margin-bottom:6px}
+  .val p{font-size:14px;color:var(--ink-soft)}
+
+  /* ---------- about ---------- */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+  .about-block{margin-bottom:34px}
+  .about-block h3{font-size:19px;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+  .about-block h3::before{content:"";width:10px;height:10px;border-radius:3px;background:var(--green)}
+  .about-block p{color:var(--ink-soft);font-size:15.5px}
+  .quote{background:var(--ink);color:#fff;border-radius:24px;padding:40px;position:sticky;top:110px;overflow:hidden;align-self:start}
+  .quote::after{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(143,210,153,.25),transparent 65%);bottom:-150px;right:-100px}
+  .quote p{font-size:21px;line-height:1.5;font-weight:600;position:relative;margin-bottom:26px;font-family:var(--font-display)}
+  .quote .mark{font-size:56px;color:var(--green);line-height:1;font-weight:800;display:block;margin-bottom:8px;font-family:var(--font-display)}
+  .quote span{color:rgba(255,255,255,.65);font-size:14px;position:relative}
+
+  /* ---------- insights ---------- */
+  .insights{background:#fff;padding-top:0}
+  .ins-head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .ins-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+  .ins{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column;cursor:pointer}
+  .ins:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+  .ins .cover{aspect-ratio:16/9;position:relative;display:grid;place-items:center;overflow:hidden;color:rgba(255,255,255,.9)}
+  .ins .cover::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:34px 34px}
+  .ins .cover svg{position:relative;transition:transform .45s cubic-bezier(.22,1,.36,1)}
+  .ins:hover .cover svg{transform:scale(1.12) rotate(-3deg)}
+  .cv1{background:linear-gradient(135deg,#0C1F14 0%,#2E7D43 100%)}
+  .cv2{background:linear-gradient(135deg,#2E7D43 0%,#5FB56F 100%)}
+  .cv3{background:linear-gradient(135deg,#123322 0%,#0C1F14 70%)}
+  .ins .body{padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .tag{align-self:flex-start;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-deep);background:rgba(143,210,153,.16);padding:5px 12px;border-radius:99px}
+  .ins h3{font-size:18px}
+  .ins .body p{font-size:14.5px;color:var(--ink-soft);flex:1}
+  .ins .meta{font-size:13px;color:#8a998f}
+  .ins-link{font-weight:600;font-size:14.5px;color:var(--green-deep);display:inline-flex;gap:7px;align-items:center;margin-top:2px}
+  .ins-link svg{transition:transform .25s}
+  .ins:hover .ins-link svg{transform:translateX(4px)}
+
+  /* ---------- faq ---------- */
+  .faq{background:var(--mist)}
+  .faq-list{max-width:820px;margin:50px auto 0}
+  details{background:#fff;border:1px solid var(--line);border-radius:16px;margin-bottom:14px;overflow:hidden;transition:.25s}
+  details[open]{border-color:var(--green-dark);box-shadow:var(--shadow)}
+  summary{cursor:pointer;padding:22px 26px;font-weight:600;font-size:16.5px;display:flex;justify-content:space-between;align-items:center;gap:18px;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary .plus{flex:none;width:30px;height:30px;border-radius:50%;background:var(--mist);display:grid;place-items:center;font-size:18px;font-weight:600;color:var(--green-deep);transition:.3s}
+  details[open] .plus{transform:rotate(45deg);background:var(--green);color:var(--ink)}
+  .faq-body{padding:0 26px 24px;color:var(--ink-soft);font-size:15px;max-width:680px}
+
+  /* ---------- contact ---------- */
+  .contact{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+  .contact::before{content:"";position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(143,210,153,.15),transparent 60%);top:-250px;left:-200px}
+  .contact .wrap{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+  .contact .eyebrow{color:var(--green)}
+  .contact h2{font-size:clamp(28px,4vw,44px);margin-bottom:16px}
+  .contact .lead{color:rgba(255,255,255,.7)}
+  .form{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:36px;backdrop-filter:blur(8px)}
+  .form label{display:block;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.6);margin:0 0 8px}
+  .form input,.form textarea{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:14px 16px;color:#fff;font:inherit;font-size:15px;margin-bottom:20px;transition:.2s}
+  .form input:focus,.form textarea:focus{outline:none;border-color:var(--green);background:rgba(255,255,255,.1);box-shadow:0 0 0 4px rgba(143,210,153,.15)}
+  .form textarea{resize:vertical;min-height:110px}
+  .form ::placeholder{color:rgba(255,255,255,.35)}
+  .form .btn{width:100%;justify-content:center;background:var(--green);color:var(--ink)}
+  .form .btn:hover{background:#fff}
+  .form-note{font-size:13px;color:rgba(255,255,255,.5);margin-top:14px;text-align:center}
+  .ct-info{margin-top:28px;display:flex;gap:13px;align-items:center;color:rgba(255,255,255,.78);font-size:15px}
+  .ct-pin{width:40px;height:40px;border-radius:12px;background:rgba(143,210,153,.15);border:1px solid rgba(143,210,153,.25);display:grid;place-items:center;color:var(--green);flex:none}
+  .sent{display:none;text-align:center;padding:40px 10px}
+  .sent .big{font-size:46px;margin-bottom:14px}
+  .sent h3{font-size:22px;margin-bottom:8px}
+  .sent p{color:rgba(255,255,255,.65);font-size:15px}
+
+  /* ---------- footer ---------- */
+  footer{background:#081510;color:rgba(255,255,255,.65);padding:64px 0 0;font-size:14.5px;position:relative;overflow:hidden}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:50px;margin-bottom:50px}
+  .foot-grid .logo{color:#fff;margin-bottom:16px}
+  .foot-tag{max-width:300px;font-size:14.5px}
+  .foot-addr{margin-top:14px;font-size:13.5px;color:rgba(255,255,255,.4);max-width:300px}
+  .foot-col h4{color:#fff;font-size:14px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px;font-family:var(--font-display)}
+  .foot-col li{margin-bottom:11px}
+  .foot-col a{transition:.2s}
+  .foot-col a:hover{color:var(--green)}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding:26px 0 30px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13.5px;color:rgba(255,255,255,.45)}
+  .foot-mark{font-family:var(--font-display);font-weight:700;font-size:clamp(90px,15vw,200px);line-height:.78;letter-spacing:-.03em;color:rgba(255,255,255,.035);text-align:center;user-select:none;pointer-events:none;transform:translateY(18%)}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+  .reveal.on{opacity:1;transform:none}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:1020px){
+    .benefit-grid,.svc-grid{grid-template-columns:repeat(2,1fr)}
+    .why-grid,.about-grid,.contact .wrap{grid-template-columns:1fr;gap:44px}
+    .val-grid,.ins-grid{grid-template-columns:repeat(2,1fr)}
+    .hero-stats{grid-template-columns:repeat(2,1fr)}
+    .quote{position:static}
+    .hero-inner{grid-template-columns:1fr}
+    .hero-vis{display:none}
+  }
+  @media(max-width:720px){
+    section{padding:70px 0}
+    .nav-links{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;flex-direction:column;padding:24px;gap:20px;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+    .nav-links.open{display:flex}
+    .burger{display:block}
+    .nav .btn{display:none}
+    .benefit-grid,.svc-grid,.val-grid,.ins-grid{grid-template-columns:1fr}
+    .hero{padding:66px 0 76px}
+    .foot-grid{grid-template-columns:1fr;gap:34px}
+    .totop{right:18px;bottom:18px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<!-- ================= HEADER ================= -->
+<header id="siteHeader">
+  <div class="wrap nav">
+    <a class="logo" href="#top"><span class="logo-mark">B</span>Barsiko</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#solutions" data-i18n="nav_solutions">Solutions</a>
+      <a href="#about" data-i18n="nav_about">Who We Are</a>
+      <a href="#insights" data-i18n="nav_insights">Insights</a>
+      <a href="#faq" data-i18n="nav_faq">FAQ</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <button id="btnEN" class="active" onclick="setLang('en')">EN</button>
+        <button id="btnET" onclick="setLang('et')">ET</button>
+      </div>
+      <a href="#contact" class="btn" data-i18n="nav_cta">Get a consultation</a>
+      <button class="burger" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<div class="hero" id="top">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="hero-grid"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge"><span class="dot"></span><span data-i18n="hero_badge">IT consultancy · Estonia</span></div>
+        <h1 data-i18n-html="hero_h1">We manage your IT, so you can manage your business to <em>successful growth</em></h1>
+        <p data-i18n="hero_p">Take charge of your business continuity with innovative IT solutions — built in Estonia, delivered across Europe and beyond.</p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn green" data-i18n="hero_cta1">Get a consultation</a>
+          <a href="#solutions" class="btn ghost" data-i18n="hero_cta2">View all solutions</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><b>24/7</b><span data-i18n="stat1">Monitoring & support</span></div>
+          <div class="stat"><b class="cnt" data-count="8">0</b><span data-i18n="stat2">End-to-end solutions</span></div>
+          <div class="stat"><b class="cnt" data-count="6" data-suffix="+">0</b><span data-i18n="stat3">Industries served</span></div>
+          <div class="stat"><b class="cnt" data-count="100" data-suffix="%">0</b><span data-i18n="stat4">Client-centric approach</span></div>
+        </div>
+      </div>
+      <div class="hero-vis" aria-hidden="true">
+        <div class="hv-ring"></div>
+        <div class="hv-ring2"></div>
+        <div class="hv-core">B</div>
+        <div class="hv-card hv-1">
+          <div class="hv-top"><span class="hv-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 8-6-16-3 8H2"/></svg></span><span data-i18n="hv1_h">System uptime</span></div>
+          <div class="hv-val">99.98<small>%</small></div>
+          <div class="hv-bar"><i data-w="96%"></i></div>
+        </div>
+        <div class="hv-card hv-2">
+          <div class="hv-top"><span class="hv-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span><span data-i18n="hv2_h">Threats blocked / month</span></div>
+          <div class="hv-val">1 284</div>
+          <div class="hv-bar"><i data-w="78%"></i></div>
+        </div>
+        <div class="hv-card hv-3">
+          <div class="hv-top"><span class="hv-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span><span data-i18n="hv3_h">Avg. response time</span></div>
+          <div class="hv-val">&lt;15 <small data-i18n="hv3_u">min</small></div>
+          <div class="hv-bar"><i data-w="88%"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= TECH MARQUEE ================= -->
+<div class="tech" aria-hidden="true">
+  <div class="tlabel" data-i18n="tech_label">Technologies we work with</div>
+  <div class="marq">
+    <div class="marq-track">
+      <span class="titem">AWS</span><span class="titem">Microsoft Azure</span><span class="titem">Google Cloud</span><span class="titem">Kubernetes</span><span class="titem">Docker</span><span class="titem">React</span><span class="titem">Node.js</span><span class="titem">Python</span><span class="titem">.NET</span><span class="titem">Java</span><span class="titem">PostgreSQL</span><span class="titem">MongoDB</span><span class="titem">Flutter</span><span class="titem">Terraform</span>
+    </div>
+    <div class="marq-track" aria-hidden="true">
+      <span class="titem">AWS</span><span class="titem">Microsoft Azure</span><span class="titem">Google Cloud</span><span class="titem">Kubernetes</span><span class="titem">Docker</span><span class="titem">React</span><span class="titem">Node.js</span><span class="titem">Python</span><span class="titem">.NET</span><span class="titem">Java</span><span class="titem">PostgreSQL</span><span class="titem">MongoDB</span><span class="titem">Flutter</span><span class="titem">Terraform</span>
+    </div>
+  </div>
+</div>
+
+<!-- ================= BENEFITS ================= -->
+<section class="benefits">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow" data-i18n="ben_eyebrow">Why Barsiko</div>
+      <h2 class="h2" data-i18n="ben_h2">Simplifying IT for a complex world.</h2>
+      <p class="lead" data-i18n="ben_lead">Technology should accelerate your business, not complicate it. We keep it simple, secure and scalable.</p>
+    </div>
+    <div class="benefit-grid stagger">
+      <div class="benefit reveal">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <h3 data-i18n="ben1_h">Cost-effectiveness</h3>
+        <p data-i18n="ben1_p">Predictable budgets and solutions sized to your actual needs — no overspend, no surprises.</p>
+      </div>
+      <div class="benefit reveal">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg></div>
+        <h3 data-i18n="ben2_h">Innovative technology</h3>
+        <p data-i18n="ben2_p">AI/ML, cloud-native architecture and DevOps automation — modern tools applied with purpose.</p>
+      </div>
+      <div class="benefit reveal">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg></div>
+        <h3 data-i18n="ben3_h">Industry expertise</h3>
+        <p data-i18n="ben3_p">Hands-on experience across finance, healthcare, retail, logistics, manufacturing and hospitality.</p>
+      </div>
+      <div class="benefit reveal">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></div>
+        <h3 data-i18n="ben4_h">Scalability</h3>
+        <p data-i18n="ben4_p">Infrastructure and teams that grow with you — from first server to multinational operations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="services" id="solutions">
+  <div class="wrap">
+    <div class="svc-head reveal">
+      <div>
+        <div class="eyebrow" data-i18n="svc_eyebrow">Our solutions</div>
+        <h2 class="h2" data-i18n="svc_h2">End-to-end IT services under one roof</h2>
+        <p class="lead" data-i18n="svc_lead">From strategy and infrastructure to development and security — everything your business needs to run and grow.</p>
+      </div>
+      <a href="#contact" class="btn green" data-i18n="svc_cta">Let's talk</a>
+    </div>
+    <div class="svc-grid stagger">
+      <div class="svc span2 reveal">
+        <span class="num">01</span>
+        <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="7" rx="2"/><rect x="2" y="14" width="20" height="7" rx="2"/><path d="M6 6.5h.01M6 17.5h.01"/></svg></div>
+        <h3 data-i18n="s1_h">Managed Services</h3>
+        <p data-i18n="s1_p">Free up your internal resources to focus on the business by letting us handle day-to-day support, management and monitoring of your IT.</p>
+      </div>
+      <div class="svc reveal">
+        <span class="num">02</span>
+        <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 1 6 6c0 2.5-1.5 3.8-2.5 5-.6.7-.5 1.5-.5 2h-6c0-.5.1-1.3-.5-2-1-1.2-2.5-2.5-2.5-5a6 6 0 0 1 6-6z"/><path d="M9 20h6M10 23h4"/></svg></div>
+        <h3 data-i18n="s2_h">IT Consulting &amp; Advisory</h3>
+        <p data-i18n="s2_p">The right technology, implemented properly and appropriately managed, can lead to significant gains in growth.</p>
+      </div>
+      <div class="svc reveal">
+        <span class="num">03</span>
+        <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3 data-i18n="s3_h">Cyber Security</h3>
+        <p data-i18n="s3_p">Our experts identify vulnerabilities, assess risks and implement robust security measures to safeguard your systems and data.</p>
+      </div>
+      <div class="svc reveal">
+        <span class="num">04</span>
+        <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.9 5.7 4 9-.1 3.3-1.5 6.4-4 9-2.5-2.6-3.9-5.7-4-9 .1-3.3 1.5-6.4 4-9z"/></svg></div>
+        <h3 data-i18n="s4_h">Web Development</h3>
+        <p data-i18n="s4_p">Establish an impactful online presence and reach your target audience effectively with our web development services.</p>
+      </div>
+      <div class="svc reveal">
+        <span class="num">05</span>
+        <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg></div>
+        <h3 data-i18n="s5_h">Mobile Development</h3>
+        <p data-i18n="s5_p">We create customised mobile apps that align with your brand and goals, with expertise across all major mobile platforms.</p>
+      </div>
+      <div class="svc span2 reveal">
+        <span class="num">06</span>
+        <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .4-9A6 6 0 0 0 6.1 8.5 4.8 4.8 0 0 0 6.5 19z"/></svg></div>
+        <h3 data-i18n="s6_h">Cloud Services</h3>
+        <p data-i18n="s6_p">With deep expertise in AWS, Azure and GCP, we help you find the right cloud solutions for your business needs and goals.</p>
+      </div>
+      <div class="svc span2 reveal">
+        <span class="num">07</span>
+        <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></div>
+        <h3 data-i18n="s7_h">Risk Assessment &amp; Management</h3>
+        <p data-i18n="s7_p">We map the risks in your IT landscape, prioritise them by business impact and build a practical plan to keep you resilient.</p>
+      </div>
+      <div class="svc span2 reveal">
+        <span class="num">08</span>
+        <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6M13 4l-2 16"/></svg></div>
+        <h3 data-i18n="s8_h">Software Development</h3>
+        <p data-i18n="s8_p">From a custom CRM to a full Transportation Management System — we've built it all, tailored to your workflows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY / INDUSTRIES ================= -->
+<section id="why">
+  <div class="wrap">
+    <div class="why-grid">
+      <div class="reveal">
+        <div class="eyebrow" data-i18n="why_eyebrow">Every industry, every day</div>
+        <h2 class="h2" data-i18n="why_h2">Solving IT challenges in every industry, every day.</h2>
+        <p class="lead" data-i18n="why_p">In today's fast-paced business landscape, staying ahead requires the ability to scale, grow and optimise operations at the speed of your ambitions. Our comprehensive solutions empower you to unleash the full potential of your business.</p>
+        <ul class="check-list">
+          <li><span class="chk"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><span data-i18n="why_li1">Strategy, tools and guidance for sustainable growth</span></li>
+          <li><span class="chk"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><span data-i18n="why_li2">Agile, DevOps and ITIL-based proven methodologies</span></li>
+          <li><span class="chk"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><span data-i18n="why_li3">ISO/IEC 27001-aligned security and full GDPR compliance</span></li>
+        </ul>
+      </div>
+      <div class="why-visual reveal">
+        <div class="why-card">
+          <b data-i18n="why_card_h">Delivered on time, under budget</b>
+          <span data-i18n="why_card_p">A reputation built on complex projects — while never losing sight of what really matters: your success.</span>
+        </div>
+      </div>
+    </div>
+    <div class="reveal" style="margin-top:80px">
+      <div class="eyebrow" data-i18n="ind_eyebrow">Industries we serve</div>
+      <div class="ind-strip">
+        <span class="ind"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg><span data-i18n="ind1">Finance</span></span>
+        <span class="ind"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A4.5 4.5 0 0 0 17.5 4c-1.7 0-3 .8-4 2-.9.9-1.3 1.3-1.5 1.3S11 6.9 10 6c-1-1.2-2.3-2-4-2A4.5 4.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></svg><span data-i18n="ind2">Healthcare &amp; Pharma</span></span>
+        <span class="ind"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1.5"/><circle cx="19" cy="21" r="1.5"/><path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h8.7a2 2 0 0 0 2-1.6L22 7H6"/></svg><span data-i18n="ind3">Retail &amp; E-commerce</span></span>
+        <span class="ind"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V9l6 4V9l6 4V4h4v16"/></svg><span data-i18n="ind4">Manufacturing</span></span>
+        <span class="ind"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 8h14v9H1zM15 11h4l4 3v3h-8"/><circle cx="6" cy="19" r="1.8"/><circle cx="18" cy="19" r="1.8"/></svg><span data-i18n="ind5">Transportation &amp; Logistics</span></span>
+        <span class="ind"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16M3 21h18M13 9h6a2 2 0 0 1 2 2v10M7 8h.01M7 12h.01M7 16h.01"/></svg><span data-i18n="ind6">Hospitality &amp; Tourism</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VALUES ================= -->
+<section class="values">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;max-width:640px;margin:0 auto">
+      <div class="eyebrow" style="justify-content:center" data-i18n="val_eyebrow">Our values</div>
+      <h2 class="h2" data-i18n="val_h2">The principles behind every project</h2>
+    </div>
+    <div class="val-grid stagger">
+      <div class="val reveal"><div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg></div><div><h3 data-i18n="v1_h">Integrity</h3><p data-i18n="v1_p">Acting with honesty and transparency in everything we do.</p></div></div>
+      <div class="val reveal"><div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg></div><div><h3 data-i18n="v2_h">Excellence</h3><p data-i18n="v2_p">Striving for high-quality work and exceeding expectations.</p></div></div>
+      <div class="val reveal"><div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2 21v-1a7 7 0 0 1 11-5.7"/><circle cx="17.5" cy="10" r="2.5"/><path d="M22 21v-.5a5 5 0 0 0-6-4.9"/></svg></div><div><h3 data-i18n="v3_h">Collaboration</h3><p data-i18n="v3_p">Fostering teamwork and open communication.</p></div></div>
+      <div class="val reveal"><div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg></div><div><h3 data-i18n="v4_h">Client-centricity</h3><p data-i18n="v4_p">Putting our clients' needs first, always.</p></div></div>
+      <div class="val reveal"><div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4M3 6h18M7 22l-4-4 4-4M21 18H3"/></svg></div><div><h3 data-i18n="v5_h">Adaptability</h3><p data-i18n="v5_p">Being flexible and ready to embrace change.</p></div></div>
+      <div class="val reveal"><div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div><div><h3 data-i18n="v6_h">Confidentiality</h3><p data-i18n="v6_p">Respecting client privacy and protecting your data.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow" data-i18n="ab_eyebrow">Who we are</div>
+      <h2 class="h2" data-i18n="ab_h2">An Estonian IT partner with global expertise</h2>
+    </div>
+    <div class="about-grid" style="margin-top:40px">
+      <div>
+        <div class="about-block reveal">
+          <h3 data-i18n="ab1_h">Our story</h3>
+          <p data-i18n="ab1_p">Barsiko was born to bridge the gap between cutting-edge technology and real business outcomes. Based in Estonia — one of the world's most advanced digital societies — we combine the agility of a boutique consultancy with the discipline of an enterprise-grade IT partner, serving clients across Europe and beyond.</p>
+        </div>
+        <div class="about-block reveal">
+          <h3 data-i18n="ab2_h">Our mission</h3>
+          <p data-i18n="ab2_p">To empower organisations of all sizes with end-to-end IT solutions that drive growth, resilience and innovation. When technology is aligned with a clear strategy, businesses unlock new opportunities and outperform their competitors.</p>
+        </div>
+        <div class="about-block reveal">
+          <h3 data-i18n="ab3_h">Our vision</h3>
+          <p data-i18n="ab3_p">To become the most trusted IT consultancy — known not just for technical excellence, but for genuine partnership and measurable business impact.</p>
+        </div>
+      </div>
+      <div class="quote reveal">
+        <span class="mark">“</span>
+        <p data-i18n="ab_quote">We've built a reputation for delivering complex projects on time and under budget — while never losing sight of what really matters: your success.</p>
+        <span data-i18n="ab_quote_by">Barsiko — We Are Better Together</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INSIGHTS ================= -->
+<section class="insights" id="insights">
+  <div class="wrap">
+    <div class="ins-head reveal">
+      <div>
+        <div class="eyebrow" data-i18n="ins_eyebrow">What we're thinking</div>
+        <h2 class="h2" data-i18n="ins_h2">Insights from our team</h2>
+        <p class="lead" data-i18n="ins_lead">Perspectives on technology, security and digital business — from the people who build it every day.</p>
+      </div>
+    </div>
+    <div class="ins-grid stagger">
+      <article class="ins reveal">
+        <div class="cover cv1">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2.5"/><path d="M9 2v2.5M15 2v2.5M9 19.5V22M15 19.5V22M2 9h2.5M2 15h2.5M19.5 9H22M19.5 15H22"/><circle cx="12" cy="12" r="2.6"/></svg>
+        </div>
+        <div class="body">
+          <span class="tag" data-i18n="i1_tag">AI &amp; Strategy</span>
+          <h3 data-i18n="i1_h">Exploring the impact of artificial intelligence on business strategies</h3>
+          <p data-i18n="i1_p">From forecasting to customer service — where AI actually pays off for mid-sized companies, and where it doesn't (yet).</p>
+          <span class="meta" data-i18n="i1_meta">July 2026 · 6 min read</span>
+          <span class="ins-link"><span data-i18n="ins_more">Read article</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </article>
+      <article class="ins reveal">
+        <div class="cover cv2">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/><path d="M3 21h18"/></svg>
+        </div>
+        <div class="body">
+          <span class="tag" data-i18n="i2_tag">Digital transformation</span>
+          <h3 data-i18n="i2_h">Digital transformation: what matters most in your sector?</h3>
+          <p data-i18n="i2_p">Retail, logistics, finance or manufacturing — the priorities differ. A practical map for choosing your first move.</p>
+          <span class="meta" data-i18n="i2_meta">June 2026 · 5 min read</span>
+          <span class="ins-link"><span data-i18n="ins_more">Read article</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </article>
+      <article class="ins reveal">
+        <div class="cover cv3">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <div class="body">
+          <span class="tag" data-i18n="i3_tag">Cyber security</span>
+          <h3 data-i18n="i3_h">Cyber hygiene for growing teams: a practical checklist</h3>
+          <p data-i18n="i3_p">Ten low-effort, high-impact habits that stop the most common attacks before they even start.</p>
+          <span class="meta" data-i18n="i3_meta">May 2026 · 4 min read</span>
+          <span class="ins-link"><span data-i18n="ins_more">Read article</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;max-width:640px;margin:0 auto">
+      <div class="eyebrow" style="justify-content:center">FAQ</div>
+      <h2 class="h2" data-i18n="faq_h2">Frequently asked questions</h2>
+    </div>
+    <div class="faq-list">
+      <details class="reveal">
+        <summary><span data-i18n="q1">Who is Barsiko and what does the company do?</span><span class="plus">+</span></summary>
+        <p class="faq-body" data-i18n="a1">Barsiko is an Estonian IT consulting firm offering end-to-end services — from strategic IT advisory and infrastructure management to web &amp; mobile development, cloud solutions and cybersecurity.</p>
+      </details>
+      <details class="reveal">
+        <summary><span data-i18n="q2">What specific services does Barsiko provide?</span><span class="plus">+</span></summary>
+        <p class="faq-body" data-i18n="a2">We offer managed services with 24/7 monitoring, IT consulting &amp; advisory, cybersecurity, web and mobile development, cloud services, risk assessment &amp; management, and custom software development.</p>
+      </details>
+      <details class="reveal">
+        <summary><span data-i18n="q3">Which industries do you serve?</span><span class="plus">+</span></summary>
+        <p class="faq-body" data-i18n="a3">We work across multiple sectors: finance, healthcare &amp; pharmaceuticals, retail &amp; e-commerce, manufacturing, transportation &amp; logistics, as well as hospitality &amp; tourism.</p>
+      </details>
+      <details class="reveal">
+        <summary><span data-i18n="q4">How do I start working with Barsiko?</span><span class="plus">+</span></summary>
+        <p class="faq-body" data-i18n="a4">Submit a request through the form on this website and schedule a free consultation to discuss your needs. Once the scope is agreed, we move to project approval and kickoff.</p>
+      </details>
+      <details class="reveal">
+        <summary><span data-i18n="q5">How is pricing determined?</span><span class="plus">+</span></summary>
+        <p class="faq-body" data-i18n="a5">Pricing is customised based on project scope, the chosen engagement model (fixed-price, time &amp; materials, or subscription), complexity and the technologies required.</p>
+      </details>
+      <details class="reveal">
+        <summary><span data-i18n="q6">What security and privacy standards do you adhere to?</span><span class="plus">+</span></summary>
+        <p class="faq-body" data-i18n="a6">We follow international standards such as ISO/IEC 27001 and the GDPR, complemented by our own stringent confidentiality policies. As an EU-based company, European data protection is at the core of how we work.</p>
+      </details>
+      <details class="reveal">
+        <summary><span data-i18n="q7">Which technologies and platforms do you specialise in?</span><span class="plus">+</span></summary>
+        <p class="faq-body" data-i18n="a7">Backend: Java, .NET, Node.js, Python, PHP. Frontend: React, Angular, Vue.js. Mobile: React Native, Flutter. Cloud: AWS, Azure, GCP. Databases: PostgreSQL, MySQL, MongoDB, Redis.</p>
+      </details>
+      <details class="reveal">
+        <summary><span data-i18n="q8">What sets Barsiko apart from other IT firms?</span><span class="plus">+</span></summary>
+        <p class="faq-body" data-i18n="a8">A holistic approach, deep technical expertise, full transparency and flexible, client-focused engagement models — combined with the digital-first mindset Estonia is known for.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow" data-i18n="ct_eyebrow">Contact</div>
+      <h2 data-i18n="ct_h2">Ready to achieve your goals? Let us guide you!</h2>
+      <p class="lead" data-i18n="ct_p">Leave us a little info, and we'll be in touch. Reach out today to discuss your business challenges and explore what's possible.</p>
+      <div class="ct-info">
+        <span class="ct-pin"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <span data-i18n="ct_addr">Barsion OÜ · Narva mnt 5, Tallinn 10117, Harju County, Estonia</span>
+      </div>
+    </div>
+    <div class="form reveal">
+      <form id="contactForm" onsubmit="return sendForm(event)">
+        <label for="fName" data-i18n="f_name">Name</label>
+        <input id="fName" type="text" required data-i18n-ph="f_name_ph" placeholder="Your name">
+        <label for="fEmail" data-i18n="f_email">Email</label>
+        <input id="fEmail" type="email" required data-i18n-ph="f_email_ph" placeholder="you@company.com">
+        <label for="fMsg" data-i18n="f_msg">How can we help?</label>
+        <textarea id="fMsg" required data-i18n-ph="f_msg_ph" placeholder="Tell us briefly about your project or challenge…"></textarea>
+        <button class="btn" type="submit" data-i18n="f_send">Get in touch</button>
+        <p class="form-note" data-i18n="f_note">We usually reply within one business day.</p>
+      </form>
+      <div class="sent" id="sentBox">
+        <div class="big">✓</div>
+        <h3 data-i18n="f_sent_h">Thank you!</h3>
+        <p data-i18n="f_sent_p">Your message has been prepared. We'll be in touch shortly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="#top"><span class="logo-mark">B</span>Barsiko</a>
+        <p class="foot-tag" data-i18n="ft_tag">We Are Better Together. An Estonian IT consultancy simplifying technology for growing businesses.</p>
+        <p class="foot-addr" data-i18n="ft_addr">Narva mnt 5, Tallinn 10117, Harju County, Estonia</p>
+      </div>
+      <div class="foot-col">
+        <h4 data-i18n="ft_sol">Solutions</h4>
+        <ul>
+          <li><a href="#solutions" data-i18n="s1_h">Managed Services</a></li>
+          <li><a href="#solutions" data-i18n="s2_h">IT Consulting &amp; Advisory</a></li>
+          <li><a href="#solutions" data-i18n="s3_h">Cyber Security</a></li>
+          <li><a href="#solutions" data-i18n="s6_h">Cloud Services</a></li>
+          <li><a href="#solutions" data-i18n="s8_h">Software Development</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4 data-i18n="ft_co">Company</h4>
+        <ul>
+          <li><a href="#about" data-i18n="nav_about">Who We Are</a></li>
+          <li><a href="#insights" data-i18n="nav_insights">Insights</a></li>
+          <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
+          <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span data-i18n="ft_copy">© 2026 Barsion OÜ. All rights reserved.</span>
+      <span data-i18n="ft_loc">Estonia · European Union</span>
+    </div>
+    <div class="foot-mark" aria-hidden="true">BARSIKO</div>
+  </div>
+</footer>
+
+<button class="totop" id="toTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<script>
+/* ============ i18n ============ */
+const T = {
+en:{
+  nav_solutions:"Solutions", nav_about:"Who We Are", nav_insights:"Insights", nav_faq:"FAQ", nav_contact:"Contact", nav_cta:"Get a consultation",
+  hero_badge:"IT consultancy · Estonia",
+  hero_h1:'We manage your IT, so you can manage your business to <em>successful growth</em>',
+  hero_p:"Take charge of your business continuity with innovative IT solutions — built in Estonia, delivered across Europe and beyond.",
+  hero_cta1:"Get a consultation", hero_cta2:"View all solutions",
+  stat1:"Monitoring & support", stat2:"End-to-end solutions", stat3:"Industries served", stat4:"Client-centric approach",
+  hv1_h:"System uptime", hv2_h:"Threats blocked / month", hv3_h:"Avg. response time", hv3_u:"min",
+  tech_label:"Technologies we work with",
+  ben_eyebrow:"Why Barsiko", ben_h2:"Simplifying IT for a complex world.",
+  ben_lead:"Technology should accelerate your business, not complicate it. We keep it simple, secure and scalable.",
+  ben1_h:"Cost-effectiveness", ben1_p:"Predictable budgets and solutions sized to your actual needs — no overspend, no surprises.",
+  ben2_h:"Innovative technology", ben2_p:"AI/ML, cloud-native architecture and DevOps automation — modern tools applied with purpose.",
+  ben3_h:"Industry expertise", ben3_p:"Hands-on experience across finance, healthcare, retail, logistics, manufacturing and hospitality.",
+  ben4_h:"Scalability", ben4_p:"Infrastructure and teams that grow with you — from first server to multinational operations.",
+  svc_eyebrow:"Our solutions", svc_h2:"End-to-end IT services under one roof",
+  svc_lead:"From strategy and infrastructure to development and security — everything your business needs to run and grow.",
+  svc_cta:"Let's talk",
+  s1_h:"Managed Services", s1_p:"Free up your internal resources to focus on the business by letting us handle day-to-day support, management and monitoring of your IT.",
+  s2_h:"IT Consulting & Advisory", s2_p:"The right technology, implemented properly and appropriately managed, can lead to significant gains in growth.",
+  s3_h:"Cyber Security", s3_p:"Our experts identify vulnerabilities, assess risks and implement robust security measures to safeguard your systems and data.",
+  s4_h:"Web Development", s4_p:"Establish an impactful online presence and reach your target audience effectively with our web development services.",
+  s5_h:"Mobile Development", s5_p:"We create customised mobile apps that align with your brand and goals, with expertise across all major mobile platforms.",
+  s6_h:"Cloud Services", s6_p:"With deep expertise in AWS, Azure and GCP, we help you find the right cloud solutions for your business needs and goals.",
+  s7_h:"Risk Assessment & Management", s7_p:"We map the risks in your IT landscape, prioritise them by business impact and build a practical plan to keep you resilient.",
+  s8_h:"Software Development", s8_p:"From a custom CRM to a full Transportation Management System — we've built it all, tailored to your workflows.",
+  why_eyebrow:"Every industry, every day", why_h2:"Solving IT challenges in every industry, every day.",
+  why_p:"In today's fast-paced business landscape, staying ahead requires the ability to scale, grow and optimise operations at the speed of your ambitions. Our comprehensive solutions empower you to unleash the full potential of your business.",
+  why_li1:"Strategy, tools and guidance for sustainable growth",
+  why_li2:"Agile, DevOps and ITIL-based proven methodologies",
+  why_li3:"ISO/IEC 27001-aligned security and full GDPR compliance",
+  why_card_h:"Delivered on time, under budget",
+  why_card_p:"A reputation built on complex projects — while never losing sight of what really matters: your success.",
+  ind_eyebrow:"Industries we serve",
+  ind1:"Finance", ind2:"Healthcare & Pharma", ind3:"Retail & E-commerce", ind4:"Manufacturing", ind5:"Transportation & Logistics", ind6:"Hospitality & Tourism",
+  val_eyebrow:"Our values", val_h2:"The principles behind every project",
+  v1_h:"Integrity", v1_p:"Acting with honesty and transparency in everything we do.",
+  v2_h:"Excellence", v2_p:"Striving for high-quality work and exceeding expectations.",
+  v3_h:"Collaboration", v3_p:"Fostering teamwork and open communication.",
+  v4_h:"Client-centricity", v4_p:"Putting our clients' needs first, always.",
+  v5_h:"Adaptability", v5_p:"Being flexible and ready to embrace change.",
+  v6_h:"Confidentiality", v6_p:"Respecting client privacy and protecting your data.",
+  ab_eyebrow:"Who we are", ab_h2:"An Estonian IT partner with global expertise",
+  ab1_h:"Our story", ab1_p:"Barsiko was born to bridge the gap between cutting-edge technology and real business outcomes. Based in Estonia — one of the world's most advanced digital societies — we combine the agility of a boutique consultancy with the discipline of an enterprise-grade IT partner, serving clients across Europe and beyond.",
+  ab2_h:"Our mission", ab2_p:"To empower organisations of all sizes with end-to-end IT solutions that drive growth, resilience and innovation. When technology is aligned with a clear strategy, businesses unlock new opportunities and outperform their competitors.",
+  ab3_h:"Our vision", ab3_p:"To become the most trusted IT consultancy — known not just for technical excellence, but for genuine partnership and measurable business impact.",
+  ab_quote:"We've built a reputation for delivering complex projects on time and under budget — while never losing sight of what really matters: your success.",
+  ab_quote_by:"Barsiko — We Are Better Together",
+  ins_eyebrow:"What we're thinking", ins_h2:"Insights from our team",
+  ins_lead:"Perspectives on technology, security and digital business — from the people who build it every day.",
+  i1_tag:"AI & Strategy", i1_h:"Exploring the impact of artificial intelligence on business strategies",
+  i1_p:"From forecasting to customer service — where AI actually pays off for mid-sized companies, and where it doesn't (yet).",
+  i1_meta:"July 2026 · 6 min read",
+  i2_tag:"Digital transformation", i2_h:"Digital transformation: what matters most in your sector?",
+  i2_p:"Retail, logistics, finance or manufacturing — the priorities differ. A practical map for choosing your first move.",
+  i2_meta:"June 2026 · 5 min read",
+  i3_tag:"Cyber security", i3_h:"Cyber hygiene for growing teams: a practical checklist",
+  i3_p:"Ten low-effort, high-impact habits that stop the most common attacks before they even start.",
+  i3_meta:"May 2026 · 4 min read",
+  ins_more:"Read article",
+  faq_h2:"Frequently asked questions",
+  q1:"Who is Barsiko and what does the company do?",
+  a1:"Barsiko is an Estonian IT consulting firm offering end-to-end services — from strategic IT advisory and infrastructure management to web & mobile development, cloud solutions and cybersecurity.",
+  q2:"What specific services does Barsiko provide?",
+  a2:"We offer managed services with 24/7 monitoring, IT consulting & advisory, cybersecurity, web and mobile development, cloud services, risk assessment & management, and custom software development.",
+  q3:"Which industries do you serve?",
+  a3:"We work across multiple sectors: finance, healthcare & pharmaceuticals, retail & e-commerce, manufacturing, transportation & logistics, as well as hospitality & tourism.",
+  q4:"How do I start working with Barsiko?",
+  a4:"Submit a request through the form on this website and schedule a free consultation to discuss your needs. Once the scope is agreed, we move to project approval and kickoff.",
+  q5:"How is pricing determined?",
+  a5:"Pricing is customised based on project scope, the chosen engagement model (fixed-price, time & materials, or subscription), complexity and the technologies required.",
+  q6:"What security and privacy standards do you adhere to?",
+  a6:"We follow international standards such as ISO/IEC 27001 and the GDPR, complemented by our own stringent confidentiality policies. As an EU-based company, European data protection is at the core of how we work.",
+  q7:"Which technologies and platforms do you specialise in?",
+  a7:"Backend: Java, .NET, Node.js, Python, PHP. Frontend: React, Angular, Vue.js. Mobile: React Native, Flutter. Cloud: AWS, Azure, GCP. Databases: PostgreSQL, MySQL, MongoDB, Redis.",
+  q8:"What sets Barsiko apart from other IT firms?",
+  a8:"A holistic approach, deep technical expertise, full transparency and flexible, client-focused engagement models — combined with the digital-first mindset Estonia is known for.",
+  ct_eyebrow:"Contact", ct_h2:"Ready to achieve your goals? Let us guide you!",
+  ct_p:"Leave us a little info, and we'll be in touch. Reach out today to discuss your business challenges and explore what's possible.",
+  ct_addr:"Barsion OÜ · Narva mnt 5, Tallinn 10117, Harju County, Estonia",
+  f_name:"Name", f_name_ph:"Your name",
+  f_email:"Email", f_email_ph:"you@company.com",
+  f_msg:"How can we help?", f_msg_ph:"Tell us briefly about your project or challenge…",
+  f_send:"Get in touch", f_note:"We usually reply within one business day.",
+  f_sent_h:"Thank you!", f_sent_p:"Your message has been prepared. We'll be in touch shortly.",
+  ft_tag:"We Are Better Together. An Estonian IT consultancy simplifying technology for growing businesses.",
+  ft_addr:"Narva mnt 5, Tallinn 10117, Harju County, Estonia",
+  ft_sol:"Solutions", ft_co:"Company",
+  ft_copy:"© 2026 Barsion OÜ. All rights reserved.", ft_loc:"Estonia · European Union"
+},
+et:{
+  nav_solutions:"Lahendused", nav_about:"Meist", nav_insights:"Mõtted", nav_faq:"KKK", nav_contact:"Kontakt", nav_cta:"Küsi konsultatsiooni",
+  hero_badge:"IT-konsultatsioonid · Eesti",
+  hero_h1:'Meie haldame teie IT-d, et teie saaksite juhtida oma ettevõtte <em>eduka kasvuni</em>',
+  hero_p:"Kindlustage oma äri järjepidevus uuenduslike IT-lahendustega — loodud Eestis, pakutud üle Euroopa ja kaugemalgi.",
+  hero_cta1:"Küsi konsultatsiooni", hero_cta2:"Vaata kõiki lahendusi",
+  stat1:"Seire ja tugi", stat2:"Terviklikku lahendust", stat3:"Teenindatavat valdkonda", stat4:"Kliendikeskne lähenemine",
+  hv1_h:"Süsteemi töökindlus", hv2_h:"Tõrjutud ründeid kuus", hv3_h:"Keskmine reageerimisaeg", hv3_u:"min",
+  tech_label:"Tehnoloogiad, millega töötame",
+  ben_eyebrow:"Miks Barsiko", ben_h2:"Muudame IT lihtsaks keerulises maailmas.",
+  ben_lead:"Tehnoloogia peaks teie äri kiirendama, mitte keerulisemaks muutma. Hoiame selle lihtsa, turvalise ja skaleeritavana.",
+  ben1_h:"Kulutõhusus", ben1_p:"Prognoositavad eelarved ja lahendused, mis vastavad teie tegelikele vajadustele — ilma ülekulude ja üllatusteta.",
+  ben2_h:"Uuenduslik tehnoloogia", ben2_p:"AI/ML, pilvepõhine arhitektuur ja DevOps-automatiseerimine — kaasaegsed tööriistad, rakendatud eesmärgipäraselt.",
+  ben3_h:"Valdkonna asjatundlikkus", ben3_p:"Praktiline kogemus rahanduses, tervishoius, jaekaubanduses, logistikas, tootmises ja turismis.",
+  ben4_h:"Skaleeritavus", ben4_p:"Taristu ja meeskonnad, mis kasvavad koos teiega — esimesest serverist rahvusvahelise tegevuseni.",
+  svc_eyebrow:"Meie lahendused", svc_h2:"Terviklikud IT-teenused ühest kohast",
+  svc_lead:"Strateegiast ja taristust kuni arenduse ja turvalisuseni — kõik, mida teie ettevõte vajab toimimiseks ja kasvuks.",
+  svc_cta:"Räägime",
+  s1_h:"Haldusteenused", s1_p:"Vabastage oma sisemised ressursid põhitegevuseks — meie hoolitseme igapäevase toe, halduse ja teie IT seire eest.",
+  s2_h:"IT-konsultatsioonid ja nõustamine", s2_p:"Õige tehnoloogia, korralikult juurutatud ja asjatundlikult hallatud, võib tuua märkimisväärse kasvuhüppe.",
+  s3_h:"Küberturvalisus", s3_p:"Meie eksperdid tuvastavad haavatavused, hindavad riske ja rakendavad tugevad turvameetmed teie süsteemide ja andmete kaitseks.",
+  s4_h:"Veebiarendus", s4_p:"Looge mõjus veebipresentsus ja jõudke oma sihtrühmani tõhusalt meie veebiarenduse teenuste abil.",
+  s5_h:"Mobiiliarendus", s5_p:"Loome teie brändi ja eesmärkidega kooskõlas oleva mobiilirakenduse — asjatundlikkusega kõigil peamistel platvormidel.",
+  s6_h:"Pilveteenused", s6_p:"Põhjaliku AWS-i, Azure'i ja GCP kogemusega aitame leida just teie ärivajadustele ja eesmärkidele vastavad pilvelahendused.",
+  s7_h:"Riskide hindamine ja juhtimine", s7_p:"Kaardistame teie IT-maastiku riskid, prioriseerime need ärimõju järgi ja koostame praktilise plaani teie vastupidavuse tagamiseks.",
+  s8_h:"Tarkvaraarendus", s8_p:"Kohandatud CRM-ist kuni tervikliku transpordihaldussüsteemini — oleme ehitanud kõike, kohandatuna teie tööprotsessidele.",
+  why_eyebrow:"Iga valdkond, iga päev", why_h2:"Lahendame IT-väljakutseid igas valdkonnas, iga päev.",
+  why_p:"Tänases kiires ärikeskkonnas nõuab edu võimet skaleerida, kasvada ja optimeerida tegevust teie ambitsioonide kiirusel. Meie terviklikud lahendused aitavad teil vallandada oma ettevõtte täieliku potentsiaali.",
+  why_li1:"Strateegia, tööriistad ja tugi jätkusuutlikuks kasvuks",
+  why_li2:"Tõestatud metoodikad: Agile, DevOps ja ITIL",
+  why_li3:"ISO/IEC 27001 põhimõtetele vastav turvalisus ja täielik GDPR-i järgimine",
+  why_card_h:"Tähtajaks ja eelarve piires",
+  why_card_p:"Maine, mis on ehitatud keerukatele projektidele — kaotamata kunagi silmist kõige olulisemat: teie edu.",
+  ind_eyebrow:"Valdkonnad, mida teenindame",
+  ind1:"Rahandus", ind2:"Tervishoid ja farmaatsia", ind3:"Jaekaubandus ja e-kaubandus", ind4:"Tootmine", ind5:"Transport ja logistika", ind6:"Majutus ja turism",
+  val_eyebrow:"Meie väärtused", val_h2:"Põhimõtted iga projekti taga",
+  v1_h:"Ausus", v1_p:"Tegutseme alati ausalt ja läbipaistvalt.",
+  v2_h:"Tipptase", v2_p:"Püüdleme kõrge kvaliteedi poole ja ületame ootusi.",
+  v3_h:"Koostöö", v3_p:"Edendame meeskonnatööd ja avatud suhtlust.",
+  v4_h:"Kliendikesksus", v4_p:"Seame kliendi vajadused alati esikohale.",
+  v5_h:"Kohanemisvõime", v5_p:"Oleme paindlikud ja valmis muutusteks.",
+  v6_h:"Konfidentsiaalsus", v6_p:"Austame kliendi privaatsust ja kaitseme teie andmeid.",
+  ab_eyebrow:"Kes me oleme", ab_h2:"Eesti IT-partner globaalse kogemusega",
+  ab1_h:"Meie lugu", ab1_p:"Barsiko sündis soovist ühendada tipptehnoloogia ja tegelikud äritulemused. Asudes Eestis — ühes maailma arenenumas digiühiskonnas — ühendame väikese konsultatsioonifirma paindlikkuse ettevõttetasemel IT-partneri distsipliiniga, teenindades kliente üle Euroopa ja kaugemalgi.",
+  ab2_h:"Meie missioon", ab2_p:"Anda igas suuruses organisatsioonidele terviklikud IT-lahendused, mis toetavad kasvu, vastupidavust ja innovatsiooni. Kui tehnoloogia on selge strateegiaga kooskõlas, avavad ettevõtted uusi võimalusi ja edestavad konkurente.",
+  ab3_h:"Meie visioon", ab3_p:"Saada kõige usaldusväärsemaks IT-konsultatsioonifirmaks — tuntud mitte ainult tehnilise tipptaseme, vaid ka tõelise partnerluse ja mõõdetava ärimõju poolest.",
+  ab_quote:"Oleme ehitanud maine, viies keerukad projektid ellu tähtajaks ja eelarve piires — kaotamata kunagi silmist kõige olulisemat: teie edu.",
+  ab_quote_by:"Barsiko — üheskoos oleme paremad",
+  ins_eyebrow:"Millest me mõtleme", ins_h2:"Meie meeskonna mõtted",
+  ins_lead:"Vaated tehnoloogiale, turvalisusele ja digiärile — inimestelt, kes seda iga päev ehitavad.",
+  i1_tag:"AI ja strateegia", i1_h:"Tehisintellekti mõju äristrateegiatele",
+  i1_p:"Prognoosidest klienditeeninduseni — kus AI end keskmise suurusega ettevõttes tegelikult ära tasub ja kus (veel) mitte.",
+  i1_meta:"Juuli 2026 · 6 min lugemist",
+  i2_tag:"Digipööre", i2_h:"Digipööre: mis on teie valdkonnas kõige olulisem?",
+  i2_p:"Jaekaubandus, logistika, rahandus või tootmine — prioriteedid on erinevad. Praktiline teejuht esimese sammu valimiseks.",
+  i2_meta:"Juuni 2026 · 5 min lugemist",
+  i3_tag:"Küberturvalisus", i3_h:"Küberhügieen kasvavale meeskonnale: praktiline kontrollnimekiri",
+  i3_p:"Kümme lihtsat, kuid mõjusat harjumust, mis peatavad levinumad ründed juba enne algust.",
+  i3_meta:"Mai 2026 · 4 min lugemist",
+  ins_more:"Loe artiklit",
+  faq_h2:"Korduma kippuvad küsimused",
+  q1:"Kes on Barsiko ja millega ettevõte tegeleb?",
+  a1:"Barsiko on Eesti IT-konsultatsioonifirma, mis pakub terviklikke teenuseid — strateegilisest IT-nõustamisest ja taristu haldamisest kuni veebi- ja mobiiliarenduse, pilvelahenduste ja küberturvalisuseni.",
+  q2:"Milliseid teenuseid Barsiko täpsemalt pakub?",
+  a2:"Pakume haldusteenuseid 24/7 seirega, IT-konsultatsioone ja nõustamist, küberturvalisust, veebi- ja mobiiliarendust, pilveteenuseid, riskide hindamist ja juhtimist ning kohandatud tarkvaraarendust.",
+  q3:"Milliseid valdkondi te teenindate?",
+  a3:"Töötame mitmes sektoris: rahandus, tervishoid ja farmaatsia, jae- ja e-kaubandus, tootmine, transport ja logistika ning majutus ja turism.",
+  q4:"Kuidas alustada koostööd Barsikoga?",
+  a4:"Esitage päring selle veebilehe vormi kaudu ja leppige kokku tasuta konsultatsioon oma vajaduste arutamiseks. Kui töömaht on kokku lepitud, liigume projekti kinnitamise ja käivitamise juurde.",
+  q5:"Kuidas kujuneb hind?",
+  a5:"Hind kujuneb vastavalt projekti mahule, valitud koostöömudelile (fikseeritud hind, aeg ja materjalid või püsitasu), keerukusele ja vajalikele tehnoloogiatele.",
+  q6:"Milliseid turva- ja privaatsusstandardeid te järgite?",
+  a6:"Järgime rahvusvahelisi standardeid nagu ISO/IEC 27001 ja GDPR, millele lisanduvad meie enda ranged konfidentsiaalsuspõhimõtted. EL-i ettevõttena on Euroopa andmekaitse meie töö keskmes.",
+  q7:"Millistele tehnoloogiatele ja platvormidele olete spetsialiseerunud?",
+  a7:"Backend: Java, .NET, Node.js, Python, PHP. Frontend: React, Angular, Vue.js. Mobiil: React Native, Flutter. Pilv: AWS, Azure, GCP. Andmebaasid: PostgreSQL, MySQL, MongoDB, Redis.",
+  q8:"Mis eristab Barsikot teistest IT-ettevõtetest?",
+  a8:"Terviklik lähenemine, sügav tehniline asjatundlikkus, täielik läbipaistvus ja paindlikud kliendikesksed koostöömudelid — koos digitaalse mõtteviisiga, mille poolest Eesti on tuntud.",
+  ct_eyebrow:"Kontakt", ct_h2:"Valmis oma eesmärke saavutama? Meie juhatame teed!",
+  ct_p:"Jätke meile veidi infot ja võtame teiega ühendust. Kirjutage juba täna, et arutada oma äri väljakutseid ja avastada võimalusi.",
+  ct_addr:"Barsion OÜ · Narva mnt 5, Tallinn 10117, Harju maakond, Eesti",
+  f_name:"Nimi", f_name_ph:"Teie nimi",
+  f_email:"E-post", f_email_ph:"teie@ettevote.ee",
+  f_msg:"Kuidas saame aidata?", f_msg_ph:"Kirjeldage lühidalt oma projekti või väljakutset…",
+  f_send:"Võta ühendust", f_note:"Vastame tavaliselt ühe tööpäeva jooksul.",
+  f_sent_h:"Aitäh!", f_sent_p:"Teie sõnum on valmis. Võtame teiega peagi ühendust.",
+  ft_tag:"Üheskoos oleme paremad. Eesti IT-konsultatsioonifirma, mis muudab tehnoloogia kasvavatele ettevõtetele lihtsaks.",
+  ft_addr:"Narva mnt 5, Tallinn 10117, Harju maakond, Eesti",
+  ft_sol:"Lahendused", ft_co:"Ettevõte",
+  ft_copy:"© 2026 Barsion OÜ. Kõik õigused kaitstud.", ft_loc:"Eesti · Euroopa Liit"
+}
+};
+
+let lang = 'en';
+function setLang(l){
+  lang = l;
+  document.documentElement.lang = l;
+  document.getElementById('btnEN').classList.toggle('active', l==='en');
+  document.getElementById('btnET').classList.toggle('active', l==='et');
+  const dict = T[l];
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k = el.getAttribute('data-i18n');
+    if(dict[k]!==undefined) el.textContent = dict[k];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+    const k = el.getAttribute('data-i18n-html');
+    if(dict[k]!==undefined) el.innerHTML = dict[k];
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{
+    const k = el.getAttribute('data-i18n-ph');
+    if(dict[k]!==undefined) el.setAttribute('placeholder', dict[k]);
+  });
+}
+
+/* ============ contact form ============ */
+function sendForm(e){
+  e.preventDefault();
+  document.getElementById('contactForm').style.display='none';
+  document.getElementById('sentBox').style.display='block';
+  return false;
+}
+
+/* ============ reveal on scroll (with stagger) ============ */
+document.querySelectorAll('.stagger').forEach(grid=>{
+  [...grid.children].forEach((el,i)=>{ el.dataset.d = i*80; });
+});
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(en=>{
+    if(en.isIntersecting){
+      const d = parseInt(en.target.dataset.d||0,10);
+      setTimeout(()=>en.target.classList.add('on'), d);
+      io.unobserve(en.target);
+    }
+  });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ============ animated counters ============ */
+const cio = new IntersectionObserver(entries=>{
+  entries.forEach(en=>{
+    if(!en.isIntersecting) return;
+    cio.unobserve(en.target);
+    const el = en.target, target = parseFloat(el.dataset.count), suf = el.dataset.suffix||'';
+    const t0 = performance.now(), dur = 1300;
+    (function tick(t){
+      const p = Math.min((t-t0)/dur,1), e = 1-Math.pow(1-p,3);
+      el.textContent = Math.round(target*e) + suf;
+      if(p<1) requestAnimationFrame(tick);
+    })(t0);
+  });
+},{threshold:.5});
+document.querySelectorAll('.cnt').forEach(el=>cio.observe(el));
+
+/* ============ hero mini-dashboard bars ============ */
+window.addEventListener('load',()=>{
+  setTimeout(()=>{ document.querySelectorAll('.hv-bar i').forEach(b=>{ b.style.width = b.dataset.w; }); }, 400);
+});
+
+/* ============ scroll ui: progress, header, totop ============ */
+const header = document.getElementById('siteHeader'), toTop = document.getElementById('toTop'), prog = document.getElementById('progress');
+window.addEventListener('scroll',()=>{
+  const y = window.scrollY, h = document.documentElement.scrollHeight - window.innerHeight;
+  prog.style.width = (h>0 ? (y/h*100) : 0) + '%';
+  header.classList.toggle('scrolled', y>10);
+  toTop.classList.toggle('show', y>600);
+},{passive:true});
+
+/* ============ active nav link ============ */
+const navMap = {};
+document.querySelectorAll('.nav-links a').forEach(a=>{ navMap[a.getAttribute('href').slice(1)] = a; });
+const sio = new IntersectionObserver(entries=>{
+  entries.forEach(en=>{
+    if(en.isIntersecting && navMap[en.target.id]){
+      document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+      navMap[en.target.id].classList.add('active');
+    }
+  });
+},{rootMargin:'-40% 0px -55% 0px'});
+['solutions','about','insights','faq','contact'].forEach(id=>{ const s=document.getElementById(id); if(s) sio.observe(s); });
+
+/* ============ cursor glow on service cards ============ */
+document.querySelectorAll('.svc').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--mx', (e.clientX-r.left)+'px');
+    card.style.setProperty('--my', (e.clientY-r.top)+'px');
+  });
+});
+
+/* close mobile menu on link click */
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+</script>
+</body>
+</html>
