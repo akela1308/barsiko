@@ -112,15 +112,16 @@
   .think-item h3 .arr{color:var(--cyan);margin-left:8px}
   .think-item .meta{font-size:13.5px;color:#9094a8}
 
-  /* faq */
-  .faq{padding-top:0}
-  .faq-list{max-width:860px}
-  details{border-bottom:1px solid var(--line)}
-  summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;font-family:var(--fh);font-weight:500;font-size:19px;color:var(--ink)}
+  /* faq — card style */
+  .faq{background:#F4F6FB}
+  .faq-list{max-width:880px}
+  details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:14px;overflow:hidden;transition:border-color .25s,box-shadow .25s}
+  details[open]{border-color:var(--navy);box-shadow:0 12px 40px rgba(1,4,61,.08)}
+  summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 26px;font-family:var(--fh);font-weight:500;font-size:18px;color:var(--ink)}
   summary::-webkit-details-marker{display:none}
-  summary .plus{flex:none;color:var(--navy);font-size:22px;font-weight:300;transition:transform .25s}
-  details[open] .plus{transform:rotate(45deg);color:#6ccadb}
-  .faq-a{padding:0 0 24px;max-width:700px;font-size:15.5px}
+  summary .plus{flex:none;width:32px;height:32px;border-radius:50%;background:#F4F6FB;display:grid;place-items:center;color:var(--navy);font-size:19px;font-weight:400;transition:.3s}
+  details[open] .plus{transform:rotate(45deg);background:var(--cyan)}
+  .faq-a{padding:0 26px 24px;max-width:720px;font-size:15.5px}
 
   /* contact */
   .contact{position:relative;overflow:hidden;border-top:1px solid var(--line)}
@@ -303,6 +304,8 @@
       <details class="reveal"><summary><span data-i18n="q4">How do I start working with Barsiko?</span><span class="plus">+</span></summary><p class="faq-a" data-i18n="a4">Submit a request through the form on this website and schedule a free consultation to discuss your needs. Once the scope is agreed, we move to project approval and kickoff.</p></details>
       <details class="reveal"><summary><span data-i18n="q5">How is pricing determined?</span><span class="plus">+</span></summary><p class="faq-a" data-i18n="a5">Pricing is customised based on project scope, the chosen engagement model (fixed-price, time &amp; materials, or subscription), complexity and the technologies required.</p></details>
       <details class="reveal"><summary><span data-i18n="q6">What security and privacy standards do you adhere to?</span><span class="plus">+</span></summary><p class="faq-a" data-i18n="a6">We follow international standards such as ISO/IEC 27001 and the GDPR. As an EU-based company, European data protection is at the core of how we work.</p></details>
+      <details class="reveal"><summary><span data-i18n="q7">Which technologies and platforms do you specialise in?</span><span class="plus">+</span></summary><p class="faq-a" data-i18n="a7">Backend: Java, .NET, Node.js, Python, PHP. Frontend: React, Angular, Vue.js. Mobile: React Native, Flutter. Cloud: AWS, Azure, GCP. Databases: PostgreSQL, MySQL, MongoDB, Redis.</p></details>
+      <details class="reveal"><summary><span data-i18n="q8">What sets Barsiko apart from other IT firms?</span><span class="plus">+</span></summary><p class="faq-a" data-i18n="a8">A holistic approach, deep technical expertise, full transparency and flexible, client-focused engagement models — combined with the digital-first mindset Estonia is known for.</p></details>
     </div>
   </div>
 </section>
@@ -410,6 +413,10 @@ en:{
   a5:"Pricing is customised based on project scope, the chosen engagement model (fixed-price, time & materials, or subscription), complexity and the technologies required.",
   q6:"What security and privacy standards do you adhere to?",
   a6:"We follow international standards such as ISO/IEC 27001 and the GDPR. As an EU-based company, European data protection is at the core of how we work.",
+  q7:"Which technologies and platforms do you specialise in?",
+  a7:"Backend: Java, .NET, Node.js, Python, PHP. Frontend: React, Angular, Vue.js. Mobile: React Native, Flutter. Cloud: AWS, Azure, GCP. Databases: PostgreSQL, MySQL, MongoDB, Redis.",
+  q8:"What sets Barsiko apart from other IT firms?",
+  a8:"A holistic approach, deep technical expertise, full transparency and flexible, client-focused engagement models — combined with the digital-first mindset Estonia is known for.",
   ct_h:"Ready to achieve your goals? Let us guide you!",
   ct_p:"Reach out to us today to discuss your business challenges and explore what's possible.",
   ct_addr:"Barsion OÜ · Narva mnt 5, Tallinn 10117, Harju County, Estonia",
@@ -461,6 +468,10 @@ et:{
   a5:"Hind kujuneb vastavalt projekti mahule, valitud koostöömudelile (fikseeritud hind, aeg ja materjalid või püsitasu), keerukusele ja vajalikele tehnoloogiatele.",
   q6:"Milliseid turva- ja privaatsusstandardeid te järgite?",
   a6:"Järgime rahvusvahelisi standardeid nagu ISO/IEC 27001 ja GDPR. EL-i ettevõttena on Euroopa andmekaitse meie töö keskmes.",
+  q7:"Millistele tehnoloogiatele ja platvormidele olete spetsialiseerunud?",
+  a7:"Backend: Java, .NET, Node.js, Python, PHP. Frontend: React, Angular, Vue.js. Mobiil: React Native, Flutter. Pilv: AWS, Azure, GCP. Andmebaasid: PostgreSQL, MySQL, MongoDB, Redis.",
+  q8:"Mis eristab Barsikot teistest IT-ettevõtetest?",
+  a8:"Terviklik lähenemine, sügav tehniline asjatundlikkus, täielik läbipaistvus ja paindlikud kliendikesksed koostöömudelid — koos digitaalse mõtteviisiga, mille poolest Eesti on tuntud.",
   ct_h:"Valmis oma eesmärke saavutama? Meie juhatame teed!",
   ct_p:"Kirjutage juba täna, et arutada oma äri väljakutseid ja avastada võimalusi.",
   ct_addr:"Barsion OÜ · Narva mnt 5, Tallinn 10117, Harju maakond, Eesti",
