@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://akela1308.github.io/barsiko/sitemap.xml
