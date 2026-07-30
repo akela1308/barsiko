@@ -162,18 +162,34 @@
     background:radial-gradient(circle,rgba(165,236,244,.26),transparent 66%);filter:blur(28px)}
   .mstage{position:relative;z-index:1;transform:translate3d(0,0,0);
     transition:transform .55s var(--ease-out)}
-  /* asymmetric mask: the opaque core sits on the leopard, the desk dissolves.
-     values derived by compositing over #090F23 — do not re-tune by eye */
+  /* Mask tuned to the video's framing (the poster is frame 0 of the same clip,
+     so still and video share one mask). Layer 1 is the vignette, layer 2 is a
+     narrow tall ellipse that pinches the desk's straight far edge out of the
+     lower half, layer 3 dissolves the bottom. Verified against frames 20/90/150/215. */
+  /* The leopard sits high-right and the laptop low-left, so no single ellipse
+     hugs both without also keeping a bright slab of sky between them. The mask
+     is therefore the UNION of one ellipse per subject, intersected with a bottom
+     dissolve. Layers read bottom-up: laptop, then cat added to it, then the
+     bottom fade intersected with that union. Verified frame-by-frame. */
   .mascot{display:block;width:100%;height:auto;
-    -webkit-mask-image:radial-gradient(ellipse 54% 60% at 50% 43%,#000 54%,transparent 100%),linear-gradient(180deg,#000 70%,rgba(0,0,0,.4) 85%,transparent 100%);
-    -webkit-mask-composite:source-in;
-    mask-image:radial-gradient(ellipse 54% 60% at 50% 43%,#000 54%,transparent 100%),linear-gradient(180deg,#000 70%,rgba(0,0,0,.4) 85%,transparent 100%);
-    mask-composite:intersect}
+    mask-image:linear-gradient(180deg,#000 82%,rgba(0,0,0,.35) 91%,transparent 100%),radial-gradient(ellipse 34% 46% at 62% 42%,#000 55%,transparent 100%),radial-gradient(ellipse 25% 21% at 27% 74%,#000 44%,transparent 100%);
+    mask-composite:intersect,add,add}
+  /* -webkit-mask-image without a matching -webkit-mask-composite makes Chromium
+     union every layer and the image's box comes straight back, so both prefixed
+     properties ship together and only where the standard one is missing. */
+  @supports not (mask-composite: intersect){
+    .mascot{-webkit-mask-image:linear-gradient(180deg,#000 82%,rgba(0,0,0,.35) 91%,transparent 100%),radial-gradient(ellipse 34% 46% at 62% 42%,#000 55%,transparent 100%),radial-gradient(ellipse 25% 21% at 27% 74%,#000 44%,transparent 100%);-webkit-mask-composite:source-in,source-over}
+  }
+  video.mascot{position:absolute;inset:0;width:100%;height:100%;z-index:2;object-fit:cover;
+    opacity:0;transition:opacity .7s var(--ease-out)}
+  video.mascot.on{opacity:1}
+  /* the clip carries its own life: stop doubling it with our own motion */
+  .playing .mascot,.playing .mglow{animation:none}
   .live .mascot{animation:mfloat 9s var(--ease-in-out) infinite}
   @keyframes mfloat{50%{transform:translateY(-9px)}}
   .mfade{position:absolute;inset:0;z-index:3;pointer-events:none;
-    background:linear-gradient(180deg,transparent 48%,rgba(9,15,35,.5) 74%,var(--bg) 96%)}
-  .mglow{position:absolute;left:9%;top:50%;width:44%;height:33%;z-index:4;pointer-events:none;opacity:.85;
+    background:linear-gradient(180deg,transparent 74%,rgba(9,15,35,.28) 90%,var(--bg) 100%)}
+  .mglow{position:absolute;left:8%;top:56%;width:42%;height:32%;z-index:4;pointer-events:none;opacity:.85;
     background:radial-gradient(closest-side,rgba(165,236,244,.32),transparent 72%);filter:blur(14px)}
   .live .mglow{animation:mbreathe 5.2s var(--ease-in-out) infinite}
   @keyframes mbreathe{50%{opacity:.52;transform:scale(1.07)}}
@@ -398,6 +414,7 @@
     .hero .beam{opacity:.75!important}
     .sent-check circle,.sent-check path{stroke-dashoffset:0!important}
     .mstage{transform:none!important}
+    video.mascot{display:none!important}
     .prog{opacity:0}
     .faq-body{transition:none!important}
   }
@@ -467,7 +484,7 @@
     <div class="mwrap">
       <span class="sky" aria-hidden="true"></span>
       <div class="mstage">
-        <img class="mascot" src="mascot.jpg" width="1280" height="714" alt="Barsion snow leopard mascot working at a laptop" loading="lazy">
+        <img class="mascot" src="mascot.jpg" width="848" height="464" alt="Barsion snow leopard mascot working at a laptop" loading="lazy">
         <span class="mfade" aria-hidden="true"></span>
         <span class="mglow" aria-hidden="true"></span>
       </div>
@@ -876,6 +893,39 @@ if(mwrap){
       });
     });
     mwrap.addEventListener('pointerleave', ()=>{ mstage.style.transform = ''; });
+  }
+
+  /* The looping clip is an enhancement layered over the poster, never a
+     dependency: the markup ships the still, and the video is only built when
+     the visitor has not opted out and the section is nearly in view. If any
+     of it fails, the still is already on screen and nothing looks broken. */
+  const conn = navigator.connection || {};
+  const thrifty = conn.saveData === true || /(^|-)2g$/.test(conn.effectiveType || '');
+  if(mstage && !calm && !thrifty){
+    new IntersectionObserver((es, obs)=>{
+      if(!es.some(e=>e.isIntersecting)) return;
+      obs.disconnect();
+      const v = document.createElement('video');
+      v.className = 'mascot';
+      v.muted = true; v.defaultMuted = true; v.loop = true; v.autoplay = true;
+      v.playsInline = true;
+      v.setAttribute('muted',''); v.setAttribute('playsinline',''); v.setAttribute('webkit-playsinline','');
+      v.setAttribute('aria-hidden','true'); v.tabIndex = -1;
+      v.preload = 'auto'; v.poster = 'mascot.jpg'; v.width = 848; v.height = 464;
+      [['mascot.webm','video/webm'],['mascot.mp4','video/mp4']].forEach(([src,type])=>{
+        const so = document.createElement('source'); so.src = src; so.type = type; v.appendChild(so);
+      });
+      v.addEventListener('playing', ()=>{
+        v.classList.add('on'); mstage.classList.add('playing');
+      }, {once:true});
+      mstage.insertBefore(v, mstage.querySelector('.mfade'));
+      const tryPlay = ()=>{ const pr = v.play(); if(pr && pr.catch) pr.catch(()=>{}); };
+      tryPlay();
+      // never burn frames or battery on a section nobody is looking at
+      new IntersectionObserver(vs=>{
+        vs.forEach(e=>{ if(e.isIntersecting) tryPlay(); else v.pause(); });
+      },{threshold:0}).observe(mwrap);
+    },{rootMargin:'600px 0px'}).observe(mwrap);
   }
 }
 </script>
