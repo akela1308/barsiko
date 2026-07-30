@@ -736,7 +736,11 @@ function splitWords(el, step, lead){
     i++;
   });
   el.classList.remove('lit');
-  requestAnimationFrame(()=>requestAnimationFrame(()=>el.classList.add('lit')));
+  const light=()=>el.classList.add('lit');
+  // rAF gives a frame-accurate start; the timer guarantees the words appear even
+  // when the page loads in a background tab, where rAF never fires.
+  requestAnimationFrame(()=>requestAnimationFrame(light));
+  setTimeout(light,260);
 }
 splitWords(h1, .055, .25);
 
