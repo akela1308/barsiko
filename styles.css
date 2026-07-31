@@ -146,8 +146,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:60;height:var(--hh);
 @keyframes twinkle{50%{opacity:.3}}
 .mwrap::before{content:"";position:absolute;left:2%;bottom:14%;width:66%;height:54%;z-index:0;
   background:radial-gradient(circle,rgba(165,236,244,.26),transparent 66%);filter:blur(28px)}
-.mstage{position:relative;z-index:1;transform:translate3d(0,0,0);
-  transition:transform .55s var(--ease-out)}
+.mstage{position:relative;z-index:1}
 /* Mask tuned to the video's framing (the poster is frame 0 of the same clip,
    so still and video share one mask). Layer 1 is the vignette, layer 2 is a
    narrow tall ellipse that pinches the desk's straight far edge out of the
@@ -176,16 +175,15 @@ video.mascot.on{opacity:1}
    clip runs: the mask is feathered at its edges, so anywhere its alpha is below 1 the
    video is semi-transparent and the frozen still shows through behind it. */
 .playing img.mascot{visibility:hidden}
-/* the clip carries its own life: stop doubling it with our own motion */
-.playing .mascot,.playing .mglow{animation:none}
-.live .mascot{animation:mfloat 9s var(--ease-in-out) infinite}
-@keyframes mfloat{50%{transform:translateY(-9px)}}
+/* The clip carries all of its own motion. Nothing may move the element itself:
+   an overriding rule is not enough here — `.playing .mascot{animation:none}` and
+   `.live .mascot{animation:mfloat}` had equal specificity, so the later one won
+   and the float ran the whole time. The animations are therefore deleted, not
+   overridden, and the glow is a constant light rather than a pulsing one. */
 .mfade{position:absolute;inset:0;z-index:3;pointer-events:none;
   background:linear-gradient(180deg,transparent 80%,rgba(9,15,35,.22) 92%,var(--bg) 100%)}
 .mglow{position:absolute;left:10%;top:48%;width:28%;height:30%;z-index:4;pointer-events:none;opacity:.85;
   background:radial-gradient(closest-side,rgba(165,236,244,.32),transparent 72%);filter:blur(14px)}
-.live .mglow{animation:mbreathe 5.2s var(--ease-in-out) infinite}
-@keyframes mbreathe{50%{opacity:.52;transform:scale(1.07)}}
 .mani .corner{position:absolute;left:-16px;bottom:-24px;width:66px;height:118px;background:var(--cyan);transform:skewX(-16deg);z-index:1}
 
 /* ── solutions: engineered cage ─────────────────────────── */

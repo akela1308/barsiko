@@ -370,22 +370,7 @@ if(mwrap){
     es.forEach(en=>en.target.classList.toggle('live', en.isIntersecting));
   },{threshold:0}).observe(mwrap);
 
-  if(mstage && fine && !calm){
-    let mraf = 0, tx = 0, ty = 0, rx = 0, ry = 0;
-    mwrap.addEventListener('pointermove', e=>{
-      const r = mwrap.getBoundingClientRect();
-      const px = (e.clientX - r.left) / r.width - .5;
-      const py = (e.clientY - r.top) / r.height - .5;
-      tx = px * 20; ty = py * 12; ry = px * 6.4; rx = -py * 4.4;
-      if(!mraf) mraf = requestAnimationFrame(()=>{
-        mstage.style.transform =
-          'perspective(1000px) translate3d(' + tx.toFixed(2) + 'px,' + ty.toFixed(2) + 'px,0)' +
-          ' rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg)';
-        mraf = 0;
-      });
-    });
-    mwrap.addEventListener('pointerleave', ()=>{ mstage.style.transform = ''; });
-  }
+  /* No cursor tilt: the clip provides the motion and the element stays put. */
 
   /* The looping clip is an enhancement layered over the poster, never a
      dependency: the markup ships the still, and the video is only built when
