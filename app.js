@@ -403,8 +403,11 @@ if(mwrap){
       v.playsInline = true;
       v.setAttribute('muted',''); v.setAttribute('playsinline',''); v.setAttribute('webkit-playsinline','');
       v.setAttribute('aria-hidden','true'); v.tabIndex = -1;
-      v.preload = 'auto'; v.poster = 'mascot.jpg'; v.width = 848; v.height = 464;
-      [['mascot.webm','video/webm'],['mascot.mp4','video/mp4']].forEach(([src,type])=>{
+      v.preload = 'auto'; v.poster = 'mascot.jpg'; v.width = 1152; v.height = 648;
+      // mp4 first: the browser takes the first source it can decode, so Chrome,
+      // Safari and Edge get the smaller H.264 file (587KB vs 730KB) and the webm
+      // is only ever fetched by builds without H.264 — it costs nobody bytes.
+      [['mascot.mp4','video/mp4'],['mascot.webm','video/webm']].forEach(([src,type])=>{
         const so = document.createElement('source'); so.src = src; so.type = type; v.appendChild(so);
       });
       v.addEventListener('playing', ()=>{
