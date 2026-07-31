@@ -1,410 +1,308 @@
-const T = {
-en:{
-  logo_s:"IT services",
-  nav_solutions:"Solutions", nav_about:"Who We Are", nav_faq:"FAQ", nav_contact:"Contacts",
-  hero_h1:"Technology should power your business, never slow it down.",
-  hero_sub:"Barsion keeps your systems running, your data safe and your ideas shipping. From Tallinn, for all of Europe.",
-  hero_cta:"Book a free consultation",
-  dark_h:"Complex technology. Simple outcomes.",
-  ben1:"Transparent, predictable costs", ben2:"Modern, proven technology", ben3:"Deep sector know-how", ben4:"Built to scale with you",
-  sol_label:"Solutions",
-  s1_h:"Managed IT", s1_p:"We run your day-to-day IT: support, administration and round-the-clock monitoring. Your team stays focused on the business.",
-  s2_h:"Technology Consulting", s2_p:"Independent advice on what to build, what to buy and what to retire, so every technology decision moves the business forward.",
-  s3_h:"Security & Compliance", s3_p:"From vulnerability audits to hardened infrastructure and GDPR alignment. We keep your data and your reputation safe.",
-  s4_h:"Web Platforms", s4_p:"Fast, reliable websites and web applications that turn visitors into customers.",
-  s5_h:"Mobile Apps", s5_p:"Native and cross-platform apps your customers will actually enjoy using, on iOS and Android alike.",
-  s6_h:"Cloud & Infrastructure", s6_p:"Migration, architecture and cost optimisation across AWS, Azure and Google Cloud.",
-  s7_h:"Business Continuity", s7_p:"We find the weak points in your IT before they find you, and build a recovery plan that actually works.",
-  s8_h:"Custom Software", s8_p:"Internal tools, integrations and full products, designed around the way your company really works.",
-  quote1:"We treat your infrastructure as if our own business ran on it. Because in a way, it does.",
-  quote1_by:"The Barsion team",
-  ind_h:"Every sector runs on IT. We keep it running.",
-  ind_p:"In a market that moves this fast, success depends on how reliably your systems perform every single day. We help you scale, optimise and stay ahead, with the tools, strategy and support that keep pace with your ambitions.",
-  who_p:"Barsion is a Tallinn-based IT partner working with companies across the Nordics and Europe: one team covering everything from infrastructure to product development.",
-  quote2:"“Small enough to care. Experienced enough to deliver.”",
-  val_label:"Our values",
-  v1_h:"Honesty", v1_p:"We say what we do, and do what we say.",
-  v2_h:"Craft", v2_p:"Quality is not negotiable.",
-  v3_h:"Partnership", v3_p:"Your goals set our roadmap.",
-  v4_h:"Focus", v4_p:"Every decision starts with the client.",
-  v5_h:"Agility", v5_p:"We adapt as fast as your market does.",
-  v6_h:"Trust", v6_p:"Your data stays yours. Always.",
-  think_h:"What we're thinking",
-  i1_h:"Where AI genuinely pays off in mid-sized companies", i1_meta:"July 2026 · AI",
-  i2_h:"Choosing your first step in digital transformation", i2_meta:"June 2026 · Strategy",
-  i3_h:"A security checklist every growing team should run", i3_meta:"May 2026 · Security",
-  q1:"Who is Barsion?",
-  a1:"Barsion OÜ is an Estonian IT company covering the full technology lifecycle: from advisory and infrastructure management to development, cloud and security.",
-  q2:"What services do you offer?",
-  a2:"Managed IT with 24/7 monitoring, technology consulting, security & compliance, web and mobile development, cloud services, business continuity and custom software.",
-  q3:"Who do you work with?",
-  a3:"Our clients work in finance, healthcare, commerce, manufacturing, logistics and tourism, in Estonia and across Europe.",
-  q4:"How does a project start?",
-  a4:"Write to us through the form and we'll set up a free intro call. We then agree on scope, pricing and timeline, and get to work.",
-  q5:"How do you price your work?",
-  a5:"Depending on the project: fixed price, time & materials, or a monthly subscription. You always know exactly what you're paying for before we start.",
-  q6:"How do you protect our data?",
-  a6:"We work to ISO/IEC 27001 principles and in full compliance with the GDPR. As an EU company, your data stays in Europe, under European rules.",
-  q7:"Which technologies do you work with?",
-  a7:"Node.js, Python, Java and .NET; React, Vue and Flutter; AWS, Azure and Google Cloud; PostgreSQL, MongoDB and Redis. The choice always follows your needs.",
-  q8:"Why choose Barsion?",
-  a8:"One partner for all of your IT, transparent pricing and the experience of Estonia's digital state, without big-firm bureaucracy.",
-  ct_h:"Have a project in mind? Let's make it happen.",
-  quote3:"“Good IT is invisible. You only notice it when it's missing. Our job is making sure you never do.”",
-  ct_p:"Tell us about your challenge. We'll come back with a solution and a clear next step.",
-  ct_addr:"Barsion OÜ · Narva mnt 5, Tallinn 10117, Harju County, Estonia",
-  f_name:"Name", f_email:"Email", f_msg:"What are you working on?", f_send:"Send message",
-  f_phone:"Phone", f_company:"Company", f_optional:"optional", f_topic:"What is this about?",
-  t_managed:"Managed IT", t_consulting:"Technology consulting", t_security:"Security & compliance",
-  t_development:"Web, mobile or custom software", t_cloud:"Cloud & infrastructure", t_other:"Something else",
-  e_name:"Please tell us your name.", e_email:"Please enter a valid email address.",
-  e_msg:"Please tell us a little about your project.",
-  f_privacy_note:"We use your details only to answer this enquiry.", f_privacy_link:"Privacy notice",
-  f_sending:"Sending", 
-  f_fail:"We could not send your message just now. Please try again in a moment.",
-  f_fail_email:"We could not send your message just now. Please write to us at {email}.",
-  f_sent_h:"Thank you!", f_sent_p:"Your message is on its way. We'll get back to you within one business day.",
-  ft_tag:"Stronger side by side.", ft_touch:"Get in touch",
-  ft_addr:"Narva mnt 5, Tallinn 10117, Harju County, Estonia",
-  ft_copy:"© 2026 Barsion OÜ. All rights reserved.", ft_loc:"Estonia · European Union",
-  pp_h:"Privacy notice", pp_lede:"What happens to the details you send us, and the rights you have over them.",
-  pp_updated:"Last updated",
-  pp_1h:"Who is responsible for your data",
-  pp_1p:"Barsion OÜ, registered at Narva mnt 5, Tallinn 10117, Harju County, Estonia, is the controller of the personal data described here. That means we decide why and how it is used, and we are the ones you can hold to account for it.",
-  pp_2h:"What we collect",
-  pp_2p:"Only what you type into the contact form on this site: your name, your email address, and optionally your phone number, company name, the topic you choose, and the message itself. We also record which language version of the site you used, so we answer you in the right one.",
-  pp_2p2:"We do not use cookies for advertising, we do not run third-party tracking scripts, and we do not build profiles of visitors.",
-  pp_3h:"Why we are allowed to use it",
-  pp_3p:"When you send us an enquiry, we process your details in order to take steps at your request before entering into a contract, and on the basis of our legitimate interest in answering people who contact our business. Both grounds come from Article 6 of the GDPR. You are never required to send us anything.",
-  pp_4h:"How long we keep it",
-  pp_4p:"Enquiries that do not lead to work are deleted within 12 months. If we do end up working together, the correspondence becomes part of the client record and is kept for as long as Estonian accounting and contract law requires.",
-  pp_5h:"Who else sees it",
-  pp_5p:"The contact form is delivered by a form-processing service that passes your message to our inbox, and our email is hosted by a mail provider. Both act only on our instructions and are bound by data processing agreements. Your data stays within the European Economic Area. We never sell it and we never pass it to anyone for marketing.",
-  pp_6h:"Your rights", pp_6p:"Under the GDPR you can ask us to:",
-  pp_r1:"show you a copy of the data we hold about you", pp_r2:"correct anything that is wrong",
-  pp_r3:"delete it", pp_r4:"restrict or object to how we use it",
-  pp_r5:"receive it in a portable, machine-readable form",
-  pp_6p2:"Write to us and we will answer within one month. If you think we have handled your data badly, you can complain to the Estonian Data Protection Inspectorate.",
-  pp_7h:"Security",
-  pp_7p:"The site is served over HTTPS and form submissions are encrypted in transit. Access to the inbox is limited to the people who need it and protected by two-factor authentication.",
-  pp_8h:"Changes",
-  pp_8p:"If this notice changes, the date at the top of the page changes with it. Material changes will be announced on the site itself.",
-  pp_back:"Back to the site"
-},
-et:{
-  logo_s:"IT-teenused",
-  nav_solutions:"Lahendused", nav_about:"Meist", nav_faq:"KKK", nav_contact:"Kontakt",
-  hero_h1:"Tehnoloogia peab teie äri edasi viima, mitte pidurdama.",
-  hero_sub:"Barsion hoiab teie süsteemid töös, andmed kaitstuna ja ideed liikumas. Tallinnast, kogu Euroopa jaoks.",
-  hero_cta:"Broneeri tasuta konsultatsioon",
-  dark_h:"Keeruline tehnoloogia. Selged tulemused.",
-  ben1:"Läbipaistvad ja prognoositavad kulud", ben2:"Kaasaegne, end tõestanud tehnoloogia", ben3:"Põhjalik valdkonnatundmine", ben4:"Valmis teiega koos kasvama",
-  sol_label:"Lahendused",
-  s1_h:"IT haldus", s1_p:"Hoolitseme teie igapäevase IT eest: tugi, haldus ja ööpäevaringne seire. Nii saab teie meeskond keskenduda ärile.",
-  s2_h:"Tehnoloogianõustamine", s2_p:"Sõltumatu nõu, mida ehitada, mida osta ja millest loobuda, et iga tehnoloogiaotsus viiks äri edasi.",
-  s3_h:"Turvalisus ja vastavus", s3_p:"Haavatavusauditist tugevdatud taristu ja GDPR-i vastavuseni. Hoiame teie andmed ja maine kaitstuna.",
-  s4_h:"Veebiplatvormid", s4_p:"Kiired ja töökindlad veebilehed ning -rakendused, mis muudavad külastajad klientideks.",
-  s5_h:"Mobiilirakendused", s5_p:"Natiivsed ja platvormiülesed rakendused, mida teie kliendid päriselt kasutada tahavad, nii iOS-il kui Androidil.",
-  s6_h:"Pilv ja taristu", s6_p:"Migratsioon, arhitektuur ja kulude optimeerimine AWS-is, Azure'is ja Google Cloudis.",
-  s7_h:"Äri järjepidevus", s7_p:"Leiame teie IT nõrgad kohad enne, kui need end ise näitavad, ja koostame taasteplaani, mis päriselt toimib.",
-  s8_h:"Eritarkvara", s8_p:"Sisetööriistad, liidestused ja terviklikud tooted, loodud selle järgi, kuidas teie ettevõte päriselt töötab.",
-  quote1:"Hoolitseme teie taristu eest nii, nagu töötaks sellel meie enda äri. Sest teatud mõttes töötabki.",
-  quote1_by:"Barsioni meeskond",
-  ind_h:"Iga valdkond töötab IT peal. Meie hoiame selle töös.",
-  ind_p:"Nii kiiresti liikuval turul sõltub edu sellest, kui kindlalt teie süsteemid iga päev toimivad. Aitame teil kasvada, optimeerida ja ees püsida, tööriistade, strateegia ja toega, mis käivad teie ambitsioonidega ühte sammu.",
-  who_p:"Barsion on Tallinnas asuv IT-partner, kes töötab ettevõtetega üle Põhjamaade ja Euroopa: üks meeskond, mis katab kõik taristust tootearenduseni.",
-  quote2:"„Piisavalt väikesed, et hoolida. Piisavalt kogenud, et tulemusi anda.“",
-  val_label:"Meie väärtused",
-  v1_h:"Ausus", v1_p:"Ütleme, mida teeme, ja teeme, mida ütleme.",
-  v2_h:"Meisterlikkus", v2_p:"Kvaliteedis me ei kauple.",
-  v3_h:"Partnerlus", v3_p:"Teie eesmärgid on meie teekaart.",
-  v4_h:"Fookus", v4_p:"Iga otsus algab kliendist.",
-  v5_h:"Paindlikkus", v5_p:"Kohandume sama kiiresti kui teie turg.",
-  v6_h:"Usaldus", v6_p:"Teie andmed jäävad teie omaks. Alati.",
-  think_h:"Millest me mõtleme",
-  i1_h:"Kus tehisintellekt end keskmise suurusega ettevõttes päriselt ära tasub", i1_meta:"Juuli 2026 · AI",
-  i2_h:"Kuidas valida digipöörde esimest sammu", i2_meta:"Juuni 2026 · Strateegia",
-  i3_h:"Turvakontrollnimekiri, mille iga kasvav meeskond peaks läbi käima", i3_meta:"Mai 2026 · Turvalisus",
-  q1:"Kes on Barsion?",
-  a1:"Barsion OÜ on Eesti IT-ettevõte, mis katab kogu tehnoloogia elukaare: nõustamisest ja taristu haldusest kuni arenduse, pilve ja turvalisuseni.",
-  q2:"Milliseid teenuseid pakute?",
-  a2:"IT haldus ööpäevaringse seirega, tehnoloogianõustamine, turvalisus ja vastavus, veebi- ja mobiiliarendus, pilveteenused, äri järjepidevus ning eritarkvara.",
-  q3:"Kellega te töötate?",
-  a3:"Meie kliendid tegutsevad rahanduses, tervishoius, kaubanduses, tootmises, logistikas ja turismis, nii Eestis kui mujal Euroopas.",
-  q4:"Kuidas koostöö algab?",
-  a4:"Kirjutage meile vormi kaudu ja lepime kokku tasuta tutvumiskõne. Seejärel täpsustame töömahu, hinna ja ajakava ning asume tööle.",
-  q5:"Kuidas te oma tööd hinnastate?",
-  a5:"Sõltuvalt projektist: fikseeritud hind, tunnipõhine arveldus või kuutasu. Enne alustamist teate alati täpselt, mille eest maksate.",
-  q6:"Kuidas te meie andmeid kaitsete?",
-  a6:"Töötame ISO/IEC 27001 põhimõtete järgi ja täies vastavuses GDPR-iga. EL-i ettevõttena püsivad teie andmed Euroopas, Euroopa reeglite järgi.",
-  q7:"Milliste tehnoloogiatega te töötate?",
-  a7:"Node.js, Python, Java ja .NET; React, Vue ja Flutter; AWS, Azure ja Google Cloud; PostgreSQL, MongoDB ja Redis. Valik lähtub alati teie vajadustest.",
-  q8:"Miks valida just Barsion?",
-  a8:"Üks partner kogu teie IT jaoks, läbipaistev hinnastus ja Eesti digiriigi kogemus, ilma suurfirma bürokraatiata.",
-  ct_h:"On teil projekt mõttes? Viime selle ellu.",
-  quote3:"„Hea IT on nähtamatu. Seda märkad alles siis, kui see puudub. Meie töö on hoolitseda, et te seda kunagi ei märkaks.“",
-  ct_p:"Kirjeldage oma väljakutset. Pakume välja lahenduse ja selge järgmise sammu.",
-  ct_addr:"Barsion OÜ · Narva mnt 5, Tallinn 10117, Harju maakond, Eesti",
-  f_name:"Nimi", f_email:"E-post", f_msg:"Millega te parasjagu tegelete?", f_send:"Saada sõnum",
-  f_phone:"Telefon", f_company:"Ettevõte", f_optional:"valikuline", f_topic:"Millega saame aidata?",
-  t_managed:"IT haldus", t_consulting:"Tehnoloogianõustamine", t_security:"Turvalisus ja vastavus",
-  t_development:"Veebi-, mobiili- või eritarkvara", t_cloud:"Pilv ja taristu", t_other:"Midagi muud",
-  e_name:"Palun öelge oma nimi.", e_email:"Palun sisestage kehtiv e-posti aadress.",
-  e_msg:"Palun kirjeldage lühidalt oma projekti.",
-  f_privacy_note:"Kasutame teie andmeid ainult sellele päringule vastamiseks.", f_privacy_link:"Privaatsusteade",
-  f_sending:"Saadan",
-  f_fail:"Sõnumi saatmine ei õnnestunud. Palun proovige hetke pärast uuesti.",
-  f_fail_email:"Sõnumi saatmine ei õnnestunud. Palun kirjutage meile aadressil {email}.",
-  f_sent_h:"Aitäh!", f_sent_p:"Teie sõnum on teel. Vastame ühe tööpäeva jooksul.",
-  ft_tag:"Üheskoos tugevamad.", ft_touch:"Võta ühendust",
-  ft_addr:"Narva mnt 5, Tallinn 10117, Harju maakond, Eesti",
-  ft_copy:"© 2026 Barsion OÜ. Kõik õigused kaitstud.", ft_loc:"Eesti · Euroopa Liit",
-  pp_h:"Privaatsusteade", pp_lede:"Mis juhtub andmetega, mille meile saadate, ja millised õigused teil nende suhtes on.",
-  pp_updated:"Viimati uuendatud",
-  pp_1h:"Kes teie andmete eest vastutab",
-  pp_1p:"Barsion OÜ, aadressiga Narva mnt 5, Tallinn 10117, Harju maakond, Eesti, on siin kirjeldatud isikuandmete vastutav töötleja. See tähendab, et meie otsustame, miks ja kuidas andmeid kasutatakse, ning meie vastutame selle eest.",
-  pp_2h:"Mida me kogume",
-  pp_2p:"Ainult seda, mille te ise kontaktivormi sisestate: nimi, e-posti aadress ning soovi korral telefon, ettevõtte nimi, valitud teema ja sõnum ise. Lisaks jätame meelde, millist keeleversiooni kasutasite, et vastata teile õiges keeles.",
-  pp_2p2:"Me ei kasuta reklaamiküpsiseid, ei jooksuta kolmandate osapoolte jälgimisskripte ega koosta külastajate profiile.",
-  pp_3h:"Millel meie õigus põhineb",
-  pp_3p:"Kui saadate meile päringu, töötleme teie andmeid selleks, et astuda teie soovil samme enne lepingu sõlmimist, ning tuginedes meie õigustatud huvile vastata neile, kes meie ettevõttega ühendust võtavad. Mõlemad alused tulenevad GDPR-i artiklist 6. Te ei ole kunagi kohustatud meile midagi saatma.",
-  pp_4h:"Kui kaua me neid hoiame",
-  pp_4p:"Päringud, millest koostööd ei sünni, kustutatakse 12 kuu jooksul. Kui koostöö siiski algab, saab kirjavahetusest osa kliendidokumentidest ja seda säilitatakse nii kaua, kui Eesti raamatupidamis- ja lepinguõigus nõuab.",
-  pp_5h:"Kes veel neid näeb",
-  pp_5p:"Kontaktivormi vahendab vormiteenus, mis edastab teie sõnumi meie postkasti, ja meie e-posti majutab e-postiteenuse pakkuja. Mõlemad tegutsevad ainult meie juhiste järgi ja on seotud andmetöötluslepingutega. Teie andmed jäävad Euroopa Majanduspiirkonda. Me ei müü neid kunagi ega edasta kellelegi turunduseks.",
-  pp_6h:"Teie õigused", pp_6p:"GDPR-i alusel võite paluda meil:",
-  pp_r1:"näidata koopiat andmetest, mida teie kohta hoiame", pp_r2:"parandada kõik, mis on vale",
-  pp_r3:"need kustutada", pp_r4:"piirata nende kasutamist või sellele vastu vaielda",
-  pp_r5:"saada need ülekantavas, masinloetavas vormis",
-  pp_6p2:"Kirjutage meile ja vastame ühe kuu jooksul. Kui arvate, et oleme teie andmeid halvasti käidelnud, saate esitada kaebuse Andmekaitse Inspektsioonile.",
-  pp_7h:"Turvalisus",
-  pp_7p:"Sait töötab HTTPS-i kaudu ja vormi saadetised on edastamisel krüpteeritud. Ligipääs postkastile on piiratud nendega, kes seda vajavad, ja kaitstud kaheastmelise autentimisega.",
-  pp_8h:"Muudatused",
-  pp_8p:"Kui see teade muutub, muutub ka kuupäev lehe ülaosas. Olulistest muudatustest anname teada saidil endal.",
-  pp_back:"Tagasi saidile"
-}
-};
+(()=>{var yo=Object.defineProperty;var Gi=(t,e)=>{for(var s in e)yo(t,s,{get:e[s],enumerable:!0})};var $e=typeof window<"u",it=$e?window:null,W=$e?document:null,K={OBJECT:0,ATTRIBUTE:1,CSS:2,TRANSFORM:3,CSS_VAR:4},R={NUMBER:0,UNIT:1,COLOR:2,COMPLEX:3},ye={NONE:0,AUTO:1,FORCE:2},ee={replace:0,none:1,blend:2},li=Symbol(),Xe=Symbol(),ds=Symbol(),yt=Symbol(),Ji=Symbol(),P=1e-11,qt=1e12,nt=1e3,Ht=240,Ye="",Zi="var(",zt=[],hs=(()=>{let t=new Map;return t.set("x","translateX"),t.set("y","translateY"),t.set("z","translateZ"),t})(),Ot=["perspective","translateX","translateY","translateZ","rotate","rotateX","rotateY","rotateZ","scale","scaleX","scaleY","scaleZ","skew","skewX","skewY"],Qi=Ot.reduce((t,e)=>({...t,[e]:e+"("}),{}),F=()=>{},en=t=>t,tn=/\)\s*[-.\d]/,sn=/(^#([\da-f]{3}){1,2}$)|(^#([\da-f]{4}){1,2}$)/i,nn=/rgb\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)/i,on=/rgba\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,\s*(-?\d+|-?\d*.\d+)\s*\)/i,rn=/hsl\(\s*(-?\d+|-?\d*.\d+)\s*,\s*(-?\d+|-?\d*.\d+)%\s*,\s*(-?\d+|-?\d*.\d+)%\s*\)/i,an=/hsla\(\s*(-?\d+|-?\d*.\d+)\s*,\s*(-?\d+|-?\d*.\d+)%\s*,\s*(-?\d+|-?\d*.\d+)%\s*,\s*(-?\d+|-?\d*.\d+)\s*\)/i,ci=/[-+]?\d*\.?\d+(?:e[-+]?\d)?/gi,ms=/^([-+]?\d*\.?\d+(?:e[-+]?\d+)?)([a-z]+|%)$/i,ln=/([a-z])([A-Z])/g,ps=/(\*=|\+=|-=)/,cn=/var\(\s*(--[\w-]+)(?:\s*,\s*([^)]+))?\s*\)/;var Dt={id:null,keyframes:null,playbackEase:null,playbackRate:1,frameRate:Ht,loop:0,reversed:!1,alternate:!1,autoplay:!0,persist:!1,duration:nt,delay:0,loopDelay:0,ease:"out(2)",composition:ee.replace,modifier:en,onBegin:F,onBeforeUpdate:F,onUpdate:F,onLoop:F,onPause:F,onComplete:F,onRender:F},We={current:null,root:W},E={defaults:Dt,precision:4,timeScale:1,tickThreshold:200,editor:null},ui={version:"4.5.0",engine:null};$e&&(it.AnimeJS||(it.AnimeJS=[]),it.AnimeJS.push(ui));var hi=t=>t.replace(ln,"$1-$2").toLowerCase(),Me=(t,e)=>t.indexOf(e)===0,dt=Date.now,Ae=Array.isArray,Le=t=>t&&t.constructor===Object,me=t=>typeof t=="number"&&!isNaN(t),oe=t=>typeof t=="string",se=t=>typeof t=="function",v=t=>typeof t>"u",ot=t=>v(t)||t===null,fs=t=>$e&&t instanceof SVGElement,mi=t=>sn.test(t),pi=t=>Me(t,"rgb"),fi=t=>Me(t,"hsl"),un=t=>mi(t)||(pi(t)||fi(t))&&(t[t.length-1]===")"||!tn.test(t)),kt=t=>!E.defaults.hasOwnProperty(t),To=["opacity","rotate","overflow","color"],dn=(t,e)=>{if(To.includes(e))return!1;if(t.getAttribute(e)||e in t){if(e==="scale"){let s=t.parentNode;return s&&s.tagName==="filter"}return!0}},gs=t=>oe(t)?parseFloat(t):t,St=Math.pow,Xt=Math.sqrt,hn=Math.sin,mn=Math.cos,wt=Math.abs;var Et=Math.floor,pn=Math.asin;var Yt=Math.PI,di=Math.round,ke=(t,e,s)=>t<e?e:t>s?s:t,I=(t,e)=>{if(e<0)return t;if(!e)return di(t);let s=10**e;return di(t*s)/s},fn=(t,e)=>Ae(e)?e.reduce((s,i)=>wt(i-t)<wt(s-t)?i:s):e?di(t/e)*e:t,Ke=(t,e,s)=>s===1?e:s===0?t:t+(e-t)*s,Ct=t=>t===1/0?qt:t===-1/0?-qt:t,ht=t=>t<=P?P:Ct(I(t,11)),ge=t=>Ae(t)?[...t]:t,At=(t,e)=>{let s={...t};for(let i in e){let n=t[i];s[i]=v(n)?e[i]:n}return s},N=(t,e,s,i="_prev",n="_next")=>{let o=t._head,r=n;for(s&&(o=t._tail,r=i);o;){let c=o[r];e(o),o=c}},Fe=(t,e,s="_prev",i="_next")=>{let n=e[s],o=e[i];n?n[i]=o:t._head=o,o?o[s]=n:t._tail=n,e[s]=null,e[i]=null},Ne=(t,e,s,i="_prev",n="_next")=>{let o=t._tail;for(;o&&s&&s(o,e);)o=o[i];let r=o?o[n]:t._head;o?o[n]=e:t._head=e,r?r[i]=e:t._tail=e,e[i]=o,e[n]=r};var gn=(t,e,s)=>{let i=t.style.transform;if(i){let n=t[yt],o=0,r=i.length,c;for(;o<r;){for(;o<r&&i.charCodeAt(o)===32;)o++;if(o>=r)break;let l=o;for(;o<r&&i.charCodeAt(o)!==40;)o++;if(o>=r)break;let u=i.substring(l,o),h=1,d=o+1,m=-1,p=-1;for(o++;o<r&&h>0;){let _=i.charCodeAt(o);_===40?h++:_===41?h--:_===44&&h===1&&(m===-1?m=o:p===-1&&(p=o)),o++}let f=o-1;u==="translate"||u==="translate3d"?(m===-1?n.translateX=i.substring(d,f).trim():(n.translateX=i.substring(d,m).trim(),p===-1?n.translateY=i.substring(m+1,f).trim():(n.translateY=i.substring(m+1,p).trim(),n.translateZ=i.substring(p+1,f).trim())),c=i.substring(d,f)):u==="scale"||u==="scale3d"?m===-1?n.scale=i.substring(d,f).trim():(n.scaleX=i.substring(d,m).trim(),p===-1?n.scaleY=i.substring(m+1,f).trim():(n.scaleY=i.substring(m+1,p).trim(),n.scaleZ=i.substring(p+1,f).trim())):n[u]=i.substring(d,f)}if(e==="translate3d"&&c)return s&&(s[e]=c),c;let a=n[e];if(!v(a))return s&&(s[e]=a),a}return e==="translate3d"?"0px, 0px, 0px":e==="rotate3d"?"0, 0, 0, 0deg":Me(e,"scale")?"1":Me(e,"rotate")||Me(e,"skew")?"0deg":"0px"},vs=t=>{let e=Ye;for(let s=0,i=Ot.length;s<i;s++){let n=Ot[s],o=t[n];if(o!==void 0){if(n==="translateX"){let r=t.translateY;if(r!==void 0){let c=t.translateZ;c!==void 0?(e+=`translate3d(${o},${r},${c}) `,s+=2):(e+=`translate(${o},${r}) `,s+=1);continue}}if(n==="scaleX"&&t.scale===void 0){let r=t.scaleY;if(r!==void 0){let c=t.scaleZ;c!==void 0?(e+=`scale3d(${o},${r},${c}) `,s+=2):(e+=`scale(${o},${r}) `,s+=1);continue}}e+=`${Qi[n]}${o}) `}n==="rotateZ"&&t.rotate3d!==void 0&&(e+=`rotate3d(${t.rotate3d}) `)}return t.matrix!==void 0&&(e+=`matrix(${t.matrix}) `),t.matrix3d!==void 0&&(e+=`matrix3d(${t.matrix3d}) `),e};var gi=[];function _s(t,e){if(!t)return null;let s=gi.length;e:for(let i=0;i<s;i++){let n=gi[i];if(n.detect&&!n.detect(t))continue;let o=n.targetAdapters;for(let r=0,c=o.length;r<c;r++){let a=o[r];if(a.detect(t)){let l=a.props[e];if(l&&(!l.gate||l.gate(t)))return l;break e}}}for(let i=0;i<s;i++){let n=gi[i];if(n.detect&&!n.detect(t))continue;let o=n.propertyResolvers;for(let r=0,c=o.length;r<c;r++){let a=o[r](t,e);if(a)return a}}return null}var bo=t=>{let e=nn.exec(t)||on.exec(t),s=v(e[4])?1:+e[4];return[+e[1],+e[2],+e[3],s]},xo=t=>{let e=t.length,s=e===4||e===5;return[+("0x"+t[1]+t[s?1:2]),+("0x"+t[s?2:3]+t[s?2:4]),+("0x"+t[s?3:5]+t[s?3:6]),e===5||e===9?+(+("0x"+t[s?4:7]+t[s?4:8])/255).toFixed(3):1]},vi=(t,e,s)=>(s<0&&(s+=1),s>1&&(s-=1),s<1/6?t+(e-t)*6*s:s<1/2?e:s<2/3?t+(e-t)*(2/3-s)*6:t),wo=t=>{let e=rn.exec(t)||an.exec(t),s=+e[1]/360,i=+e[2]/100,n=+e[3]/100,o=v(e[4])?1:+e[4],r,c,a;if(i===0)r=c=a=n;else{let l=n<.5?n*(1+i):n+i-n*i,u=2*n-l;r=I(vi(u,l,s+1/3)*255,0),c=I(vi(u,l,s)*255,0),a=I(vi(u,l,s-1/3)*255,0)}return[r,c,a,o]},vn=t=>pi(t)?bo(t):mi(t)?xo(t):fi(t)?wo(t):[0,0,0,1];var $=(t,e)=>v(t)?e:t,_n=(t,e)=>{let s=t.match(cn),i=e[Xe]?e:document.documentElement,n=getComputedStyle(i)?.getPropertyValue(s[1]);return(!n||n.trim()===Ye)&&s[2]&&(n=s[2].trim()),n||0},rt=(t,e,s,i,n,o)=>{if(se(t)){if(!n){let c=t(e,s,i,o);return isNaN(+c)?c||0:+c}let r=()=>{let c=t(e,s,i,o);return isNaN(+c)?c||0:+c};return n.func=r,r()}if(oe(t)&&Me(t,Zi)){if(!n)return _n(t,e);let r=()=>_n(t,e);return n.func=r,r()}return t},Kt=(t,e)=>t[Xe]?t[ds]&&dn(t,e)?K.ATTRIBUTE:Ot.includes(e)||hs.get(e)?K.TRANSFORM:Me(e,"--")?K.CSS_VAR:e in t.style?K.CSS:e in t?K.OBJECT:K.ATTRIBUTE:K.OBJECT,yn=(t,e,s)=>{let i=t.style[e];i&&s&&(s[e]=i);let n=i||getComputedStyle(t[Ji]||t).getPropertyValue(e);return n==="auto"?"0":n},at=(t,e,s,i)=>{let n=v(s)?Kt(t,e):s,o=_s(t,e);if(o){let r=o.get(t);return r&&i&&(i[e]=r),r??0}if(n===K.OBJECT){let r=t[e];return r&&i&&(i[e]=r),r||0}if(n===K.ATTRIBUTE){let r=t.getAttribute(e);return r&&i&&(i[e]=r),r}return n===K.TRANSFORM?gn(t,e,i):n===K.CSS_VAR?yn(t,e,i).trimStart():yn(t,e,i)},lt=(t,e,s)=>s==="-"?t-e:s==="+"?t+e:t*e,ys=()=>({t:R.NUMBER,n:0,u:null,o:null,d:null,s:null}),Se=(t,e)=>{if(e.t=R.NUMBER,e.n=0,e.u=null,e.o=null,e.d=null,e.s=null,!t)return e;let s=+t;if(!isNaN(s))return e.n=s,e;let i=t;i[1]==="="&&(e.o=i[0],i=i.slice(2));let n=i.includes(" ")?!1:ms.exec(i);if(n)return e.t=R.UNIT,e.n=+n[1],e.u=n[2],e;if(e.o)return e.n=+i,e;if(un(i))return e.t=R.COLOR,e.d=vn(i),e;{let o=i.match(ci);return e.t=R.COMPLEX,e.d=o?o.map(Number):[],e.s=i.split(ci)||[],e}},_i=(t,e)=>(e.t=t._valueType,e.n=t._toNumber,e.u=t._unit,e.o=null,e.d=ge(t._toNumbers),e.s=ge(t._strings),e),le=ys(),Ts=(t,e,s)=>{let i=t._modifier,n=t._fromNumbers,o=t._toNumbers,r=t._strings,c=r[0];for(let a=0,l=o.length;a<l;a++){let u=i(I(Ke(n[a],o[a],e),s)),h=r[a+1];c+=`${h?u+h:u}`,t._numbers[a]=u}return c};var Gt=(t,e,s,i,n)=>{let o=t.parent,r=t.duration,c=t.completed,a=t.iterationDuration,l=t.iterationCount,u=t._currentIteration,h=t._loopDelay,d=t._reversed,m=t._alternate,p=t._hasChildren,f=t._delay,_=t._currentTime,T=f+a,b=e-f,g=ke(_,-f,r),k=ke(b,-f,r),L=b-_,A=k>0,z=k>=r,ce=r<=P,ue=n===ye.FORCE,Q=0,S=b,x=0;if(l>1){let ie=a+(z?0:h),re=~~(k/ie);t._currentIteration=ke(re,0,l),z&&t._currentIteration--,Q=t._currentIteration%2,S=k-re*ie||0}let D=d^(m&&Q),w=t._ease,Y=z?D?0:r:D?a-S:S;w&&(Y=a*w(Y/a)||0);let G=(o?o.backwards:b<_)?!D:!!D;if(t._currentTime=b,t._iterationTime=Y,t.backwards=G,A&&!t.began?(t.began=!0,!s&&!(o&&(G||!o.began))&&t.onBegin(t)):b<=0&&(t.began=!1),!s&&!p&&A&&t._currentIteration!==u&&t.onLoop(t),ue||n===ye.AUTO&&(e>=(o&&f>0?0:f)&&e<=T||e<=f&&g>f||e>=T&&g!==r)||Y>=T&&g!==r||Y<=f&&g>0&&!z||e<=g&&g===r&&c||z&&!c&&ce){if(A&&(t.computeDeltaTime(g),s||t.onBeforeUpdate(t)),!p){let ie=ue||(G?L*-1:L)>=E.tickThreshold,re=I(t._offset+(o?o._offset:0)+f+Y,12),y=t._head,U,pe,Ee,vt,st=0;for(;y;){let Oe=y._composition,j=y._currentTime,Ve=y._changeDuration,Pe=y._absoluteStartTime+y._changeDuration,q=y._nextRep,Ie=y._prevRep,Ce=Oe!==ee.none,M=Ie?Ie._absoluteStartTime+Ie._changeDuration:0,J=Ie&&Ie.parent!==y.parent,be=!q||q._isOverridden?Pe:q.parent===y.parent?Pe+q._delay:q._absoluteStartTime<q._absoluteUpdateStartTime?q._absoluteStartTime:q._absoluteUpdateStartTime;if((ie||(j!==Ve||re<=be||Ie&&!J&&(!q||q.parent!==y.parent))&&(j!==0||re>=y._absoluteStartTime||J&&!y._hasFromValue&&!Ie._isOverridden&&re>=M||q&&!q._isOverridden&&q.parent===y.parent&&q._currentTime!==0&&Y<q._startTime))&&(!Ie||J||Y>=y._startTime)&&(!Ce||!y._isOverridden&&(!y._isOverlapped||re<=Pe)&&(!q||q._isOverridden||re<=be)&&(!Ie||Ie._isOverridden||(J?re>=y._absoluteStartTime||!y._hasFromValue&&re>=M:re>=M+y._delay)))){let xe=y._currentTime=ke(Y-y._startTime,0,Ve),Z=y._ease(xe/y._updateDuration),ne=y._modifier,ve=y._valueType,fe=y._tweenType,Be=fe===K.OBJECT,de=ve===R.NUMBER,_e=de&&Be||Z===0||Z===1?-1:E.precision,B,te;if(de)B=te=ne(I(Ke(y._fromNumber,y._toNumber,Z),_e));else if(ve===R.UNIT)te=ne(I(Ke(y._fromNumber,y._toNumber,Z),_e)),B=`${te}${y._unit}`;else if(ve===R.COLOR){let X=y._numbers,ae=y._fromNumbers,H=y._toNumbers,we=1-Z,he=ae[0],_t=ae[1],Qe=ae[2],Nt=H[0],xt=H[1],Vt=H[2];X[0]=ne(Math.sqrt(he*he*we+Nt*Nt*Z)),X[1]=ne(Math.sqrt(_t*_t*we+xt*xt*Z)),X[2]=ne(Math.sqrt(Qe*Qe*we+Vt*Vt*Z)),X[3]=ne(Ke(ae[3],H[3],Z)),(!y._setter||i)&&(B=`rgba(${I(X[0],0)},${I(X[1],0)},${I(X[2],0)},${X[3]})`)}else ve===R.COMPLEX&&(B=Ts(y,Z,_e));if(Ce&&(y._number=te),!i&&Oe!==ee.blend){let X=y.property;U=y.target,y._setter?y._setter(U,te,y):Be?U[X]=B:fe===K.ATTRIBUTE?U.setAttribute(X,B):(pe=U.style,fe===K.TRANSFORM?(U!==Ee&&(Ee=U,vt=U[yt]),vt[X]=B,st=1):fe===K.CSS?pe[X]=B:fe===K.CSS_VAR&&pe.setProperty(X,B)),A&&(x=1)}else y._value=B}else j&&Ie&&!J&&Y<y._startTime&&(y._currentTime=0);st&&y._renderTransforms&&(pe.transform=vs(vt),st=0),y=y._next}!s&&x&&t.onRender(t)}!s&&A&&t.onUpdate(t)}return o&&ce?!s&&(o.began&&!G&&b>0&&!c||G&&b<=P&&c)&&(t.onComplete(t),t.completed=!G):A&&z?l===1/0?t._startTime+=t.duration:t._currentIteration>=l-1&&(t.paused=!0,!c&&!p&&(t.completed=!0,!s&&!(o&&(G||!o.began))&&(t.onComplete(t),t._resolve(t)))):t.completed=!1,x},ct=(t,e,s,i,n)=>{let o=t._currentIteration;if(Gt(t,e,s,i,n),t._hasChildren){let r=t,c=r.backwards,a=i?e:r._iterationTime,l=dt(),u=0,h=!0;if(!i&&r._currentIteration!==o){let d=r.iterationDuration;N(r,m=>{if(!c)!m.completed&&!m.backwards&&m._currentTime<m.iterationDuration&&Gt(m,d,s,1,ye.FORCE),m.began=!1,m.completed=!1;else{let p=m.duration,f=m._offset+m._delay,_=f+p;!s&&p<=P&&(!f||_===d)&&m.onComplete(m)}}),s||r.onLoop(r)}N(r,d=>{let m=I((a-d._offset)*d._speed,12);if(c&&m>d._delay+d.duration)return;let p=d._fps<r._fps?d.requestTick(l):n;u+=Gt(d,m,s,i,p),!d.completed&&h&&(h=!1)},c),!s&&u&&r.onRender(r),(h||c)&&r._currentTime>=r.duration&&(r.paused=!0,r.completed||(r.completed=!0,s||(r.onComplete(r),r._resolve(r))))}};var Tn={},Mt=(t,e,s)=>{if(s===K.TRANSFORM){let i=hs.get(t);return i||t}else if(s===K.CSS||s===K.ATTRIBUTE&&fs(e)&&t in e.style){let i=Tn[t];if(i)return i;{let n=t&&hi(t);return Tn[t]=n,n}}else return t},Ft=(t,e=!1)=>{if(t._hasChildren)N(t,s=>Ft(s,e),!0);else{let s=t;s.pause(),N(s,i=>{let n=i.property,o=i.target,r=i._tweenType,c=i._inlineValue,a=ot(c)||c===Ye;if(i._setter){if(!e&&!a){if(Se(c,le),le.d){let l=le.d,u=i._numbers;for(let h=0,d=l.length;h<d;h++)u[h]=l[h]}else i._number=le.n;i._setter(i.target,i._number,i)}}else if(r===K.OBJECT)!e&&!a&&(o[n]=c);else if(o[Xe])if(r===K.ATTRIBUTE)e||(a?o.removeAttribute(n):o.setAttribute(n,c));else{let l=o.style;if(r===K.TRANSFORM){let u=o[yt];a?delete u[n]:u[n]=c,i._renderTransforms&&(Object.keys(u).length?l.transform=vs(u):l.removeProperty("transform"))}else a?l.removeProperty(hi(n)):l[n]=c}o[Xe]&&s._tail===i&&s.targets.forEach(l=>{l.getAttribute&&l.getAttribute("style")===Ye&&l.removeAttribute("style")})})}return t},bn=t=>Ft(t,!0);var Bt=class{constructor(e=0){this.deltaTime=0,this._currentTime=e,this._lastTickTime=e,this._startTime=e,this._lastTime=e,this._frameDuration=nt/Ht,this._fps=Ht,this._speed=1,this._hasChildren=!1,this._head=null,this._tail=null}get fps(){return this._fps}set fps(e){let s=+e,i=s<P?P:s,n=nt/i;i>Dt.frameRate&&(Dt.frameRate=i),this._fps=i,this._frameDuration=n}get speed(){return this._speed}set speed(e){let s=+e;this._speed=s<P?P:s}requestTick(e){let s=this._frameDuration,i=e-this._lastTickTime,n=s*.25,o=n<4?n:4;return i+o<s?ye.NONE:(this._lastTickTime=i>=s?e-i%s:e,ye.AUTO)}computeDeltaTime(e){let s=e-this._lastTime;return this.deltaTime=s,this._lastTime=e,s}};var mt={animation:null,update:F},xn=t=>{let e=mt.animation;return e||(e={duration:P,computeDeltaTime:F,_offset:0,_delay:0,_head:null,_tail:null},mt.animation=e,mt.update=()=>{t.forEach(s=>{for(let i in s){let n=s[i],o=n._head;if(o){let r=o._valueType,c=r===R.COMPLEX||r===R.COLOR?ge(o._fromNumbers):null,a=o._fromNumber,l=n._tail;for(;l&&l!==o;){if(c)for(let u=0,h=l._numbers.length;u<h;u++)c[u]+=l._numbers[u];else a+=l._number;l=l._prevAdd}o._toNumber=a,o._toNumbers=c}}}),Gt(e,1,1,0,ye.FORCE)}),e};var wn=$e?requestAnimationFrame:setImmediate,ko=$e?cancelAnimationFrame:clearImmediate,yi=class extends Bt{constructor(e){super(e),this.useDefaultMainLoop=!0,this.pauseOnDocumentHidden=!0,this.defaults=Dt,this.paused=!0,this.reqId=0}update(){let e=this._currentTime=dt();if(this.requestTick(e)){this.computeDeltaTime(e);let s=this._speed,i=this._fps,n=this._head;for(;n;){let o=n._next;n.paused?(Fe(this,n),this._hasChildren=!!this._tail,n._running=!1,n.completed&&!n._cancelled&&n.cancel()):ct(n,(e-n._startTime)*n._speed*s,0,0,n._fps<i?n.requestTick(e):ye.AUTO),n=o}mt.update()}}wake(){return this.useDefaultMainLoop&&!this.reqId&&(this.requestTick(dt()),this.reqId=wn(kn)),this}pause(){if(this.reqId)return this.paused=!0,So()}resume(){if(this.paused)return this.paused=!1,N(this,e=>e.resetTime()),this.wake()}get speed(){return this._speed*(E.timeScale===1?1:nt)}set speed(e){let s=e*E.timeScale;this._speed!==s&&(this._speed=s,N(this,i=>i.speed=i._speed))}get timeUnit(){return E.timeScale===1?"ms":"s"}set timeUnit(e){let i=e==="s",n=i?.001:1;if(E.timeScale!==n){E.timeScale=n,E.tickThreshold=200*n;let o=i?.001:nt;this.defaults.duration*=o,this._speed*=o}}get precision(){return E.precision}set precision(e){E.precision=e}},Te=(()=>{let t=new yi(dt());return $e&&(ui.engine=t,W.addEventListener("visibilitychange",()=>{t.pauseOnDocumentHidden&&(W.hidden?t.pause():t.resume())})),t})(),kn=()=>{Te._head?(Te.reqId=wn(kn),Te.update()):Te.reqId=0},So=()=>(ko(Te.reqId),Te.reqId=0,Te);var bs={_rep:new WeakMap,_add:new Map},Zt=(t,e,s="_rep")=>{let i=bs[s],n=i.get(t);return n||(n={},i.set(t,n)),n[e]?n[e]:n[e]={_head:null,_tail:null}},Eo=(t,e)=>t._isOverridden||t._absoluteStartTime>e._absoluteStartTime,Jt=t=>{t._isOverlapped=1,t._isOverridden=1,t._changeDuration=P,t._currentTime=P},xs=(t,e)=>{let s=t._composition;if(s===ee.replace){let i=t._absoluteStartTime;Ne(e,t,Eo,"_prevRep","_nextRep");let n=t._prevRep;if(n){let o=n.parent,r=n._absoluteEndTime;if(t.parent.id!==o.id&&o.iterationCount>1&&r+(o.duration-o.iterationDuration)>i){Jt(n);let l=n._prevRep;for(;l&&l.parent.id===o.id;)Jt(l),l=l._prevRep}let c=t._absoluteUpdateStartTime;if(r>c){let l=n._startTime,u=r-(l+n._updateDuration),h=I(c-u-l,12);n._changeDuration=h,n._currentTime=h,n._isOverlapped=1,h<P&&Jt(n)}let a=t.parent.parent;if(!a||a!==o.parent){let l=!0;if(N(o,u=>{u._isOverlapped||(l=!1)}),l){let u=o.parent;if(u){let h=!0;N(u,d=>{d!==o&&N(d,m=>{m._isOverlapped||(h=!1)})}),h&&u.cancel()}else o.cancel()}}}}else if(s===ee.blend){let i=Zt(t.target,t.property,"_add"),n=xn(bs._add),o=i._head;o||(o={...t},o._composition=ee.replace,o._updateDuration=P,o._startTime=0,o._numbers=ge(t._fromNumbers),o._number=0,o._next=null,o._prev=null,Ne(i,o),Ne(n,o));let r=t._toNumber;if(t._fromNumber=o._fromNumber-r,t._toNumber=0,t._numbers=ge(t._fromNumbers),t._number=0,o._fromNumber=r,t._toNumbers.length){let c=ge(t._toNumbers);c.forEach((a,l)=>{t._fromNumbers[l]=o._fromNumbers[l]-a,t._toNumbers[l]=0}),o._fromNumbers=c}Ne(i,t,null,"_prevAdd","_nextAdd")}return t},Ti=t=>{let e=t._composition;if(e!==ee.none){let s=t.target,i=t.property,r=bs._rep.get(s)[i];if(Fe(r,t,"_prevRep","_nextRep"),e===ee.blend){let c=bs._add,a=c.get(s);if(!a)return;let l=a[i],u=mt.animation;Fe(l,t,"_prevAdd","_nextAdd");let h=l._head;if(h&&h===l._tail){Fe(l,h,"_prevAdd","_nextAdd"),Fe(u,h);let d=!0;for(let m in a)if(a[m]._head){d=!1;break}d&&c.delete(s)}}}return t},Sn=(t,e,s)=>{let i=!1;return N(e,n=>{let o=n.target;if(t.includes(o)){let r=n.property,c=n._tweenType,a=Mt(s,o,c);(!a||a&&a===r)&&(n.parent._tail===n&&n._tweenType===K.TRANSFORM&&n._prev&&n._prev._tweenType===K.TRANSFORM&&(n._prev._renderTransforms=1),Fe(e,n),Ti(n),i=!0)}},!0),i},Qt=(t,e,s)=>{let i=e||Te,n;if(i._hasChildren){let o=0;N(i,r=>{if(!r._hasChildren)if(n=Sn(t,r,s),n&&!r._head)r.cancel(),Fe(i,r);else{let a=r._offset+r._delay+r.duration;a>o&&(o=a)}r._head?Qt(t,r,s):r._hasChildren=!1},!0),v(i.iterationDuration)||(i.iterationDuration=o)}else n=Sn(t,i,s);n&&!i._head&&(i._hasChildren=!1,i.cancel&&i.cancel())};var En=t=>(t.paused=!0,t.began=!1,t.completed=!1,t),bi=t=>(t._cancelled&&(t._hasChildren?N(t,bi):N(t,e=>{e._composition!==ee.none&&xs(e,Zt(e.target,e.property))}),t._cancelled=0),t),Cn=0,Co=(t,e)=>t._priority>e._priority,je=class extends Bt{constructor(e={},s=null,i=0){super(0),++Cn;let{id:n,delay:o,duration:r,reversed:c,alternate:a,loop:l,loopDelay:u,autoplay:h,frameRate:d,playbackRate:m,priority:p,onComplete:f,onLoop:_,onPause:T,onBegin:b,onBeforeUpdate:g,onUpdate:k}=e;We.current&&We.current.register(this);let L=s?0:Te._lastTickTime,A=s?s.defaults:E.defaults,z=se(o)||v(o)?A.delay:+o,ce=se(r)||v(r)?1/0:+r,ue=$(l,A.loop),Q=$(u,A.loopDelay),S=ue===!0||ue===1/0||ue<0?1/0:ue+1,x=0;s?x=i:(Te.reqId||Te.requestTick(dt()),x=(Te._lastTickTime-Te._startTime)*E.timeScale),this.id=v(n)?Cn:n,this.parent=s,this.duration=Ct((ce+Q)*S-Q)||P,this.backwards=!1,this.paused=!0,this.began=!1,this.completed=!1,this.onBegin=b||A.onBegin,this.onBeforeUpdate=g||A.onBeforeUpdate,this.onUpdate=k||A.onUpdate,this.onLoop=_||A.onLoop,this.onPause=T||A.onPause,this.onComplete=f||A.onComplete,this.iterationDuration=ce,this.iterationCount=S,this._autoplay=s?!1:$(h,A.autoplay),this._offset=x,this._delay=z,this._loopDelay=Q,this._iterationTime=0,this._currentIteration=0,this._resolve=F,this._running=!1,this._reversed=+$(c,A.reversed),this._reverse=this._reversed,this._cancelled=0,this._alternate=$(a,A.alternate),this._prev=null,this._next=null,this._lastTickTime=L,this._startTime=L,this._lastTime=L,this._fps=$(d,A.frameRate),this._speed=$(m,A.playbackRate),this._priority=+$(p,1)}get cancelled(){return!!this._cancelled}set cancelled(e){e?this.cancel():this.reset(!0).play()}get currentTime(){return ke(I(this._currentTime,E.precision),-this._delay,this.duration)}set currentTime(e){let s=this.paused;this.pause().seek(+e),s||this.resume()}get iterationCurrentTime(){return ke(I(this._iterationTime,E.precision),0,this.iterationDuration)}set iterationCurrentTime(e){this.currentTime=this.iterationDuration*this._currentIteration+e}get progress(){return ke(I(this._currentTime/this.duration,10),0,1)}set progress(e){this.currentTime=this.duration*e}get iterationProgress(){return ke(I(this._iterationTime/this.iterationDuration,10),0,1)}set iterationProgress(e){let s=this.iterationDuration;this.currentTime=s*this._currentIteration+s*e}get currentIteration(){return this._currentIteration}set currentIteration(e){this.currentTime=this.iterationDuration*ke(+e,0,this.iterationCount-1)}get reversed(){return!!this._reversed}set reversed(e){e?this.reverse():this.play()}get speed(){return super.speed}set speed(e){super.speed=e,this.resetTime()}reset(e=!1){return bi(this),this._reversed&&!this._reverse&&(this.reversed=!1),this._iterationTime=this.iterationDuration,ct(this,0,1,~~e,ye.FORCE),En(this),this._hasChildren&&N(this,En),this}init(e=!1){this.fps=this._fps,this.speed=this._speed,!e&&this._hasChildren&&ct(this,this.duration,1,~~e,ye.FORCE),this.reset(e);let s=this._autoplay;return s===!0?this.resume():s&&!v(s.linked)&&s.link(this),this}resetTime(){let e=1/(this._speed*Te._speed);return this._startTime=dt()-(this._currentTime+this._delay)*e,this}pause(){return this.paused?this:(this.paused=!0,this.onPause(this),this)}resume(){return this.paused?(this.paused=!1,this.duration<=P&&!this._hasChildren?ct(this,P,0,0,ye.FORCE):(this._running||(Ne(Te,this,Co),Te._hasChildren=!0,this._running=!0),this.resetTime(),this._startTime-=12,Te.wake()),this):this}restart(){return this.reset().resume()}seek(e,s=0,i=0){bi(this),this.completed=!1;let n=this.paused;return this.paused=!0,ct(this,e+this._delay,~~s,~~i,ye.AUTO),n?this:this.resume()}alternate(){let e=this._reversed,s=this.iterationCount,i=this.iterationDuration,n=s===1/0?Et(qt/i):s;return this._reversed=+(this._alternate&&!(n%2)?e:!e),s===1/0?this.iterationProgress=this._reversed?1-this.iterationProgress:this.iterationProgress:this.seek(i*n-this._currentTime),this.resetTime(),this}play(){return this._reversed&&this.alternate(),this.resume()}reverse(){return this._reversed||this.alternate(),this.resume()}cancel(){return this._hasChildren?N(this,e=>e.cancel(),!0):N(this,Ti),this._cancelled=1,this.pause()}stretch(e){let s=this.duration,i=ht(e);if(s===i)return this;let n=e/s,o=e<=P;return this.duration=o?P:i,this.iterationDuration=o?P:ht(this.iterationDuration*n),this._offset*=n,this._delay*=n,this._loopDelay*=n,this}revert(){ct(this,0,1,0,ye.AUTO);let e=this._autoplay;return e&&e.linked&&e.linked===this&&e.revert(),this.cancel()}complete(e=0){return this.seek(this.duration,e).cancel()}then(e=F){let s=this.then,i=()=>{this.then=null,e(this),this.then=s,this._resolve=F};return new Promise(n=>(this._resolve=()=>n(i()),this.completed&&this._resolve(),this))}};function ws(t){let e=oe(t)?We.root.querySelectorAll(t):t;if(e instanceof NodeList||e instanceof HTMLCollection)return e}function pt(t){if(ot(t))return[];if(!$e)return Ae(t)&&t.flat(1/0)||[t];if(Ae(t)){let s=t.flat(1/0),i=[];for(let n=0,o=s.length;n<o;n++){let r=s[n];if(!ot(r)){let c=ws(r);if(c)for(let a=0,l=c.length;a<l;a++){let u=c[a];if(!ot(u)){let h=!1;for(let d=0,m=i.length;d<m;d++)if(i[d]===u){h=!0;break}h||i.push(u)}}else{let a=!1;for(let l=0,u=i.length;l<u;l++)if(i[l]===r){a=!0;break}a||i.push(r)}}}return i}let e=ws(t);return e?Array.from(e):[t]}function Tt(t){let e=pt(t),s=e.length;for(let i=0;i<s;i++){let n=e[i];if(!n[li]){n[li]=!0;let o=fs(n);(n.nodeType||o)&&(n[Xe]=!0,n[ds]=o,n[yt]={})}}return e}var xi={deg:1,rad:180/Yt,turn:360},An={},Rt=(t,e,s,i=!1)=>{let n=e.u,o=e.n;if(e.t===R.UNIT&&n===s)return e;let r=o+n+s,c=An[r];if(!v(c)&&!i)e.n=c;else{let a;if(n in xi)a=o*xi[n]/xi[s];else{let u=t.cloneNode(),h=t.parentNode,d=h&&h!==W?h:W.body;d.appendChild(u);let m=u.style;m.width=100+n;let p=u.offsetWidth||100;m.width=100+s;let f=u.offsetWidth||100,_=p/f;d.removeChild(u),a=_*o}e.n=a,An[r]=a}return e.t,R.UNIT,e.u=s,e};var Ge=t=>t;var es=(t=1.68)=>e=>St(e,+t),ki={in:t=>e=>t(e),out:t=>e=>1-t(1-e),inOut:t=>e=>e<.5?t(e*2)/2:1-t(e*-2+2)/2,outIn:t=>e=>e<.5?(1-t(1-e*2))/2:(t(e*2-1)+1)/2},Ao=Yt/2,Rn=Yt*2,Pn={[Ye]:es,Quad:es(2),Cubic:es(3),Quart:es(4),Quint:es(5),Sine:t=>1-mn(t*Ao),Circ:t=>1-Xt(1-t*t),Expo:t=>t?St(2,10*t-10):0,Bounce:t=>{let e,s=4;for(;t<((e=St(2,--s))-1)/11;);return 1/St(4,3-s)-7.5625*St((e*3-2)/22-t,2)},Back:(t=1.7)=>e=>(+t+1)*e*e*e-+t*e*e,Elastic:(t=1,e=.3)=>{let s=ke(+t,1,10),i=ke(+e,P,2),n=i/Rn*pn(1/s),o=Rn/i;return r=>r===0||r===1?r:-s*St(2,-10*(1-r))*hn((1-r-n)*o)}},wi=(()=>{let t={linear:Ge,none:Ge};for(let e in ki)for(let s in Pn){let i=Pn[s],n=ki[e];t[e+s]=s===Ye||s==="Back"||s==="Elastic"?(o,r)=>n(i(o,r)):n(i)}return t})(),ks={linear:Ge,none:Ge},Ro=t=>{if(ks[t])return ks[t];if(t.indexOf("(")<=-1){let s=ki[t]||t.includes("Back")||t.includes("Elastic")?wi[t]():wi[t];return s?ks[t]=s:Ge}else{let e=t.slice(0,-1).split("("),s=wi[e[0]];return s?ks[t]=s(...e[1].split(",")):Ge}},In=["steps(","irregular(","linear(","cubicBezier("],et=t=>{if(oe(t)){for(let s=0,i=In.length;s<i;s++)if(Me(t,In[s]))return console.warn(`String syntax for \`ease: "${t}"\` has been removed from the core and replaced by importing and passing the easing function directly: \`ease: ${t}\``),Ge}return se(t)?t:oe(t)?Ro(t):Ge};var C=ys(),O=ys(),$t={},Ss={func:null},Es={func:null},Cs=[null],Wt=[null,null],As={to:null},Po=0,Ln=0,bt,ut,Io=(t,e)=>{let s={};if(Ae(t)){let i=[].concat(...t.map(n=>Object.keys(n))).filter(kt);for(let n=0,o=i.length;n<o;n++){let r=i[n],c=t.map(a=>{let l={};for(let u in a){let h=a[u];kt(u)?u===r&&(l.to=h):l[u]=h}return l});s[r]=c}}else{let i=$(e.duration,E.defaults.duration);Object.keys(t).map(o=>({o:parseFloat(o)/100,p:t[o]})).sort((o,r)=>o.o-r.o).forEach(o=>{let r=o.o,c=o.p;for(let a in c)if(kt(a)){let l=s[a];l||(l=s[a]=[]);let u=r*i,h=l.length,d=l[h-1],m={to:c[a]},p=0;for(let f=0;f<h;f++)p+=l[f].duration;h===1&&(m.from=d.to),c.ease&&(m.ease=c.ease),m.duration=u-(h?p:0),l.push(m)}return o});for(let o in s){let r=s[o],c;for(let a=0,l=r.length;a<l;a++){let u=r[a],h=u.ease;u.ease=c||void 0,c=h}r[0].duration||r.shift()}}return s},tt=class extends je{constructor(e,s,i,n,o=!1,r=0,c){super(s,i,n),this._head,this._tail,++Ln;let a=Tt(e),l=a.length,u=s.keyframes,h=u?At(Io(u,s),s):s,{id:d,delay:m,duration:p,ease:f,playbackEase:_,modifier:T,composition:b,onRender:g}=h,k=i?i.defaults:E.defaults,L=$(f,k.ease),A=$(_,k.playbackEase),z=A?et(A):null,ce=!v(L.ease),ue=ce?L.ease:$(f,z?"linear":k.ease),Q=ce?L.settlingDuration:$(p,k.duration),S=$(m,k.delay),x=T||k.modifier,D=v(b)&&l>=nt?ee.none:v(b)?k.composition:b,w=this._offset+(i?i._offset:0);ce&&(L.parent=this);let Y=NaN,G=NaN,ie=0,re=0;for(let y=0;y<l;y++){let U=a[y],pe=r||y,Ee=c||a,vt=NaN,st=NaN;for(let Oe in h)if(kt(Oe)){let j=Kt(U,Oe),Ve=_s(U,Oe),Pe=Mt(Oe,U,j),q=h[Oe],Ie=Ae(q);if(o&&!Ie&&(Wt[0]=q,Wt[1]=q,q=Wt),Ie){let Z=q.length,ne=!Le(q[0]);Z===2&&ne?(As.to=q,Cs[0]=As,bt=Cs):Z>2&&ne?(bt=[],q.forEach((ve,fe)=>{fe?fe===1?(Wt[1]=ve,bt.push(Wt)):bt.push(ve):Wt[0]=ve})):bt=q}else Cs[0]=q,bt=Cs;let Ce=null,M=null,J=NaN,be=0,xe=0;for(let Z=bt.length;xe<Z;xe++){let ne=bt[xe];Le(ne)?ut=ne:(As.to=ne,ut=As),Ss.func=null,Es.func=null;let ve=rt($(ut.composition,D),U,pe,Ee,null,null),fe=me(ve)?ve:ee[ve];!Ce&&fe!==ee.none&&(Ce=Zt(U,Pe));let Be=Ce?Ce._tail:null,de=i&&Be&&Be.parent.parent===i?Be:M,_e=rt(ut.to,U,pe,Ee,Ss,de),B;Le(_e)&&!v(_e.to)?(ut=_e,B=_e.to):B=_e;let te=rt(ut.from,U,pe,Ee,Es,de),X=ut.ease||ue,ae=rt(X,U,pe,Ee,null,de),H=se(ae)||oe(ae)?ae:X,we=!v(H)&&!v(H.ease),he=we?H.ease:H,_t=we?H.settlingDuration:rt($(ut.duration,Z>1?rt(Q,U,pe,Ee,null,de)/Z:Q),U,pe,Ee,null,de),Qe=rt($(ut.delay,xe?0:S),U,pe,Ee,null,de),Nt=ut.modifier||x,xt=!v(te),Vt=!v(B),Ut=Ae(B),fo=Ut||xt&&Vt,go=M?be:0,ni=M?be+Qe:Qe,oi=I(w+ni,12),vo=I(w+go,12);!re&&(xt||Ut)&&(re=1);let ze=M;if(fe!==ee.none){let V=Ce._head;for(;V&&V._absoluteStartTime<=oi;)if(V._isOverridden||(ze=V),V=V._nextRep,V&&V._absoluteStartTime>=oi)for(;V;)Jt(V),V=V._nextRep}if(fo){Se(Ut?rt(B[0],U,pe,Ee,Es,de):te,C),Se(Ut?rt(B[1],U,pe,Ee,Ss,de):B,O);let V=at(U,Pe,j,$t);C.t===R.NUMBER&&(ze?ze._valueType===R.UNIT&&(C.t=R.UNIT,C.u=ze._unit):(Se(V,le),le.t===R.UNIT&&(C.t=R.UNIT,C.u=le.u)))}else Vt?Se(B,O):M?_i(M,O):Se(i&&ze&&ze.parent.parent===i?ze._value:at(U,Pe,j,$t),O),xt?Se(te,C):M?_i(M,C):Se(i&&ze&&ze.parent.parent===i?ze._value:at(U,Pe,j,$t),C);if(C.o&&(C.n=lt(ze?ze._toNumber:Se(at(U,Pe,j,$t),le).n,C.n,C.o)),O.o&&(O.n=lt(C.n,O.n,O.o)),C.t!==O.t){if(C.t===R.COMPLEX||O.t===R.COMPLEX){let V=C.t===R.COMPLEX?C:O,De=C.t===R.COMPLEX?O:C;De.t=R.COMPLEX,De.s=ge(V.s),De.d=V.d.map(()=>De.n)}else if(C.t===R.UNIT||O.t===R.UNIT){let V=C.t===R.UNIT?C:O,De=C.t===R.UNIT?O:C;De.t=R.UNIT,De.u=V.u}else if(C.t===R.COLOR||O.t===R.COLOR){let V=C.t===R.COLOR?C:O,De=C.t===R.COLOR?O:C;De.t=R.COLOR,De.d=V.d.map(()=>0)}}if(C.u!==O.u){let V=O.u?C:O;V=Rt(U,V,O.u?O.u:C.u,!1)}if(O.d&&C.d&&O.d.length!==C.d.length){let V=C.d.length>O.d.length?C:O,De=V===C?O:C;De.d=V.d.map((tr,Ki)=>v(De.d[Ki])?0:De.d[Ki]),De.s=ge(V.s)}let ri=I(+_t||P,12),zi=$t[Pe];ot(zi)||($t[Pe]=null);let _o=Ve?Ve.set:null;be=I(ni+ri,12);let us=C.d,Xi=O.d,Yi=O.s,Ue={parent:this,id:Po++,property:Pe,target:U,_value:null,_toFunc:Ss.func,_fromFunc:Es.func,_ease:et(he),_fromNumbers:us?ge(us):zt,_toNumbers:Xi?ge(Xi):zt,_strings:Yi?ge(Yi):zt,_fromNumber:C.n,_toNumber:O.n,_numbers:us?ge(us):zt,_number:C.n,_unit:O.u,_modifier:Nt,_currentTime:0,_startTime:ni,_delay:+Qe,_updateDuration:ri,_changeDuration:ri,_absoluteStartTime:oi,_absoluteUpdateStartTime:vo,_absoluteEndTime:I(w+be,12),_hasFromValue:xt||Ut?1:0,_tweenType:j,_setter:_o,_valueType:O.t,_composition:fe,_isOverlapped:0,_isOverridden:0,_renderTransforms:0,_inlineValue:zi,_prevRep:null,_nextRep:null,_prevAdd:null,_nextAdd:null,_prev:null,_next:null};fe!==ee.none&&xs(Ue,Ce);let ai=Ue._valueType;if(ai===R.COMPLEX)Ue._value=Ts(Ue,1,-1);else if(ai===R.UNIT)Ue._value=`${Nt(Ue._toNumber)}${Ue._unit}`;else if(ai===R.COLOR){let V=O.d;Ue._value=`rgba(${I(V[0],0)},${I(V[1],0)},${I(V[2],0)},${V[3]})`}else Ue._value=Nt(Ue._toNumber);isNaN(J)&&(J=Ue._startTime),M=Ue,ie++,Ne(this,Ue)}(isNaN(G)||J<G)&&(G=J),(isNaN(Y)||be>Y)&&(Y=be),j===K.TRANSFORM&&(vt=ie-xe,st=ie)}if(!isNaN(vt)){let Oe=0;N(this,j=>{Oe>=vt&&Oe<st&&(j._renderTransforms=1,j._composition===ee.blend&&N(mt.animation,Ve=>{Ve.id===j.id&&(Ve._renderTransforms=1)})),Oe++})}}l||console.warn("No target found. Make sure the element you're trying to animate is accessible before creating your animation."),G?(N(this,y=>{y._startTime-y._delay||(y._delay-=G),y._startTime-=G}),Y-=G):G=0,Y||(Y=P,this.iterationCount=0),this.targets=a,this.id=v(d)?Ln:d,this.duration=Y===P?P:Ct((Y+this._loopDelay)*this.iterationCount-this._loopDelay)||P,this.onRender=g||k.onRender,this._ease=z,this._delay=G,this.iterationDuration=Y,!this._autoplay&&re&&this.onRender(this)}stretch(e){let s=this.duration;if(s===ht(e))return this;let i=e/s;return N(this,n=>{n._updateDuration=ht(n._updateDuration*i),n._changeDuration=ht(n._changeDuration*i),n._currentTime*=i,n._delay*=i,n._startTime*=i,n._absoluteStartTime*=i,n._absoluteUpdateStartTime*=i,n._absoluteEndTime*=i}),super.stretch(e)}refresh(){return N(this,e=>{let s=e._toFunc,i=e._fromFunc;(s||i)&&(i?(Se(i(),C),C.u!==e._unit&&e.target[Xe]&&Rt(e.target,C,e._unit,!0),e._fromNumbers=ge(C.d),e._fromNumber=C.n):s&&(Se(at(e.target,e.property,e._tweenType),le),e._fromNumbers=ge(le.d),e._fromNumber=le.n),s&&(Se(s(),O),e._toNumbers=ge(O.d),e._strings=ge(O.s),e._toNumber=O.o?lt(e._fromNumber,O.n,O.o):O.n))}),this.duration===P&&this.restart(),this}revert(){return super.revert(),Ft(this)}then(e){return super.then(e)}},Rs=(t,e)=>E.editor?E.editor.addAnimation(t,e):new tt(t,e,null,0,!1).init();var Lo=(t,e)=>{if(Me(e,"<")){let s=e[1]==="<",i=t._tail,n=i?i._offset+i._delay:0;return s?n:n+i.duration}},Pt=(t,e)=>{let s=t.iterationDuration;if(s===P&&(s=0),v(e))return s;if(me(+e))return+e;let i=e,n=t?t.labels:null,o=!ot(n),r=Lo(t,i),c=!v(r),a=ps.exec(i);if(a){let l=a[0],u=i.split(l),h=o&&u[0]?n[u[0]]:s,d=c?r:o?h:s,m=+u[1];return lt(d,m,l[0])}else return c?r:o?v(n[i])?s:n[i]:s};function No(t){return Ct((t.iterationDuration+t._loopDelay)*t.iterationCount-t._loopDelay)||P}function Si(t,e,s,i,n,o){let c=me(t.duration)&&t.duration<=P?s-P:s;e.composition&&ct(e,c,1,1,ye.AUTO);let a=i?new tt(i,t,e,c,!1,n,o):new je(t,e,c);return e.composition&&a.init(!0),Ne(e,a),N(e,l=>{let h=l._offset+l._delay+l.duration;h>e.iterationDuration&&(e.iterationDuration=h)}),e.duration=No(e),e}var Nn=0,Ps=class extends je{constructor(e={}){super(e,null,0),++Nn,this.id=v(e.id)?Nn:e.id,this.duration=0,this.labels={};let s=e.defaults,i=E.defaults;this.defaults=s?At(s,i):i,this.composition=$(e.composition,!0),this.onRender=e.onRender||i.onRender;let n=$(e.playbackEase,i.playbackEase);this._ease=n?et(n):null,this.iterationDuration=0}add(e,s,i){let n=Le(s),o=Le(e);if(n||o){if(this._hasChildren=!0,n){let r=s,c=E.editor&&E.editor.addTimelineChild,a=i&&i.type==="Stagger"&&E.editor,l=se(i)?i:null;if(l||a){let u=pt(e),h=this.duration,d=this.iterationDuration,m=r.id,p=0,f=u.length,_=c?c(e,r,this.id,i,f):null,T=l||E.editor.resolveStagger(i.defaultValue);u.forEach(b=>{let g={..._||r};this.duration=h,this.iterationDuration=d,v(m)||(g.id=m+"-"+p);let k=Pt(this,T(b,p,u,null,this));Si(g,this,k,b,p,u),p++})}else{let u=c?c(e,r,this.id,i):r,h=i&&i.type?i.defaultValue:i;Si(u,this,Pt(this,h),e)}}else Si(e,this,Pt(this,s));return this.composition&&this.init(!0),this}}sync(e,s){if(v(e)||e&&v(e.pause))return this;e.pause();let i=+(e.effect?e.effect.getTiming().duration:e.duration);!v(e)&&!v(e.persist)&&(e.persist=!0);let n=E.editor,o=n&&n.addTimelineChild;n&&n.addTimelineSync&&(s=n.addTimelineSync(e,s,this.id),n.addTimelineChild=null);let r=this.add(e,{currentTime:[0,i],duration:i,delay:0,ease:"linear",playbackEase:"linear"},s);return n&&(n.addTimelineChild=o),r}set(e,s,i){return v(s)?this:(s.duration=P,s.composition=ee.replace,this.add(e,s,i))}call(e,s){return v(e)||e&&!se(e)?this:(E.editor&&E.editor.addTimelineCall&&(s=E.editor.addTimelineCall(e,s,this.id)),this.add({duration:0,delay:0,onComplete:()=>e(this)},s))}label(e,s){return v(e)||e&&!oe(e)?this:(E.editor&&E.editor.addTimelineLabel&&(s=E.editor.addTimelineLabel(e,s,this.id)),this.labels[e]=Pt(this,s),this)}remove(e,s){return Qt(pt(e),this,s),this}stretch(e){let s=this.duration;if(s===ht(e))return this;let i=e/s,n=this.labels;N(this,o=>o.stretch(o.duration*i));for(let o in n)n[o]*=i;return super.stretch(e)}refresh(){return N(this,e=>{e.refresh&&e.refresh()}),this}revert(){return super.revert(),N(this,e=>e.revert,!0),Ft(this)}then(e){return super.then(e)}},Ei=t=>E.editor?E.editor.addTimeline(t):new Ps(t).init();var Is=class{constructor(e,s){We.current&&We.current.register(this);let i=()=>{this.callbacks.completed&&this.callbacks.reset(),this.callbacks.play()},n=()=>{if(this.callbacks.completed)return;let a=!0;for(let l in this.animations)if(!this.animations[l].paused&&a){a=!1;break}a&&this.callbacks.complete()},o={onBegin:i,onComplete:n,onPause:n},r={v:1,autoplay:!1},c={};if(this.targets=[],this.animations={},this.callbacks=null,!(v(e)||v(s))){for(let a in s){let l=s[a];kt(a)?c[a]=l:Me(a,"on")?r[a]=l:o[a]=l}this.callbacks=new tt({v:0},r);for(let a in c){let l=c[a],u=Le(l),h={},d="+=0";if(u){let f=l.unit;oe(f)&&(d+=f)}else h.duration=l;h[a]=u?At({to:d},l):d;let m=At(o,h);m.composition=ee.replace,m.autoplay=!1;let p=this.animations[a]=new tt(e,m,null,0,!1).init();this.targets.length||this.targets.push(...p.targets),this[a]=(f,_,T)=>{let b=p._head;if(v(f)&&b){let g=b._numbers;return g&&g.length?g:b._modifier(b._number)}else return N(p,g=>{if(Ae(f))for(let k=0,L=f.length;k<L;k++)v(g._numbers[k])||(g._fromNumbers[k]=g._modifier(g._numbers[k]),g._toNumbers[k]=f[k]);else g._fromNumber=g._modifier(g._number),g._toNumber=f;v(T)||(g._ease=et(T)),g._currentTime=0}),v(_)||p.stretch(_),p.reset(!0).resume(),this}}}}revert(){for(let e in this.animations)this[e]=F,this.animations[e].revert();return this.animations={},this.targets.length=0,this.callbacks&&this.callbacks.revert(),this}},ts=(t,e)=>new Is(t,e);var Ci={};Gi(Ci,{clamp:()=>ke,damp:()=>jo,degToRad:()=>$o,lerp:()=>Ke,mapRange:()=>Bo,padEnd:()=>Mo,padStart:()=>Do,radToDeg:()=>Wo,round:()=>I,roundPad:()=>Oo,snap:()=>fn,wrap:()=>Fo});var Oo=(t,e)=>(+t).toFixed(e),Do=(t,e,s)=>`${t}`.padStart(e,s),Mo=(t,e,s)=>`${t}`.padEnd(e,s),Fo=(t,e,s)=>((t-e)%(s-e)+(s-e))%(s-e)+e,Bo=(t,e,s,i,n)=>i+(t-e)/(s-e)*(n-i),$o=t=>t*Math.PI/180,Wo=t=>t*180/Math.PI,jo=(t,e,s,i)=>i?i===1?e:Ke(t,e,1-Math.exp(-i*s*.1)):t;var On={_head:null,_tail:null},Dn=(t,e,s)=>{let i=On._head,n;for(;i;){let o=i._next,r=i.$el===t,c=!e||i.property===e,a=!s||i.parent===s;if(r&&c&&a){n=i.animation;try{n.commitStyles()}catch{}n.cancel(),Fe(On,i);let l=i.parent;l&&(l._completed++,l.animations.length===l._completed&&(l.completed=!0,l.paused=!0,l.muteCallbacks||(l.onComplete(l),l._resolve(l))))}i=o}return n};function ss(t,e,s){let i=Tt(t);if(!i.length)return;let[n]=i,o=Kt(n,e),r=Mt(e,n,o),c=at(n,r);if(v(s))return c;if(Se(c,le),le.t===R.NUMBER||le.t===R.UNIT){if(s===!1)return le.n;{let a=Rt(n,le,s,!1);return`${I(a.n,E.precision)}${a.u}`}}}var is=(t,e)=>{if(!v(e))return E.editor&&E.editor.addSet?E.editor.addSet(t,e):(e.duration=P,e.composition=$(e.composition,ee.none),new tt(t,e,null,0,!0).resume())},Mn=(t,e,s)=>{let i=pt(t);for(let n=0,o=i.length;n<o;n++)Dn(i[n],s,e&&e.controlAnimation&&e);return Qt(i,e,s),i};var Ls=(t=F)=>new je({duration:1*E.timeScale,onComplete:t},null,0).resume(),Ns=t=>{let e;return((...s)=>{let i,n,o,r,c;e&&(i=e.currentIteration,n=e.iterationProgress,o=e.reversed,r=e._alternate,c=e._startTime,e.revert());let a=t(...s);return a&&!se(a)&&a.revert&&(e=a),v(n)||(e.currentIteration=i,e.iterationProgress=(r&&i%2?!o:o)?1-n:n,e._startTime=c),a||F})};var Vo=()=>{let t=W.createElement("div");W.body.appendChild(t),t.style.height="100lvh";let e=t.offsetHeight;return W.body.removeChild(t),e},Os=(t,e)=>t&&se(t)?t(e):t,Ms=new Map,Ai=class{constructor(e){this.element=e,this.useWin=this.element===W.body,this.winWidth=0,this.winHeight=0,this.width=0,this.height=0,this.left=0,this.top=0,this.scale=1,this.zIndex=0,this.scrollX=0,this.scrollY=0,this.prevScrollX=0,this.prevScrollY=0,this.scrollWidth=0,this.scrollHeight=0,this.velocity=0,this.backwardX=!1,this.backwardY=!1,this.scrollTicker=new je({autoplay:!1,onBegin:()=>this.dataTimer.resume(),onUpdate:()=>{let s=this.backwardX||this.backwardY;N(this,i=>i.handleScroll(),s)},onComplete:()=>this.dataTimer.pause()}).init(),this.dataTimer=new je({autoplay:!1,frameRate:30,onUpdate:s=>{let i=s.deltaTime,n=this.prevScrollX,o=this.prevScrollY,r=this.scrollX,c=this.scrollY,a=n-r,l=o-c;this.prevScrollX=r,this.prevScrollY=c,a&&(this.backwardX=n>r),l&&(this.backwardY=o>c),this.velocity=I(i>0?Math.sqrt(a*a+l*l)/i:0,5)}}).init(),this.resizeTicker=new je({autoplay:!1,duration:250*E.timeScale,onComplete:()=>{this.updateWindowBounds(),this.refreshScrollObservers(),this.handleScroll()}}).init(),this.wakeTicker=new je({autoplay:!1,duration:500*E.timeScale,onBegin:()=>{this.scrollTicker.resume()},onComplete:()=>{this.scrollTicker.pause()}}).init(),this._head=null,this._tail=null,this.updateScrollCoords(),this.updateWindowBounds(),this.updateBounds(),this.refreshScrollObservers(),this.handleScroll(),this.resizeObserver=new ResizeObserver(()=>this.resizeTicker.restart()),this.resizeObserver.observe(this.element),(this.useWin?it:this.element).addEventListener("scroll",this,!1)}updateScrollCoords(){let e=this.useWin,s=this.element;this.scrollX=I(e?it.scrollX:s.scrollLeft,0),this.scrollY=I(e?it.scrollY:s.scrollTop,0)}updateWindowBounds(){this.winWidth=it.innerWidth,this.winHeight=Vo()}updateBounds(){let e=getComputedStyle(this.element),s=this.element;this.scrollWidth=s.scrollWidth+parseFloat(e.marginLeft)+parseFloat(e.marginRight),this.scrollHeight=s.scrollHeight+parseFloat(e.marginTop)+parseFloat(e.marginBottom),this.updateWindowBounds();let i,n;if(this.useWin)i=this.winWidth,n=this.winHeight;else{let o=s.getBoundingClientRect();i=s.clientWidth,n=s.clientHeight,this.top=o.top,this.left=o.left,this.scale=o.width?i/o.width:o.height?n/o.height:1}this.width=i,this.height=n}refreshScrollObservers(){N(this,e=>{e.ready&&e._debug&&e.removeDebug()}),this.updateBounds(),N(this,e=>{e.ready&&(e.refresh(),e.onResize(e),e._debug&&e.debug())})}refresh(){this.updateWindowBounds(),this.updateBounds(),this.refreshScrollObservers(),this.handleScroll()}handleScroll(){this.updateScrollCoords(),this.wakeTicker.restart()}handleEvent(e){e.type==="scroll"&&this.handleScroll()}revert(){this.scrollTicker.cancel(),this.dataTimer.cancel(),this.resizeTicker.cancel(),this.wakeTicker.cancel(),this.resizeObserver.disconnect(),(this.useWin?it:this.element).removeEventListener("scroll",this),Ms.delete(this.element)}},Uo=t=>{let e=t?pt(t)[0]||W.body:W.body,s=Ms.get(e);return s||(s=new Ai(e),Ms.set(e,s)),s},ns=(t,e,s,i,n)=>{let o=e==="min",r=e==="max",c=e==="top"||e==="left"||e==="start"||o?0:e==="bottom"||e==="right"||e==="end"||r?"100%":e==="center"?"50%":e,{n:a,u:l}=Se(c,le),u=a;return l==="%"?u=a/100*s:l&&(u=Rt(t,le,"px",!0).n),r&&i<0&&(u+=i),o&&n>0&&(u+=n),u},Ds=(t,e,s,i,n)=>{let o;if(oe(e)){let r=ps.exec(e);if(r){let c=r[0],a=c[0],l=e.split(c),u=l[0]==="min",h=l[0]==="max",d=ns(t,l[0],s,i,n),m=ns(t,l[1],s,i,n);if(u){let p=lt(ns(t,"min",s),m,a);o=p<d?d:p}else if(h){let p=lt(ns(t,"max",s),m,a);o=p>d?d:p}else o=lt(d,m,a)}else o=ns(t,e,s,i,n)}else o=e;return I(o,0)},Fn=t=>{let e,s=t.targets;for(let i=0,n=s.length;i<n;i++){let o=s[i];if(o[Xe]){e=o;break}}return e},qo=0,Bn=["#FF4B4B","#FF971B","#FFC730","#F9F640","#7AFF5A","#18FF74","#17E09B","#3CFFEC","#05DBE9","#33B3F1","#638CF9","#C563FE","#FF4FCF","#F93F8A"],Fs=class{constructor(e={}){We.current&&We.current.register(this);let s=$(e.sync,"play pause"),i=s?et(s):null,n=s&&(s==="linear"||s===Ge),o=s&&!(i===Ge&&!n),r=s&&(me(s)||s===!0||n),c=s&&oe(s)&&!o&&!r,a=c?s.split(" ").map(u=>()=>{let h=this.linked;return h&&h[u]?h[u]():null}):null,l=c&&a.length>2;this.index=qo++,this.id=v(e.id)?this.index:e.id,this.container=Uo(e.container),this.target=null,this.linked=null,this.repeat=null,this.horizontal=null,this.enter=null,this.leave=null,this.sync=o||r||!!a,this.syncEase=o?i:null,this.syncSmooth=r?s===!0||n?1:s:null,this.onSyncEnter=a&&!l&&a[0]?a[0]:F,this.onSyncLeave=a&&!l&&a[1]?a[1]:F,this.onSyncEnterForward=a&&l&&a[0]?a[0]:F,this.onSyncLeaveForward=a&&l&&a[1]?a[1]:F,this.onSyncEnterBackward=a&&l&&a[2]?a[2]:F,this.onSyncLeaveBackward=a&&l&&a[3]?a[3]:F,this.onEnter=e.onEnter||F,this.onLeave=e.onLeave||F,this.onEnterForward=e.onEnterForward||F,this.onLeaveForward=e.onLeaveForward||F,this.onEnterBackward=e.onEnterBackward||F,this.onLeaveBackward=e.onLeaveBackward||F,this.onUpdate=e.onUpdate||F,this.onResize=e.onResize||F,this.onSyncComplete=e.onSyncComplete||F,this.reverted=!1,this.ready=!1,this.completed=!1,this.began=!1,this.isInView=!1,this.forceEnter=!1,this.hasEntered=!1,this.offset=0,this.offsetStart=0,this.offsetEnd=0,this.distance=0,this.prevProgress=0,this.thresholds=["start","end","end","start"],this.coords=[0,0,0,0],this.debugStyles=null,this.$debug=null,this._params=e,this._debug=$(e.debug,!1),this._next=null,this._prev=null,Ne(this.container,this),Ls(()=>{if(!this.reverted){if(!this.target){let u=pt(e.target)[0];this.target=u||W.body,this.refresh()}this._debug&&this.debug()}})}link(e){if(e&&(e.pause(),this.linked=e,!v(e)&&!v(e.persist)&&(e.persist=!0),!this._params.target)){let s;v(e.targets)?N(e,i=>{i.targets&&!s&&(s=Fn(i))}):s=Fn(e),this.target=s||W.body,this.refresh()}return this}get velocity(){return this.container.velocity}get backward(){return this.horizontal?this.container.backwardX:this.container.backwardY}get scroll(){return this.horizontal?this.container.scrollX:this.container.scrollY}get progress(){let e=(this.scroll-this.offsetStart)/this.distance;return e===1/0||isNaN(e)?0:I(ke(e,0,1),6)}refresh(){this.ready=!0,this.reverted=!1;let e=this._params;return this.repeat=$(Os(e.repeat,this),!0),this.horizontal=$(Os(e.axis,this),"y")==="x",this.enter=$(Os(e.enter,this),"end start"),this.leave=$(Os(e.leave,this),"start end"),this.updateBounds(),this.handleScroll(),this}removeDebug(){return this.$debug&&(this.$debug.parentNode.removeChild(this.$debug),this.$debug=null),this.debugStyles&&(this.debugStyles.revert(),this.$debug=null),this}debug(){this.removeDebug();let e=this.container,s=this.horizontal,i=e.element.querySelector(":scope > .animejs-onscroll-debug"),n=W.createElement("div"),o=W.createElement("div"),r=W.createElement("div"),c=Bn[this.index%Bn.length],a=e.useWin,l=a?e.winWidth:e.width,u=a?e.winHeight:e.height,h=e.scrollWidth,d=e.scrollHeight,m=this.container.width>360?320:260,p=s?0:10,f=s?10:0,_=s?24:m/2,T=s?_:15,b=s?60:_,g=s?b:T,k=s?"repeat-x":"repeat-y",L=Q=>s?"0px "+Q+"px":Q+"px 2px",A=Q=>`linear-gradient(${s?90:0}deg, ${Q} 2px, transparent 1px)`,z=(Q,S,x,D,w)=>`position:${Q};left:${S}px;top:${x}px;width:${D}px;height:${w}px;`;n.style.cssText=`${z("absolute",p,f,s?h:m,s?m:d)}
+      pointer-events: none;
+      z-index: ${this.container.zIndex++};
+      display: flex;
+      flex-direction: ${s?"column":"row"};
+      filter: drop-shadow(0px 1px 0px rgba(0,0,0,.75));
+    `,o.style.cssText=`${z("sticky",0,0,s?l:_,s?_:u)}`,i||(o.style.cssText+=`background:
+        ${A("#FFFF")}${L(_-10)} / 100px 100px ${k},
+        ${A("#FFF8")}${L(_-10)} / 10px 10px ${k};
+      `),r.style.cssText=`${z("relative",0,0,s?h:_,s?_:d)}`,i||(r.style.cssText+=`background:
+        ${A("#FFFF")}${L(0)} / ${s?"100px 10px":"10px 100px"} ${k},
+        ${A("#FFF8")}${L(0)} / ${s?"10px 0px":"0px 10px"} ${k};
+      `);let ce=[" enter: "," leave: "];this.coords.forEach((Q,S)=>{let x=S>1,D=(x?0:this.offset)+Q,w=S%2,Y=D<g,G=D>(x?s?l:u:s?h:d)-g,ie=(x?w&&!Y:!w&&!Y)||G,re=W.createElement("div"),y=W.createElement("div"),U=s?ie?"right":"left":ie?"bottom":"top",pe=ie?(s?b:T)+(x?s?-1:G?0:-2:s?-1:-2):s?1:0;y.innerHTML=`${this.id}${ce[w]}${this.thresholds[S]}`,re.style.cssText=`${z("absolute",0,0,b,T)}
+        display: flex;
+        flex-direction: ${s?"column":"row"};
+        justify-content: flex-${x?"start":"end"};
+        align-items: flex-${ie?"end":"start"};
+        border-${U}: 2px solid ${c};
+      `,y.style.cssText=`
+        overflow: hidden;
+        max-width: ${m/2-10}px;
+        height: ${T};
+        margin-${s?ie?"right":"left":ie?"bottom":"top"}: -2px;
+        padding: 1px;
+        font-family: ui-monospace, monospace;
+        font-size: 10px;
+        letter-spacing: -.025em;
+        line-height: 9px;
+        font-weight: 600;
+        text-align: ${s&&ie||!s&&!x?"right":"left"};
+        white-space: pre;
+        text-overflow: ellipsis;
+        color: ${w?c:"rgba(0,0,0,.75)"};
+        background-color: ${w?"rgba(0,0,0,.65)":c};
+        border: 2px solid ${w?c:"transparent"};
+        border-${s?ie?"top-left":"top-right":ie?"top-left":"bottom-left"}-radius: 5px;
+        border-${s?ie?"bottom-left":"bottom-right":ie?"top-right":"bottom-right"}-radius: 5px;
+      `,re.appendChild(y);let Ee=D-pe+(s?1:0);re.style[s?"left":"top"]=`${Ee}px`,(x?o:r).appendChild(re)}),n.appendChild(o),n.appendChild(r),e.element.appendChild(n),i||n.classList.add("animejs-onscroll-debug"),this.$debug=n,ss(e.element,"position")==="static"&&(this.debugStyles=is(e.element,{position:"relative "}))}updateBounds(){this._debug&&this.removeDebug();let e,s=this.target,i=this.container,n=this.horizontal,o=this.linked,r,c=s;for(o&&(r=o.currentTime,o.seek(0,!0));c&&c!==i.element&&c!==W.body;){let w=ss(c,"position")==="sticky"?is(c,{position:"static"}):!1;c=c.parentElement,w&&(e||(e=[]),e.push(w))}let a=s.getBoundingClientRect(),l=i.scale,u=(n?a.left+i.scrollX-i.left:a.top+i.scrollY-i.top)*l,h=(n?a.width:a.height)*l,d=n?i.width:i.height,p=(n?i.scrollWidth:i.scrollHeight)-d,f=this.enter,_=this.leave,T="start",b="end",g="end",k="start";if(oe(f)){let w=f.split(" ");g=w[0],T=w.length>1?w[1]:T}else if(Le(f)){let w=f;v(w.container)||(g=w.container),v(w.target)||(T=w.target)}else me(f)&&(g=f);if(oe(_)){let w=_.split(" ");k=w[0],b=w.length>1?w[1]:b}else if(Le(_)){let w=_;v(w.container)||(k=w.container),v(w.target)||(b=w.target)}else me(_)&&(k=_);let L=Ds(s,T,h),A=Ds(s,b,h),z=L+u-d,ce=A+u-p,ue=Ds(s,g,d,z,ce),Q=Ds(s,k,d,z,ce),S=L+u-ue,x=A+u-Q,D=x-S;this.offset=u,this.offsetStart=S,this.offsetEnd=x,this.distance=D<=0?0:D,this.thresholds=[T,b,g,k],this.coords=[L,A,ue,Q],e&&e.forEach(w=>w.revert()),o&&o.seek(r,!0),this._debug&&this.debug()}handleScroll(){if(!this.ready)return;let e=this.linked,s=this.sync,i=this.syncEase,n=this.syncSmooth,o=e&&(i||n),r=this.horizontal,c=this.container,a=this.scroll,l=a<=this.offsetStart,u=a>=this.offsetEnd,h=!l&&!u,d=a===this.offsetStart||a===this.offsetEnd,m=!this.hasEntered&&d,p=this._debug&&this.$debug,f=!1,_=!1,T=this.progress;if(l&&this.began&&(this.began=!1),T>0&&!this.began&&(this.began=!0),o){let b=e.progress;if(n&&me(n)){if(n<1){let k=b<T&&T===1?1e-4:b>T&&!T?-1e-4:0;T=I(Ke(b,T,Ke(.01,.2,n))+k,6)}}else i&&(T=i(T));f=T!==this.prevProgress,_=b===1,f&&!_&&n&&b&&c.wakeTicker.restart()}if(p){let b=r?c.scrollY:c.scrollX;p.style[r?"top":"left"]=b+10+"px"}(h&&!this.isInView||m&&!this.forceEnter&&!this.hasEntered)&&(h&&(this.isInView=!0),!this.forceEnter||!this.hasEntered?(p&&h&&(p.style.zIndex=`${this.container.zIndex++}`),this.onSyncEnter(this),this.onEnter(this),this.backward?(this.onSyncEnterBackward(this),this.onEnterBackward(this)):(this.onSyncEnterForward(this),this.onEnterForward(this)),this.hasEntered=!0,m&&(this.forceEnter=!0)):h&&(this.forceEnter=!1)),(h||!h&&this.isInView)&&(f=!0),f&&(o&&e.seek(e.duration*T),this.onUpdate(this)),!h&&this.isInView&&(this.isInView=!1,this.onSyncLeave(this),this.onLeave(this),this.backward?(this.onSyncLeaveBackward(this),this.onLeaveBackward(this)):(this.onSyncLeaveForward(this),this.onLeaveForward(this)),s&&!n&&(_=!0)),T>=1&&this.began&&!this.completed&&(s&&_||!s)&&(s&&this.onSyncComplete(this),this.completed=!0,(!this.repeat&&!e||!this.repeat&&e&&e.completed)&&this.revert()),T<1&&this.completed&&(this.completed=!1),this.prevProgress=T}revert(){if(this.reverted)return;let e=this.container;return Fe(e,this),e._head||e.revert(),this._debug&&this.removeDebug(),this.reverted=!0,this.ready=!1,this}},Ri=(t={})=>new Fs(t);var js={};Gi(js,{$:()=>Tt,addChild:()=>Ne,clamp:()=>Yn,cleanInlineStyles:()=>bn,createSeededRandom:()=>$s,damp:()=>Jn,degToRad:()=>Hn,forEachChildren:()=>N,get:()=>ss,keepTime:()=>Ns,lerp:()=>Gn,mapRange:()=>qn,padEnd:()=>Vn,padStart:()=>jn,radToDeg:()=>zn,random:()=>jt,randomPick:()=>Zn,remove:()=>Mn,removeChild:()=>Fe,round:()=>Kn,roundPad:()=>Wn,set:()=>is,shuffle:()=>Ws,snap:()=>Xn,stagger:()=>It,sync:()=>Ls,wrap:()=>Un});var Je=Ci,Bs={},Ho=(t,e=0)=>(...s)=>e?i=>t(...s,i):i=>t(i,...s),$n=t=>(...e)=>{let s=t(...e);return new Proxy(F,{apply:(i,n,[o])=>s(o),get:(i,n)=>{if(Bs[n])return $n((...o)=>{let r=Bs[n](...o);return c=>r(s(c))})}})},Ze=(t,e,s=0)=>{let i=(...n)=>(n.length<e.length?$n(Ho(e,s)):e)(...n);return Bs[t]||(Bs[t]=i),i},Wn=Ze("roundPad",Je.roundPad),jn=Ze("padStart",Je.padStart),Vn=Ze("padEnd",Je.padEnd),Un=Ze("wrap",Je.wrap),qn=Ze("mapRange",Je.mapRange),Hn=Ze("degToRad",Je.degToRad),zn=Ze("radToDeg",Je.radToDeg),Xn=Ze("snap",Je.snap),Yn=Ze("clamp",Je.clamp),Kn=Ze("round",Je.round),Gn=Ze("lerp",Je.lerp,1),Jn=Ze("damp",Je.damp,1);var jt=(t=0,e=1,s=0)=>{let i=10**s;return Math.floor((Math.random()*(e-t+1/i)+t)*i)/i},zo=0,$s=(t,e=0,s=1,i=0)=>{let n=t===void 0?zo++:t;return(o=e,r=s,c=i)=>{n+=1831565813,n=Math.imul(n^n>>>15,n|1),n^=n+Math.imul(n^n>>>7,n|61);let a=10**c;return Math.floor((((n^n>>>14)>>>0)/4294967296*(r-o+1/a)+o)*a)/a}},Zn=t=>t[jt(0,t.length-1)],Ws=(t,e=jt)=>{let s=t.length,i,n;for(;s;)n=e(0,--s),i=t[s],t[s]=t[n],t[n]=i;return t};var It=(t,e={})=>{let s=[],i=0,n,o=null,r=e.from,c=e.reversed,a=e.ease,l=!v(a),h=l&&!v(a.ease)?a.ease:l?et(a):null,d=e.grid,m=d===!0,p=e.axis,f=e.total,_=v(r)||r===0||r==="first",T=r==="center",b=r==="last",g=r==="random",k=Ae(r),L=Ae(t),A=e.use,z=L?gs(t[0]):gs(t),ce=L?gs(t[1]):0,ue=ms.exec((L?t[1]:t)+Ye),Q=e.start||0+(L?z:0),S=e.seed,D=!v(S)&&S!==!1?$s(S===!0?0:S):jt,w=e.jitter,Y=!v(w),G=Ae(w),ie=G?w[0]:w||0,re=G?w[1]:w||0,y=_?0:me(r)?r:0;return(U,pe,Ee,vt,st)=>{let[Oe]=Tt(U),j=v(f)?Ee.length:f,Ve=v(A)?!1:se(A)?A(Oe,pe,j):at(Oe,A),Pe=me(Ve)||oe(Ve)&&me(+Ve)?+Ve:pe,q=Pe>=0&&Pe<j?Pe:pe;if(T&&(y=(j-1)/2),b&&(y=j-1),!s.length){if(m){let M=!0,J=!1,be=1/0,xe=1/0,Z=1/0,ne=-1/0,ve=-1/0,fe=-1/0,Be=[],de=[],_e=[];for(let B=0;B<j;B++){let te=Ee[B],X=0,ae=0,H=0,we=!1;if(te&&se(te.getBoundingClientRect)){let he=te.getBoundingClientRect();X=he.left+he.width/2,ae=he.top+he.height/2,we=!0}else{let he=te;he&&me(he.x)&&me(he.y)&&(X=he.x,ae=he.y,me(he.z)&&(H=he.z,J=!0),we=!0)}if(!we){M=!1;break}Be.push(X),de.push(ae),_e.push(H),X<be&&(be=X),ae<xe&&(xe=ae),H<Z&&(Z=H),X>ne&&(ne=X),ae>ve&&(ve=ae),H>fe&&(fe=H)}if(M){let B=Be[0],te=de[0],X=_e[0];k?(B=be+r[0]*(ne-be),te=xe+r[1]*(ve-xe),X=J?Z+(r.length>=3?r[2]:.5)*(fe-Z):0):T?(B=(be+ne)/2,te=(xe+ve)/2,X=(Z+fe)/2):b?(B=Be[j-1],te=de[j-1],X=_e[j-1]):me(r)&&(B=Be[r],te=de[r],X=_e[r]);for(let H=0;H<j;H++){let we=B-Be[H],he=te-de[H],_t=X-_e[H],Qe=Xt(we*we+he*he+(J?_t*_t:0));p==="x"&&(Qe=-we),p==="y"&&(Qe=-he),p==="z"&&(Qe=-_t),s.push(Qe)}let ae=1/0;for(let H=0;H<j;H++){let we=wt(s[H]);we>0&&we<ae&&(ae=we)}if(ae>0&&ae<1/0)for(let H=0;H<j;H++)s[H]=s[H]/ae}else for(let B=0;B<j;B++)s.push(wt(y-B))}else for(let M=0;M<j;M++)if(!d)s.push(wt(y-M));else{let J=d.length,be=d[0]*d[1],xe,Z,ne;k?(xe=r[0]*(d[0]-1),Z=r[1]*(d[1]-1),ne=J===3?(r.length>=3?r[2]:.5)*(d[2]-1):0):T?(xe=(d[0]-1)/2,Z=(d[1]-1)/2,ne=J===3?(d[2]-1)/2:0):(xe=y%d[0],Z=Et(y/d[0])%d[1],ne=J===3?Et(y/be):0);let ve=M%d[0],fe=Et(M/d[0])%d[1],Be=J===3?Et(M/be):0,de=xe-ve,_e=Z-fe,B=ne-Be,te=Xt(de*de+_e*_e+(J===3?B*B:0));p==="x"&&(te=-de),p==="y"&&(te=-_e),p==="z"&&(te=-B),s.push(te)}i=s[0];for(let M=1;M<j;M++)s[M]>i&&(i=s[M]);if(h||c)for(let M=0;M<j;M++){let J=s[M];h&&(J=h(J/i)*i),c&&(J=p?-J:wt(i-J)),s[M]=J}if(Y){o=new Array(j);for(let M=0;M<j;M++)o[M]=D(-1,1,4)}g&&(s=Ws(s,D))}let Ie=L?(ce-z)/i:z;v(n)&&(n=st?Pt(st,v(e.start)?st.iterationDuration:Q):Q);let Ce=n+(Ie*I(s[q],2)||0);if(Y){let M=i?s[q]/i:0,J=ie+(re-ie)*M;Ce=Ce+o[q]*J}return e.modifier&&(Ce=e.modifier(Ce)),ue&&(Ce=`${Ce}${ue[2]}`),Ce}};var Vs=typeof Intl<"u"&&Intl.Segmenter,Xo=/\{value\}/g,Yo=/\{i\}/g,Pi=/(\s+)/,Mi=/^\s+$/,Fi="line",os="word",rs="char",as="data-line",Ii=null,Li=null,qs=null,Qn=t=>t.isWordLike||t.segment===" "||me(+t.segment),Ni=t=>t.setAttribute("aria-hidden","true"),Us=(t,e)=>[...t.querySelectorAll(`[data-${e}]:not([data-${e}] [data-${e}])`)],Ko={line:"#00D672",word:"#FF4B4B",char:"#5A87FF"},eo=t=>{if(!t.childElementCount&&!t.textContent.trim()){let e=t.parentElement;t.remove(),e&&eo(e)}},to=(t,e,s)=>{let i=t.getAttribute(as);if(i!==null&&+i!==e||t.tagName==="BR"){s.add(t);let o=t.previousSibling,r=t.nextSibling;o&&o.nodeType===3&&Mi.test(o.textContent)&&s.add(o),r&&r.nodeType===3&&Mi.test(r.textContent)&&s.add(r)}let n=t.childElementCount;for(;n--;)to(t.children[n],e,s);return s},Oi=(t,e={})=>{let s="";e||(e={});let i=oe(e.class)?` class="${e.class}"`:"",n=$(e.clone,!1),o=$(e.wrap,!1),r=o?o===!0?"clip":o:n?"clip":!1;if(o&&(s+=`<span${r?` style="overflow:${r};"`:""}>`),s+=`<span${i}${n?' style="position:relative;"':""} data-${t}="{i}">`,n){let c=n==="left"?"-100%":n==="right"?"100%":"0",a=n==="top"?"-100%":n==="bottom"?"100%":"0";s+="<span>{value}</span>",s+=`<span inert style="position:absolute;top:${a};left:${c};white-space:nowrap;">{value}</span>`}else s+="{value}";return s+="</span>",o&&(s+="</span>"),s},Di=(t,e,s,i,n,o,r,c,a)=>{let l=n===Fi,u=n===rs,h=`_${n}_`,d=se(t)?t(s):t,m=l?"block":"inline-block";qs.innerHTML=d.replace(Xo,`<i class="${h}"></i>`).replace(Yo,`${u?a:l?r:c}`);let p=qs.content,f=p.firstElementChild,_=p.querySelector(`[data-${n}]`)||f,T=p.querySelectorAll(`i.${h}`),b=T.length;if(b){f.style.display=m,_.style.display=m,_.setAttribute(as,`${r}`),l||(_.setAttribute("data-word",`${c}`),u&&_.setAttribute("data-char",`${a}`));let g=b;for(;g--;){let k=T[g],L=k.parentElement;L.style.display=m,l?L.innerHTML=s.innerHTML:L.replaceChild(s.cloneNode(!0),k)}e.push(_),i.appendChild(p)}else console.warn('The expression "{value}" is missing from the provided template.');return o&&(f.style.outline=`1px dotted ${Ko[n]}`),f},Hs=class{constructor(e,s={}){Ii||(Ii=Vs?new Vs([],{granularity:os}):{segment:p=>{let f=[],_=p.split(Pi);for(let T=0,b=_.length;T<b;T++){let g=_[T];f.push({segment:g,isWordLike:!Mi.test(g)})}return f}}),Li||(Li=Vs?new Vs([],{granularity:"grapheme"}):{segment:p=>[...p].map(f=>({segment:f}))}),!qs&&$e&&(qs=W.createElement("template")),We.current&&We.current.register(this);let{words:i,chars:n,lines:o,accessible:r,includeSpaces:c,debug:a}=s,l=(e=Ae(e)?e[0]:e)&&e.nodeType?e:(ws(e)||[])[0],u=o===!0?{}:o,h=i===!0||v(i)?{}:i,d=n===!0?{}:n;this.debug=$(a,!1),this.includeSpaces=$(c,!1),this.accessible=$(r,!0),this.linesOnly=u&&!h&&!d,this.lineTemplate=Le(u)?Oi(Fi,u):u,this.wordTemplate=Le(h)||this.linesOnly?Oi(os,h):h,this.charTemplate=Le(d)?Oi(rs,d):d,this.$target=l,this.html=l&&l.innerHTML,this.lines=[],this.words=[],this.chars=[],this.effects=[],this.effectsCleanups=[],this.cache=null,this.ready=!1,this.width=0,this.resizeTimeout=null;let m=()=>this.html&&(u||h||d)&&this.split();this.resizeObserver=new ResizeObserver(()=>{clearTimeout(this.resizeTimeout),this.resizeTimeout=setTimeout(()=>{let p=l.offsetWidth;p!==this.width&&(this.width=p,m())},150)}),this.lineTemplate&&!this.ready?W.fonts.ready.then(m):m(),l?this.resizeObserver.observe(l):console.warn("No Text Splitter target found.")}addEffect(e){if(!se(e))return console.warn("Effect must return a function."),this;let s=Ns(e);return this.effects.push(s),this.ready&&(this.effectsCleanups[this.effects.length-1]=s(this)),this}revert(){return clearTimeout(this.resizeTimeout),this.lines.length=this.words.length=this.chars.length=0,this.resizeObserver.disconnect(),this.effectsCleanups.forEach(e=>se(e)?e(this):e.revert&&e.revert()),this.$target.innerHTML=this.html,this}splitNode(e){let s=this.wordTemplate,i=this.charTemplate,n=this.includeSpaces,o=this.debug,r=e.nodeType;if(r===3){let c=e.nodeValue;if(c.trim()){let a=[],l=this.words,u=this.chars,h=Ii.segment(c),d=W.createDocumentFragment(),m=null;for(let p of h){let f=p.segment,_=Qn(p);if(!m||_&&m&&Qn(m))a.push(f);else{let T=a.length-1,b=a[T];!Pi.test(b)&&!Pi.test(f)?a[T]+=f:a.push(f)}m=p}for(let p=0,f=a.length;p<f;p++){let _=a[p];if(_.trim()){let T=a[p+1],b=n&&T&&!T.trim(),g=_,k=i?Li.segment(g):null,L=i?W.createDocumentFragment():W.createTextNode(b?_+"\xA0":_);if(i){let A=[...k];for(let z=0,ce=A.length;z<ce;z++){let ue=A[z],S=z===ce-1&&b?ue.segment+"\xA0":ue.segment,x=W.createTextNode(S);Di(i,u,x,L,rs,o,-1,l.length,u.length)}}s?Di(s,l,L,d,os,o,-1,l.length,u.length):i?d.appendChild(L):d.appendChild(W.createTextNode(_)),b&&p++}else{if(p&&n)continue;d.appendChild(W.createTextNode(_))}}e.parentNode.replaceChild(d,e)}}else if(r===1){let c=[...e.childNodes];for(let a=0,l=c.length;a<l;a++)this.splitNode(c[a])}}split(e=!1){let s=this.$target,i=!!this.cache&&!e,n=this.lineTemplate,o=this.wordTemplate,r=this.charTemplate,c=W.fonts.status!=="loading",a=n&&c;this.ready=!n||c,(a||e)&&this.effectsCleanups.forEach(d=>se(d)&&d(this)),i||(e&&(s.innerHTML=this.html,this.words.length=this.chars.length=0),this.splitNode(s),this.cache=s.innerHTML),a&&(i&&(s.innerHTML=this.cache),this.lines.length=0,o&&(this.words=Us(s,os))),r&&(a||o)&&(this.chars=Us(s,rs));let l=this.words.length?this.words:this.chars,u,h=0;for(let d=0,m=l.length;d<m;d++){let p=l[d],{top:f,height:_}=p.getBoundingClientRect();!v(u)&&f-u>_*.5&&h++,p.setAttribute(as,`${h}`);let T=p.querySelectorAll(`[${as}]`),b=T.length;for(;b--;)T[b].setAttribute(as,`${h}`);u=f}if(a){let d=W.createDocumentFragment(),m=new Set,p=[];for(let f=0;f<h+1;f++){let _=s.cloneNode(!0);to(_,f,new Set).forEach(T=>{let b=T.parentNode;b&&(T.nodeType===1&&m.add(b),b.removeChild(T))}),p.push(_)}m.forEach(eo);for(let f=0,_=p.length;f<_;f++)Di(n,this.lines,p[f],d,Fi,this.debug,f);s.innerHTML="",s.appendChild(d),o&&(this.words=Us(s,os)),r&&(this.chars=Us(s,rs))}if(this.linesOnly){let d=this.words,m=d.length;for(;m--;){let p=d[m];p.replaceWith(p.textContent)}d.length=0}if(this.accessible&&(a||!i)){let d=W.createElement("span");d.style.cssText="position:absolute;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);width:1px;height:1px;white-space:nowrap;",d.innerHTML=this.html,s.insertBefore(d,s.firstChild),this.lines.forEach(Ni),this.words.forEach(Ni),this.chars.forEach(Ni)}return this.width=s.offsetWidth,(a||e)&&this.effects.forEach((d,m)=>this.effectsCleanups[m]=d(this)),this}refresh(){this.split(!0)}},Bi=(t,e)=>new Hs(t,e);var zs={en:{hero_h1a:"Technology should power your business,",hero_h1b:"never slow it down.",mani_label:"The promise",sol_h:"Eight ways we take the weight off your team.",s1_t:"Support \xB7 Admin \xB7 24/7 monitoring",s2_t:"Build \xB7 Buy \xB7 Retire",s3_t:"Audits \xB7 Hardening \xB7 GDPR",s4_t:"Sites \xB7 Web apps",s5_t:"iOS \xB7 Android \xB7 Cross-platform",s6_t:"AWS \xB7 Azure \xB7 Google Cloud",s7_t:"Risk \xB7 Backup \xB7 Recovery",s8_t:"Tools \xB7 Integrations \xB7 Products",fac_hint:"Swipe the belt",who_label:"Who we are",who_cap:"Tallinn, after hours",think_label:"Notes",think_note:"Written pieces are on the way. Ask us about any of these in the meantime.",faq_h:"Everything you would ask on a first call.",ct_label:"Contact",logo_s:"IT services",nav_solutions:"Solutions",nav_about:"Who We Are",nav_faq:"FAQ",nav_contact:"Contacts",hero_h1:"Technology should power your business, never slow it down.",hero_sub:"Barsion keeps your systems running, your data safe and your ideas shipping. From Tallinn, for all of Europe.",hero_cta:"Book a free consultation",dark_h:"Complex technology. Simple outcomes.",ben1:"Transparent, predictable costs",ben2:"Modern, proven technology",ben3:"Deep sector know-how",ben4:"Built to scale with you",sol_label:"Solutions",s1_h:"Managed IT",s1_p:"We run your day-to-day IT: support, administration and round-the-clock monitoring. Your team stays focused on the business.",s2_h:"Technology Consulting",s2_p:"Independent advice on what to build, what to buy and what to retire, so every technology decision moves the business forward.",s3_h:"Security & Compliance",s3_p:"From vulnerability audits to hardened infrastructure and GDPR alignment. We keep your data and your reputation safe.",s4_h:"Web Platforms",s4_p:"Fast, reliable websites and web applications that turn visitors into customers.",s5_h:"Mobile Apps",s5_p:"Native and cross-platform apps your customers will actually enjoy using, on iOS and Android alike.",s6_h:"Cloud & Infrastructure",s6_p:"Migration, architecture and cost optimisation across AWS, Azure and Google Cloud.",s7_h:"Business Continuity",s7_p:"We find the weak points in your IT before they find you, and build a recovery plan that actually works.",s8_h:"Custom Software",s8_p:"Internal tools, integrations and full products, designed around the way your company really works.",quote1:"We treat your infrastructure as if our own business ran on it. Because in a way, it does.",quote1_by:"The Barsion team",ind_h:"Every sector runs on IT. We keep it running.",ind_p:"In a market that moves this fast, success depends on how reliably your systems perform every single day. We help you scale, optimise and stay ahead, with the tools, strategy and support that keep pace with your ambitions.",who_p:"Barsion is a Tallinn-based IT partner working with companies across the Nordics and Europe: one team covering everything from infrastructure to product development.",quote2:"\u201CSmall enough to care. Experienced enough to deliver.\u201D",val_label:"Our values",v1_h:"Honesty",v1_p:"We say what we do, and do what we say.",v2_h:"Craft",v2_p:"Quality is not negotiable.",v3_h:"Partnership",v3_p:"Your goals set our roadmap.",v4_h:"Focus",v4_p:"Every decision starts with the client.",v5_h:"Agility",v5_p:"We adapt as fast as your market does.",v6_h:"Trust",v6_p:"Your data stays yours. Always.",think_h:"What we're thinking",i1_h:"Where AI genuinely pays off in mid-sized companies",i1_meta:"July 2026 \xB7 AI",i2_h:"Choosing your first step in digital transformation",i2_meta:"June 2026 \xB7 Strategy",i3_h:"A security checklist every growing team should run",i3_meta:"May 2026 \xB7 Security",q1:"Who is Barsion?",a1:"Barsion O\xDC is an Estonian IT company covering the full technology lifecycle: from advisory and infrastructure management to development, cloud and security.",q2:"What services do you offer?",a2:"Managed IT with 24/7 monitoring, technology consulting, security & compliance, web and mobile development, cloud services, business continuity and custom software.",q3:"Who do you work with?",a3:"Our clients work in finance, healthcare, commerce, manufacturing, logistics and tourism, in Estonia and across Europe.",q4:"How does a project start?",a4:"Write to us through the form and we'll set up a free intro call. We then agree on scope, pricing and timeline, and get to work.",q5:"How do you price your work?",a5:"Depending on the project: fixed price, time & materials, or a monthly subscription. You always know exactly what you're paying for before we start.",q6:"How do you protect our data?",a6:"We work to ISO/IEC 27001 principles and in full compliance with the GDPR. As an EU company, your data stays in Europe, under European rules.",q7:"Which technologies do you work with?",a7:"Node.js, Python, Java and .NET; React, Vue and Flutter; AWS, Azure and Google Cloud; PostgreSQL, MongoDB and Redis. The choice always follows your needs.",q8:"Why choose Barsion?",a8:"One partner for all of your IT, transparent pricing and the experience of Estonia's digital state, without big-firm bureaucracy.",ct_h:"Have a project in mind? Let's make it happen.",quote3:"\u201CGood IT is invisible. You only notice it when it's missing. Our job is making sure you never do.\u201D",ct_p:"Tell us about your challenge. We'll come back with a solution and a clear next step.",ct_addr:"Barsion O\xDC \xB7 Narva mnt 5, Tallinn 10117, Harju County, Estonia",f_name:"Name",f_email:"Email",f_msg:"What are you working on?",f_send:"Send message",f_phone:"Phone",f_company:"Company",f_optional:"optional",f_topic:"What is this about?",t_managed:"Managed IT",t_consulting:"Technology consulting",t_security:"Security & compliance",t_development:"Web, mobile or custom software",t_cloud:"Cloud & infrastructure",t_other:"Something else",e_name:"Please tell us your name.",e_email:"Please enter a valid email address.",e_msg:"Please tell us a little about your project.",f_privacy_note:"We use your details only to answer this enquiry.",f_privacy_link:"Privacy notice",f_sending:"Sending",f_fail:"We could not send your message just now. Please try again in a moment.",f_fail_email:"We could not send your message just now. Please write to us at {email}.",f_sent_h:"Thank you!",f_sent_p:"Your message is on its way. We'll get back to you within one business day.",ft_tag:"Stronger side by side.",ft_touch:"Get in touch",ft_addr:"Narva mnt 5, Tallinn 10117, Harju County, Estonia",ft_copy:"\xA9 2026 Barsion O\xDC. All rights reserved.",ft_loc:"Estonia \xB7 European Union",pp_h:"Privacy notice",pp_lede:"What happens to the details you send us, and the rights you have over them.",pp_updated:"Last updated",pp_1h:"Who is responsible for your data",pp_1p:"Barsion O\xDC, registered at Narva mnt 5, Tallinn 10117, Harju County, Estonia, is the controller of the personal data described here. That means we decide why and how it is used, and we are the ones you can hold to account for it.",pp_2h:"What we collect",pp_2p:"Only what you type into the contact form on this site: your name, your email address, and optionally your phone number, company name, the topic you choose, and the message itself. We also record which language version of the site you used, so we answer you in the right one.",pp_2p2:"We do not use cookies for advertising, we do not run third-party tracking scripts, and we do not build profiles of visitors.",pp_3h:"Why we are allowed to use it",pp_3p:"When you send us an enquiry, we process your details in order to take steps at your request before entering into a contract, and on the basis of our legitimate interest in answering people who contact our business. Both grounds come from Article 6 of the GDPR. You are never required to send us anything.",pp_4h:"How long we keep it",pp_4p:"Enquiries that do not lead to work are deleted within 12 months. If we do end up working together, the correspondence becomes part of the client record and is kept for as long as Estonian accounting and contract law requires.",pp_5h:"Who else sees it",pp_5p:"The contact form is delivered by a form-processing service that passes your message to our inbox, and our email is hosted by a mail provider. Both act only on our instructions and are bound by data processing agreements. Your data stays within the European Economic Area. We never sell it and we never pass it to anyone for marketing.",pp_6h:"Your rights",pp_6p:"Under the GDPR you can ask us to:",pp_r1:"show you a copy of the data we hold about you",pp_r2:"correct anything that is wrong",pp_r3:"delete it",pp_r4:"restrict or object to how we use it",pp_r5:"receive it in a portable, machine-readable form",pp_6p2:"Write to us and we will answer within one month. If you think we have handled your data badly, you can complain to the Estonian Data Protection Inspectorate.",pp_7h:"Security",pp_7p:"The site is served over HTTPS and form submissions are encrypted in transit. Access to the inbox is limited to the people who need it and protected by two-factor authentication.",pp_8h:"Changes",pp_8p:"If this notice changes, the date at the top of the page changes with it. Material changes will be announced on the site itself.",pp_back:"Back to the site"},et:{hero_h1a:"Tehnoloogia peab teie \xE4ri edasi viima,",hero_h1b:"mitte pidurdama.",mani_label:"Meie lubadus",sol_h:"Kaheksa viisi, kuidas v\xF5tta koormus teie meeskonnalt.",s1_t:"Tugi \xB7 Haldus \xB7 24/7 seire",s2_t:"Ehita \xB7 Osta \xB7 Loobu",s3_t:"Auditid \xB7 Tugevdamine \xB7 GDPR",s4_t:"Veebilehed \xB7 Veebirakendused",s5_t:"iOS \xB7 Android \xB7 Platvormi\xFClene",s6_t:"AWS \xB7 Azure \xB7 Google Cloud",s7_t:"Riskid \xB7 Varundus \xB7 Taaste",s8_t:"T\xF6\xF6riistad \xB7 Liidestused \xB7 Tooted",fac_hint:"Libista v\xF6\xF6d",who_label:"Meist",who_cap:"Tallinn, p\xE4rast t\xF6\xF6p\xE4eva",think_label:"M\xE4rkmed",think_note:"Artiklid on tulekul. Seni k\xFCsige neist julgelt otse meilt.",faq_h:"K\xF5ik, mida esimesel k\xF5nel k\xFCsiksite.",ct_label:"Kontakt",logo_s:"IT-teenused",nav_solutions:"Lahendused",nav_about:"Meist",nav_faq:"KKK",nav_contact:"Kontakt",hero_h1:"Tehnoloogia peab teie \xE4ri edasi viima, mitte pidurdama.",hero_sub:"Barsion hoiab teie s\xFCsteemid t\xF6\xF6s, andmed kaitstuna ja ideed liikumas. Tallinnast, kogu Euroopa jaoks.",hero_cta:"Broneeri tasuta konsultatsioon",dark_h:"Keeruline tehnoloogia. Selged tulemused.",ben1:"L\xE4bipaistvad ja prognoositavad kulud",ben2:"Kaasaegne, end t\xF5estanud tehnoloogia",ben3:"P\xF5hjalik valdkonnatundmine",ben4:"Valmis teiega koos kasvama",sol_label:"Lahendused",s1_h:"IT haldus",s1_p:"Hoolitseme teie igap\xE4evase IT eest: tugi, haldus ja \xF6\xF6p\xE4evaringne seire. Nii saab teie meeskond keskenduda \xE4rile.",s2_h:"Tehnoloogian\xF5ustamine",s2_p:"S\xF5ltumatu n\xF5u, mida ehitada, mida osta ja millest loobuda, et iga tehnoloogiaotsus viiks \xE4ri edasi.",s3_h:"Turvalisus ja vastavus",s3_p:"Haavatavusauditist tugevdatud taristu ja GDPR-i vastavuseni. Hoiame teie andmed ja maine kaitstuna.",s4_h:"Veebiplatvormid",s4_p:"Kiired ja t\xF6\xF6kindlad veebilehed ning -rakendused, mis muudavad k\xFClastajad klientideks.",s5_h:"Mobiilirakendused",s5_p:"Natiivsed ja platvormi\xFClesed rakendused, mida teie kliendid p\xE4riselt kasutada tahavad, nii iOS-il kui Androidil.",s6_h:"Pilv ja taristu",s6_p:"Migratsioon, arhitektuur ja kulude optimeerimine AWS-is, Azure'is ja Google Cloudis.",s7_h:"\xC4ri j\xE4rjepidevus",s7_p:"Leiame teie IT n\xF5rgad kohad enne, kui need end ise n\xE4itavad, ja koostame taasteplaani, mis p\xE4riselt toimib.",s8_h:"Eritarkvara",s8_p:"Siset\xF6\xF6riistad, liidestused ja terviklikud tooted, loodud selle j\xE4rgi, kuidas teie ettev\xF5te p\xE4riselt t\xF6\xF6tab.",quote1:"Hoolitseme teie taristu eest nii, nagu t\xF6\xF6taks sellel meie enda \xE4ri. Sest teatud m\xF5ttes t\xF6\xF6tabki.",quote1_by:"Barsioni meeskond",ind_h:"Iga valdkond t\xF6\xF6tab IT peal. Meie hoiame selle t\xF6\xF6s.",ind_p:"Nii kiiresti liikuval turul s\xF5ltub edu sellest, kui kindlalt teie s\xFCsteemid iga p\xE4ev toimivad. Aitame teil kasvada, optimeerida ja ees p\xFCsida, t\xF6\xF6riistade, strateegia ja toega, mis k\xE4ivad teie ambitsioonidega \xFChte sammu.",who_p:"Barsion on Tallinnas asuv IT-partner, kes t\xF6\xF6tab ettev\xF5tetega \xFCle P\xF5hjamaade ja Euroopa: \xFCks meeskond, mis katab k\xF5ik taristust tootearenduseni.",quote2:"\u201EPiisavalt v\xE4ikesed, et hoolida. Piisavalt kogenud, et tulemusi anda.\u201C",val_label:"Meie v\xE4\xE4rtused",v1_h:"Ausus",v1_p:"\xDCtleme, mida teeme, ja teeme, mida \xFCtleme.",v2_h:"Meisterlikkus",v2_p:"Kvaliteedis me ei kauple.",v3_h:"Partnerlus",v3_p:"Teie eesm\xE4rgid on meie teekaart.",v4_h:"Fookus",v4_p:"Iga otsus algab kliendist.",v5_h:"Paindlikkus",v5_p:"Kohandume sama kiiresti kui teie turg.",v6_h:"Usaldus",v6_p:"Teie andmed j\xE4\xE4vad teie omaks. Alati.",think_h:"Millest me m\xF5tleme",i1_h:"Kus tehisintellekt end keskmise suurusega ettev\xF5ttes p\xE4riselt \xE4ra tasub",i1_meta:"Juuli 2026 \xB7 AI",i2_h:"Kuidas valida digip\xF6\xF6rde esimest sammu",i2_meta:"Juuni 2026 \xB7 Strateegia",i3_h:"Turvakontrollnimekiri, mille iga kasvav meeskond peaks l\xE4bi k\xE4ima",i3_meta:"Mai 2026 \xB7 Turvalisus",q1:"Kes on Barsion?",a1:"Barsion O\xDC on Eesti IT-ettev\xF5te, mis katab kogu tehnoloogia elukaare: n\xF5ustamisest ja taristu haldusest kuni arenduse, pilve ja turvalisuseni.",q2:"Milliseid teenuseid pakute?",a2:"IT haldus \xF6\xF6p\xE4evaringse seirega, tehnoloogian\xF5ustamine, turvalisus ja vastavus, veebi- ja mobiiliarendus, pilveteenused, \xE4ri j\xE4rjepidevus ning eritarkvara.",q3:"Kellega te t\xF6\xF6tate?",a3:"Meie kliendid tegutsevad rahanduses, tervishoius, kaubanduses, tootmises, logistikas ja turismis, nii Eestis kui mujal Euroopas.",q4:"Kuidas koost\xF6\xF6 algab?",a4:"Kirjutage meile vormi kaudu ja lepime kokku tasuta tutvumisk\xF5ne. Seej\xE4rel t\xE4psustame t\xF6\xF6mahu, hinna ja ajakava ning asume t\xF6\xF6le.",q5:"Kuidas te oma t\xF6\xF6d hinnastate?",a5:"S\xF5ltuvalt projektist: fikseeritud hind, tunnip\xF5hine arveldus v\xF5i kuutasu. Enne alustamist teate alati t\xE4pselt, mille eest maksate.",q6:"Kuidas te meie andmeid kaitsete?",a6:"T\xF6\xF6tame ISO/IEC 27001 p\xF5him\xF5tete j\xE4rgi ja t\xE4ies vastavuses GDPR-iga. EL-i ettev\xF5ttena p\xFCsivad teie andmed Euroopas, Euroopa reeglite j\xE4rgi.",q7:"Milliste tehnoloogiatega te t\xF6\xF6tate?",a7:"Node.js, Python, Java ja .NET; React, Vue ja Flutter; AWS, Azure ja Google Cloud; PostgreSQL, MongoDB ja Redis. Valik l\xE4htub alati teie vajadustest.",q8:"Miks valida just Barsion?",a8:"\xDCks partner kogu teie IT jaoks, l\xE4bipaistev hinnastus ja Eesti digiriigi kogemus, ilma suurfirma b\xFCrokraatiata.",ct_h:"On teil projekt m\xF5ttes? Viime selle ellu.",quote3:"\u201EHea IT on n\xE4htamatu. Seda m\xE4rkad alles siis, kui see puudub. Meie t\xF6\xF6 on hoolitseda, et te seda kunagi ei m\xE4rkaks.\u201C",ct_p:"Kirjeldage oma v\xE4ljakutset. Pakume v\xE4lja lahenduse ja selge j\xE4rgmise sammu.",ct_addr:"Barsion O\xDC \xB7 Narva mnt 5, Tallinn 10117, Harju maakond, Eesti",f_name:"Nimi",f_email:"E-post",f_msg:"Millega te parasjagu tegelete?",f_send:"Saada s\xF5num",f_phone:"Telefon",f_company:"Ettev\xF5te",f_optional:"valikuline",f_topic:"Millega saame aidata?",t_managed:"IT haldus",t_consulting:"Tehnoloogian\xF5ustamine",t_security:"Turvalisus ja vastavus",t_development:"Veebi-, mobiili- v\xF5i eritarkvara",t_cloud:"Pilv ja taristu",t_other:"Midagi muud",e_name:"Palun \xF6elge oma nimi.",e_email:"Palun sisestage kehtiv e-posti aadress.",e_msg:"Palun kirjeldage l\xFChidalt oma projekti.",f_privacy_note:"Kasutame teie andmeid ainult sellele p\xE4ringule vastamiseks.",f_privacy_link:"Privaatsusteade",f_sending:"Saadan",f_fail:"S\xF5numi saatmine ei \xF5nnestunud. Palun proovige hetke p\xE4rast uuesti.",f_fail_email:"S\xF5numi saatmine ei \xF5nnestunud. Palun kirjutage meile aadressil {email}.",f_sent_h:"Ait\xE4h!",f_sent_p:"Teie s\xF5num on teel. Vastame \xFChe t\xF6\xF6p\xE4eva jooksul.",ft_tag:"\xDCheskoos tugevamad.",ft_touch:"V\xF5ta \xFChendust",ft_addr:"Narva mnt 5, Tallinn 10117, Harju maakond, Eesti",ft_copy:"\xA9 2026 Barsion O\xDC. K\xF5ik \xF5igused kaitstud.",ft_loc:"Eesti \xB7 Euroopa Liit",pp_h:"Privaatsusteade",pp_lede:"Mis juhtub andmetega, mille meile saadate, ja millised \xF5igused teil nende suhtes on.",pp_updated:"Viimati uuendatud",pp_1h:"Kes teie andmete eest vastutab",pp_1p:"Barsion O\xDC, aadressiga Narva mnt 5, Tallinn 10117, Harju maakond, Eesti, on siin kirjeldatud isikuandmete vastutav t\xF6\xF6tleja. See t\xE4hendab, et meie otsustame, miks ja kuidas andmeid kasutatakse, ning meie vastutame selle eest.",pp_2h:"Mida me kogume",pp_2p:"Ainult seda, mille te ise kontaktivormi sisestate: nimi, e-posti aadress ning soovi korral telefon, ettev\xF5tte nimi, valitud teema ja s\xF5num ise. Lisaks j\xE4tame meelde, millist keeleversiooni kasutasite, et vastata teile \xF5iges keeles.",pp_2p2:"Me ei kasuta reklaamik\xFCpsiseid, ei jooksuta kolmandate osapoolte j\xE4lgimisskripte ega koosta k\xFClastajate profiile.",pp_3h:"Millel meie \xF5igus p\xF5hineb",pp_3p:"Kui saadate meile p\xE4ringu, t\xF6\xF6tleme teie andmeid selleks, et astuda teie soovil samme enne lepingu s\xF5lmimist, ning tuginedes meie \xF5igustatud huvile vastata neile, kes meie ettev\xF5ttega \xFChendust v\xF5tavad. M\xF5lemad alused tulenevad GDPR-i artiklist 6. Te ei ole kunagi kohustatud meile midagi saatma.",pp_4h:"Kui kaua me neid hoiame",pp_4p:"P\xE4ringud, millest koost\xF6\xF6d ei s\xFCnni, kustutatakse 12 kuu jooksul. Kui koost\xF6\xF6 siiski algab, saab kirjavahetusest osa kliendidokumentidest ja seda s\xE4ilitatakse nii kaua, kui Eesti raamatupidamis- ja lepingu\xF5igus n\xF5uab.",pp_5h:"Kes veel neid n\xE4eb",pp_5p:"Kontaktivormi vahendab vormiteenus, mis edastab teie s\xF5numi meie postkasti, ja meie e-posti majutab e-postiteenuse pakkuja. M\xF5lemad tegutsevad ainult meie juhiste j\xE4rgi ja on seotud andmet\xF6\xF6tluslepingutega. Teie andmed j\xE4\xE4vad Euroopa Majanduspiirkonda. Me ei m\xFC\xFC neid kunagi ega edasta kellelegi turunduseks.",pp_6h:"Teie \xF5igused",pp_6p:"GDPR-i alusel v\xF5ite paluda meil:",pp_r1:"n\xE4idata koopiat andmetest, mida teie kohta hoiame",pp_r2:"parandada k\xF5ik, mis on vale",pp_r3:"need kustutada",pp_r4:"piirata nende kasutamist v\xF5i sellele vastu vaielda",pp_r5:"saada need \xFClekantavas, masinloetavas vormis",pp_6p2:"Kirjutage meile ja vastame \xFChe kuu jooksul. Kui arvate, et oleme teie andmeid halvasti k\xE4idelnud, saate esitada kaebuse Andmekaitse Inspektsioonile.",pp_7h:"Turvalisus",pp_7p:"Sait t\xF6\xF6tab HTTPS-i kaudu ja vormi saadetised on edastamisel kr\xFCpteeritud. Ligip\xE4\xE4s postkastile on piiratud nendega, kes seda vajavad, ja kaitstud kaheastmelise autentimisega.",pp_8h:"Muudatused",pp_8p:"Kui see teade muutub, muutub ka kuup\xE4ev lehe \xFClaosas. Olulistest muudatustest anname teada saidil endal.",pp_back:"Tagasi saidile"}};var Go=`#version 300 es
+in vec2 p; out vec2 vUv;
+void main(){ vUv = p*0.5+0.5; gl_Position = vec4(p,0.,1.); }`,Jo=`#version 300 es
+precision highp float;
+in vec2 vUv; out vec4 o;
+uniform vec2  uRes;
+uniform float uT;
+uniform vec2  uPtr;
+uniform float uPtrOn;
+uniform float uWeave;   /* 0..1 how much of the cloth exists yet   */
+uniform float uOpen;    /* 0..1 how loose the weave is             */
+uniform float uLight;   /* 0..1 how much light is behind the cloth */
+uniform sampler2D uTex; /* the aurora, seen through the gaps       */
+uniform float uTexOn;
+uniform float uRev;    /* 1 = the undyed reverse of the cloth */
 
-/* ── the authored moment: word-mask reveal on the hero line ── */
-const h1 = document.getElementById('heroH1');
-function splitWords(el, step, lead){
-  const text = el.textContent;
-  el.textContent = '';
-  let i = 0;
-  text.split(/(\s+)/).forEach(part=>{
-    if(part === '') return;
-    if(/^\s+$/.test(part)){ el.appendChild(document.createTextNode(' ')); return; }
-    const outer = document.createElement('span'); outer.className = 'w';
-    const inner = document.createElement('span'); inner.className = 'wi';
-    inner.textContent = part;
-    inner.style.transitionDelay = (lead + step*i) + 's';
-    outer.appendChild(inner); el.appendChild(outer);
-    i++;
-  });
-  el.classList.remove('lit');
-  const light=()=>el.classList.add('lit');
-  // rAF gives a frame-accurate start; the timer guarantees the words appear even
-  // when the page loads in a background tab, where rAF never fires.
-  requestAnimationFrame(()=>requestAnimationFrame(light));
-  setTimeout(light,260);
-}
-if(h1) splitWords(h1, .055, .25);
+const vec3 WARP  = vec3(0.043,0.062,0.129);  /* dark wool warp        */
+const vec3 WEFT  = vec3(0.086,0.121,0.219);  /* slightly bluer weft   */
+const vec3 PATT  = vec3(0.647,0.925,0.957);  /* the bright thread     */
+const vec3 AMBER = vec3(0.949,0.698,0.290);  /* the one warm thread   */
 
-/* ── language ─────────────────────────────────────────────── */
-let lang = 'en';
-function setLang(l){
-  lang = l;
-  document.documentElement.lang = l;
-  document.getElementById('btnEN').classList.toggle('active', l === 'en');
-  document.getElementById('btnET').classList.toggle('active', l === 'et');
-  const d = T[l];
-  document.querySelectorAll('[data-i18n]').forEach(el=>{
-    const k = el.getAttribute('data-i18n');
-    if(d[k] !== undefined) el.textContent = d[k];
-  });
-  if(h1) splitWords(h1, .022, 0);
+float hash(vec2 p){ return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453123); }
+float vnoise(vec2 p){
+  vec2 i=floor(p), f=fract(p); f=f*f*(3.0-2.0*f);
+  return mix(mix(hash(i),hash(i+vec2(1,0)),f.x),
+             mix(hash(i+vec2(0,1)),hash(i+vec2(1,1)),f.x), f.y);
 }
 
-/* ── contact form ───────────────────────────────────────────
-   Web3Forms needs one public access key; it is safe in client
-   code. Until CONTACT.key is filled in, the form must NOT claim
-   the message was sent — a false "thank you" loses the lead and
-   the trust at the same time. */
-const CONTACT = {
-  key: '',                       // web3forms.com access key
-  email: '',                     // fallback address shown if sending fails
-  endpoint: 'https://api.web3forms.com/submit'
-};
-
-const form = document.getElementById('contactForm');
-const failBox = document.getElementById('fFail');
-const submitBtn = document.getElementById('fSubmit');
-const loadedAt = Date.now();
-
-function fieldError(input){
-  const v = input.value.trim();
-  if(input.hasAttribute('required') && !v) return true;
-  if(input.type === 'email' && v && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) return true;
-  return false;
+/* One repeat of the belt: an eight-point diamond with a centre pip and
+   two guard stripes, which is the commonest kiriv\xF6\xF6 family. Written as
+   arithmetic on the thread index so it survives any zoom. */
+float motif(vec2 gi){
+  vec2 m = mod(gi, vec2(18.0,18.0)) - 8.5;
+  float a = abs(m.x) + abs(m.y);
+  float ring   = step(a,7.2) * step(5.2,a);
+  float pip    = step(a,1.6);
+  float spur   = step(abs(abs(m.x)-abs(m.y)),0.55) * step(a,8.6) * step(7.2,a);
+  return clamp(ring + pip + spur, 0.0, 1.0);
 }
-function markField(input){
-  const bad = fieldError(input);
-  input.classList.toggle('invalid', bad);
-  input.setAttribute('aria-invalid', bad ? 'true' : 'false');
-  const err = input.getAttribute('aria-describedby') && document.getElementById(input.getAttribute('aria-describedby'));
-  if(err) err.classList.toggle('show', bad);
-  return !bad;
-}
-function showFail(msg){
-  failBox.textContent = msg;
-  failBox.classList.add('show');
+/* guard stripes: two solid weft rows per repeat, the belt's selvedge */
+float stripe(float row){
+  return step(mod(row,18.0), 0.6);
 }
 
-if(form){
-  form.querySelectorAll('input,textarea').forEach(el=>{
-    el.addEventListener('blur', ()=>{ if(el.value.trim() || el.classList.contains('invalid')) markField(el); });
-    el.addEventListener('input', ()=>{ if(el.classList.contains('invalid')) markField(el); });
-  });
+void main(){
+  float ar = uRes.x/max(uRes.y,1.0);
+  vec2 uv  = vUv;
+  vec2 cuv = vec2(uv.x*ar, uv.y);
 
-  form.addEventListener('submit', async e=>{
-    e.preventDefault();
-    failBox.classList.remove('show');
+  /* a hand pressed into the fabric: the weave is dragged toward it and
+     opens up around the dent, exactly as cloth does */
+  vec2  dv   = cuv - uPtr;
+  float r    = length(dv);
+  float dent = uPtrOn * exp(-r*r*6.0);
+  cuv -= normalize(dv + 1e-5) * dent * 0.05;
 
-    const required = [...form.querySelectorAll('[required]')];
-    const ok = required.map(markField).every(Boolean);
-    if(!ok){
-      const first = form.querySelector('.invalid');
-      if(first){ first.focus(); }
-      return;
-    }
-    // bots fill hidden fields and submit instantly
-    if(form.website.value || Date.now() - loadedAt < 2500) return;
+  /* the cloth is hanging, so it breathes */
+  cuv.y += sin(cuv.x*2.1 + uT*0.21)*0.0055;
+  cuv.x += sin(cuv.y*1.6 - uT*0.16)*0.0040;
 
-    const d = T[lang];
-    if(!CONTACT.key){
-      showFail(CONTACT.email ? d.f_fail_email.replace('{email}', CONTACT.email) : d.f_fail);
-      return;
-    }
+  float N  = mix(58.0, 46.0, uOpen);
+  vec2  g  = cuv * N;
+  vec2  gi = floor(g);
+  vec2  gf = fract(g);
 
-    submitBtn.setAttribute('aria-busy','true');
-    const original = submitBtn.querySelector('[data-i18n="f_send"]').textContent;
-    submitBtn.querySelector('[data-i18n="f_send"]').textContent = d.f_sending;
+  /* the weaving front travels down the cloth */
+  float woven = smoothstep(uWeave + 0.03, uWeave - 0.14, 1.0 - uv.y);
 
-    try{
-      const body = {
-        access_key: CONTACT.key,
-        subject: 'Barsion website enquiry: ' + form.topic.value,
-        from_name: 'Barsion website',
-        name: form.name.value.trim(),
-        email: form.email.value.trim(),
-        phone: form.phone.value.trim(),
-        company: form.company.value.trim(),
-        topic: form.topic.value,
-        message: form.message.value.trim(),
-        language: lang
-      };
-      const res = await fetch(CONTACT.endpoint, {
-        method:'POST',
-        headers:{'Content-Type':'application/json', Accept:'application/json'},
-        body: JSON.stringify(body)
-      });
-      const json = await res.json().catch(()=>({}));
-      if(!res.ok || json.success === false) throw new Error(json.message || res.status);
-      form.style.display = 'none';
-      document.getElementById('sentBox').classList.add('show');
-    }catch(err){
-      showFail(CONTACT.email ? d.f_fail_email.replace('{email}', CONTACT.email) : d.f_fail);
-    }finally{
-      submitBtn.removeAttribute('aria-busy');
-      submitBtn.querySelector('[data-i18n="f_send"]').textContent = original;
-    }
-  });
-}
+  /* thread half-widths. 0.5 means the threads touch. */
+  float tw = mix(0.452, 0.315, clamp(uOpen + dent*0.9, 0.0, 1.0));
+  float ex = abs(gf.x - 0.5) / tw;
+  float ey = abs(gf.y - 0.5) / tw;
 
-/* ── entrances ────────────────────────────────────────────── */
-const io = new IntersectionObserver(es=>{
-  es.forEach(en=>{
-    if(en.isIntersecting){ en.target.classList.add('on'); io.unobserve(en.target); }
-  });
-},{threshold:.12, rootMargin:'0px 0px -6% 0px'});
-document.querySelectorAll('.rise,.val,[data-anim="stmt"]').forEach(el=>io.observe(el));
+  float onW = 1.0 - smoothstep(0.90, 1.0, ex);              /* warp, vertical  */
+  float onF = (1.0 - smoothstep(0.90, 1.0, ey)) * woven;    /* weft, horizontal*/
 
-/* ── menu ─────────────────────────────────────────────────── */
-const burger = document.getElementById('burger'), navLinks = document.getElementById('navLinks');
-burger.addEventListener('click',()=>{
-  const open = navLinks.classList.toggle('open');
-  burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-});
-navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-  navLinks.classList.remove('open');
-  burger.setAttribute('aria-expanded','false');
-}));
+  float hW = onW * sqrt(max(0.0, 1.0 - ex*ex));
+  float hF = onF * sqrt(max(0.0, 1.0 - ey*ey));
 
-/* ── cursor light on the solutions cage (fine pointers only) ─ */
-const cage = document.getElementById('cage');
-const glow = cage && cage.querySelector('.glow');
-const fine = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
-const calm = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-if(cage && glow && fine){
-  let raf = 0, mx = 0, my = 0;
-  cage.addEventListener('pointermove', e=>{
-    const r = cage.getBoundingClientRect();
-    mx = e.clientX - r.left; my = e.clientY - r.top;
-    // written on .glow, not .cage: a variable on the parent would recalc
-    // style for all eight cells and their children on every pointer frame
-    if(!raf) raf = requestAnimationFrame(()=>{
-      glow.style.setProperty('--mx', mx + 'px');
-      glow.style.setProperty('--my', my + 'px');
-      raf = 0;
-    });
-  });
-}
+  /* plain weave: alternate which thread is on top at every crossing */
+  float over = mod(gi.x + gi.y, 2.0);
+  hW *= mix(0.52, 1.0, over);
+  hF *= mix(1.0, 0.52, over);
 
-/* ── the mascot: alive only while it is on screen ─────────── */
-const mwrap = document.querySelector('.mwrap');
-const mstage = document.querySelector('.mstage');
-if(mwrap){
-  // toggles, never unobserves: the float and the breathing glow must stop
-  // when the section leaves the viewport
-  new IntersectionObserver(es=>{
-    es.forEach(en=>en.target.classList.toggle('live', en.isIntersecting));
-  },{threshold:0}).observe(mwrap);
+  float warpTop = step(hF, hW);
+  float cov     = max(hW, hF);
 
-  /* No cursor tilt: the clip provides the motion and the element stays put. */
-
-  /* The looping clip is an enhancement layered over the poster, never a
-     dependency: the markup ships the still, and the video is only built when
-     the visitor has not opted out and the section is nearly in view. If any
-     of it fails, the still is already on screen and nothing looks broken. */
-  const conn = navigator.connection || {};
-  const thrifty = conn.saveData === true || /(^|-)2g$/.test(conn.effectiveType || '');
-  if(mstage && !calm && !thrifty){
-    new IntersectionObserver((es, obs)=>{
-      if(!es.some(e=>e.isIntersecting)) return;
-      obs.disconnect();
-      const v = document.createElement('video');
-      v.className = 'mascot';
-      v.muted = true; v.defaultMuted = true; v.loop = true; v.autoplay = true;
-      v.playsInline = true;
-      v.setAttribute('muted',''); v.setAttribute('playsinline',''); v.setAttribute('webkit-playsinline','');
-      v.setAttribute('aria-hidden','true'); v.tabIndex = -1;
-      v.preload = 'auto'; v.poster = 'mascot.jpg'; v.width = 1152; v.height = 648;
-      // mp4 first: the browser takes the first source it can decode, so Chrome,
-      // Safari and Edge get the smaller H.264 file (587KB vs 730KB) and the webm
-      // is only ever fetched by builds without H.264 — it costs nobody bytes.
-      [['mascot.mp4','video/mp4'],['mascot.webm','video/webm']].forEach(([src,type])=>{
-        const so = document.createElement('source'); so.src = src; so.type = type; v.appendChild(so);
-      });
-      v.addEventListener('playing', ()=>{
-        v.classList.add('on'); mstage.classList.add('playing');
-      }, {once:true});
-      mstage.insertBefore(v, mstage.querySelector('.mfade'));
-      const tryPlay = ()=>{ const pr = v.play(); if(pr && pr.catch) pr.catch(()=>{}); };
-      tryPlay();
-      // never burn frames or battery on a section nobody is looking at
-      new IntersectionObserver(vs=>{
-        vs.forEach(e=>{ if(e.isIntersecting) tryPlay(); else v.pause(); });
-      },{threshold:0}).observe(mwrap);
-    },{rootMargin:'600px 0px'}).observe(mwrap);
+  /* \u2500\u2500 the light behind the cloth \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 */
+  float gap = 1.0 - smoothstep(0.0, 0.26, cov);
+  vec2  par = (uv - 0.5) * 0.05 * gap;                       /* parallax */
+  vec3  back = vec3(0.020,0.031,0.070);
+  if(uTexOn > 0.5){
+    vec3 t = texture(uTex, clamp(uv + par, 0.001, 0.999)).rgb;
+    back = mix(back, t*1.55, 0.94);
   }
-}
+  back *= mix(0.35, 1.0, uLight);
+
+  /* \u2500\u2500 the threads \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 */
+  float pat = motif(gi);
+  float str = stripe(gi.y);
+  vec3 weftCol = mix(WEFT, PATT, pat);
+  weftCol = mix(weftCol, AMBER, str * 0.8);
+  vec3 warpCol = mix(WARP, PATT, pat * 0.18);
+  vec3 base    = mix(weftCol, warpCol, warpTop);
+  /* the reverse: undyed wool, the pattern showing only as the shadow it
+     casts through the cloth, which is what the back of a belt looks like */
+  vec3 rWeft = mix(vec3(0.918,0.930,0.952), vec3(0.836,0.856,0.892), pat);
+  rWeft = mix(rWeft, vec3(0.902,0.860,0.792), str*0.7);
+  vec3 rWarp = mix(vec3(0.878,0.892,0.918), vec3(0.828,0.846,0.880), pat*0.35);
+  base = mix(base, mix(rWeft, rWarp, warpTop), uRev);
+
+  /* analytic normals: a thread is a cylinder, so its normal leans along
+     its own cross axis and ripples slightly along its length */
+  vec3 nW = normalize(vec3((gf.x-0.5)/tw*1.5, 0.16*sin(gf.y*6.2832), 1.0));
+  vec3 nF = normalize(vec3(0.16*sin(gf.x*6.2832), (gf.y-0.5)/tw*1.5, 1.0));
+  vec3 n  = normalize(mix(nF, nW, warpTop));
+
+  vec3  L    = normalize(vec3(-0.42, 0.58, 0.70));
+  float diff = max(dot(n, L), 0.0);
+  float spec = pow(max(dot(reflect(-L, n), vec3(0.0,0.0,1.0)), 0.0), 26.0);
+
+  /* wool is fibrous, not plastic */
+  float fib = 0.86 + 0.30*vnoise(cuv*vec2(420.0,90.0)) + 0.10*vnoise(cuv*vec2(90.0,420.0));
+
+  vec3 thread = base * mix(0.20, 0.74, uRev) * 1.0
+              + base * mix(0.95, 0.34, uRev) * diff * 1.0;
+  thread *= fib;
+  thread += spec * mix(mix(0.28,0.72,pat), 0.10, uRev) * mix(vec3(1.0), PATT, 0.5*(1.0-uRev));
+
+  /* light leaking around every thread it passes: this is what makes the
+     cloth read as lit from behind rather than printed */
+  float rim = pow(1.0 - cov, 2.2) * step(0.02, cov);
+  thread += back * rim * 1.05 * (1.0 - uRev);
+
+  vec3 col = mix(mix(back, vec3(0.836,0.849,0.878), uRev), thread, smoothstep(0.0, 0.16, cov));
+  col *= mix(mix(1.0, 0.74, uOpen), 1.0, uRev);   /* the weave calms as the page fills with text */
+
+  /* the un-woven region is open warp: dimmer, so the front line reads */
+  col = mix(col * 0.82, col, woven*0.6 + 0.4);
+
+  col *= 1.0 - mix(0.42, 0.10, uRev)*pow(length((uv-0.5)*vec2(1.25,1.10)), 2.2);
+  col += (hash(uv*uRes + fract(uT)) - 0.5) * 0.014;
+
+  o = vec4(max(col, mix(vec3(0.020,0.031,0.070)*0.85, vec3(0.80,0.81,0.84), uRev)), 1.0);
+}`;function $i(t,e={}){let s=t.getContext("webgl2",{antialias:!1,alpha:!1,powerPreference:"high-performance"});if(!s)return null;let i=(S,x)=>{let D=s.createShader(S);return s.shaderSource(D,x),s.compileShader(D),s.getShaderParameter(D,s.COMPILE_STATUS)?D:(console.warn(s.getShaderInfoLog(D)),null)},n=i(s.VERTEX_SHADER,Go),o=i(s.FRAGMENT_SHADER,Jo);if(!n||!o)return null;let r=s.createProgram();if(s.attachShader(r,n),s.attachShader(r,o),s.linkProgram(r),!s.getProgramParameter(r,s.LINK_STATUS))return null;s.useProgram(r);let c=s.createBuffer();s.bindBuffer(s.ARRAY_BUFFER,c),s.bufferData(s.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),s.STATIC_DRAW);let a=s.getAttribLocation(r,"p");s.enableVertexAttribArray(a),s.vertexAttribPointer(a,2,s.FLOAT,!1,0,0);let l=S=>s.getUniformLocation(r,S),u={res:l("uRes"),t:l("uT"),ptr:l("uPtr"),ptrOn:l("uPtrOn"),weave:l("uWeave"),open:l("uOpen"),light:l("uLight"),tex:l("uTex"),texOn:l("uTexOn"),rev:l("uRev")};s.uniform1i(u.tex,0),s.uniform1f(u.texOn,0),s.uniform1f(u.rev,e.reverse?1:0);let h=s.createTexture();s.activeTexture(s.TEXTURE0),s.bindTexture(s.TEXTURE_2D,h),s.texParameteri(s.TEXTURE_2D,s.TEXTURE_WRAP_S,s.CLAMP_TO_EDGE),s.texParameteri(s.TEXTURE_2D,s.TEXTURE_WRAP_T,s.CLAMP_TO_EDGE),s.texParameteri(s.TEXTURE_2D,s.TEXTURE_MIN_FILTER,s.LINEAR),s.texParameteri(s.TEXTURE_2D,s.TEXTURE_MAG_FILTER,s.LINEAR),s.texImage2D(s.TEXTURE_2D,0,s.RGB,1,1,0,s.RGB,s.UNSIGNED_BYTE,new Uint8Array([5,8,18]));let d=null,m=!1;function p(S){let x=document.createElement("video");x.muted=!0,x.defaultMuted=!0,x.loop=!0,x.playsInline=!0,x.setAttribute("muted",""),x.setAttribute("playsinline",""),x.setAttribute("webkit-playsinline",""),x.crossOrigin="anonymous",x.preload="auto",S.forEach(([w,Y])=>{let G=document.createElement("source");G.src=w,G.type=Y,x.appendChild(G)}),x.addEventListener("playing",()=>{m=!0,s.uniform1f(u.texOn,1)},{once:!0}),x.style.cssText="position:fixed;left:-10px;top:-10px;width:2px;height:2px;opacity:0;pointer-events:none",x.setAttribute("aria-hidden","true"),x.tabIndex=-1,document.body.appendChild(x);let D=x.play();D&&D.catch&&D.catch(()=>{}),d=x}let f=0,_=0,T=e.dprCap||1.5;function b(){let S=Math.min(devicePixelRatio||1,T),x=e.fitParent?t.parentElement.getBoundingClientRect():null,D=x?x.width:innerWidth,w=x?x.height:innerHeight;f=Math.max(1,Math.round(D*S)),_=Math.max(1,Math.round(w*S)),t.width=f,t.height=_,e.fitParent||(t.style.width=D+"px",t.style.height=w+"px"),s.viewport(0,0,f,_),s.uniform2f(u.res,f,_)}b(),addEventListener("resize",b,{passive:!0});let g={weave:0,weaveT:0,open:0,openT:0,light:0,lightT:1,px:0,py:0,pxT:0,pyT:0,on:0,onT:0},k=0,L=!1,A=performance.now();function z(S){if(!L)return;let x=Math.min((S-A)/1e3,.05);A=S;let D=(w,Y,G)=>w+(Y-w)*Math.min(x*G,1);g.weave=D(g.weave,g.weaveT,2.6),g.open=D(g.open,g.openT,3),g.light=D(g.light,g.lightT,2.4),g.px=D(g.px,g.pxT,6),g.py=D(g.py,g.pyT,6),g.on=D(g.on,g.onT,4.5),d&&m&&d.readyState>=2&&(s.activeTexture(s.TEXTURE0),s.bindTexture(s.TEXTURE_2D,h),s.texImage2D(s.TEXTURE_2D,0,s.RGB,s.RGB,s.UNSIGNED_BYTE,d)),s.uniform1f(u.t,S/1e3),s.uniform1f(u.weave,g.weave),s.uniform1f(u.open,g.open),s.uniform1f(u.light,g.light),s.uniform2f(u.ptr,g.px,g.py),s.uniform1f(u.ptrOn,g.on),s.drawArrays(s.TRIANGLES,0,3),k=requestAnimationFrame(z)}function ce(){if(!L&&(L=!0,A=performance.now(),k=requestAnimationFrame(z),d)){let S=d.play();S&&S.catch&&S.catch(()=>{})}}function ue(){L=!1,cancelAnimationFrame(k),d&&d.pause()}function Q(){g.weave=g.weaveT,g.open=g.openT,g.light=g.lightT,g.on=0,s.uniform1f(u.t,7),s.uniform1f(u.weave,g.weave),s.uniform1f(u.open,g.open),s.uniform1f(u.light,g.light),s.uniform2f(u.ptr,0,0),s.uniform1f(u.ptrOn,0),s.drawArrays(s.TRIANGLES,0,3)}return{play:ce,stop:ue,still:Q,attachVideo:p,set weave(S){g.weaveT=S},set open(S){g.openT=S},set light(S){g.lightT=S},pointer(S,x,D){g.pxT=S,g.pyT=x,g.onT=D?1:0}}}var He=matchMedia("(prefers-reduced-motion:reduce)").matches,ho=matchMedia("(hover:hover) and (pointer:fine)").matches,so=navigator.connection||{},ii=so.saveData===!0||/(^|-)2g$/.test(so.effectiveType||""),io=document.getElementById("cloth"),Re=io?$i(io,{dprCap:He?1:1.5}):null;Re||document.documentElement.classList.add("nogl");Re&&(He||ii?(Re.weave=1,Re.open=.4,Re.light=1,Re.still()):(Re.attachVideo([["aurora.mp4","video/mp4"],["aurora.webm","video/webm"]]),Re.play(),Re.weave=1,document.addEventListener("visibilitychange",()=>document.hidden?Re.stop():Re.play()),ho&&(addEventListener("pointermove",t=>{let e=innerWidth/innerHeight;Re.pointer(t.clientX/innerWidth*e,1-t.clientY/innerHeight,!0)},{passive:!0}),addEventListener("pointerleave",()=>Re.pointer(0,0,!1),{passive:!0}))));var Xs=document.getElementById("clothRev"),ft=null;Xs&&(ft=$i(Xs,{reverse:!0,fitParent:!0,dprCap:He?1:1.25}),ft?(ft.weave=1,ft.open=.5,ft.light=1,He||ii||new IntersectionObserver(t=>{t.forEach(e=>e.isIntersecting?ft.play():ft.stop())},{rootMargin:"200px 0px"}).observe(Xs.parentElement),ft.still()):Xs.parentElement.classList.add("nocloth"));var qi=0;function mo(){qi=0;let t=Math.max(1,document.documentElement.scrollHeight-innerHeight),e=Math.min(1,scrollY/t);Re&&(Re.open=.24+e*.76,Re.light=.62+e*.38,(He||ii)&&Re.still())}addEventListener("scroll",()=>{qi||(qi=requestAnimationFrame(mo))},{passive:!0});mo();var no=document.getElementById("hdr"),oo=[...document.querySelectorAll("[data-light]")];if(no&&oo.length){let t=()=>(parseInt(getComputedStyle(document.documentElement).getPropertyValue("--hh"))||78)*.62,e=!1,s=()=>{let i=t(),n=oo.some(o=>{let r=o.getBoundingClientRect();return r.top<=i&&r.bottom>i});n!==e&&(e=n,no.classList.toggle("light",n))};addEventListener("scroll",s,{passive:!0}),addEventListener("resize",s,{passive:!0}),s()}var ro=document.getElementById("heroH1"),Ys=ro&&ro.querySelector(".l1"),gt=null;function po(){if(!Ys)return;if(gt&&(gt.revert(),gt=null),He){js.set(".hero .sub, .hero .cta, .plaque, .l2",{opacity:1});return}gt=Bi(Ys,{words:{wrap:"clip"},chars:!1,lines:!1});let t=Ei({defaults:{ease:"out(3)"}});t.add(Ys,{"--wd":[74,116],duration:1500,ease:"out(4)"},120).add(gt.words,{y:["110%","0%"],opacity:[0,1],duration:950,delay:It(46)},160).add(".l2",{opacity:[0,1],scaleX:[.86,1],duration:700},"<+=260").add(".hero .sub",{opacity:[0,1],y:[16,0],duration:640},"<+=60").add(".hero .cta > *",{opacity:[0,1],y:[16,0],duration:600,delay:It(70)},"<+=40").add(".plaque",{opacity:[0,1],duration:700},"<-=300").add(".plaque b",{scaleY:[0,1],duration:520,delay:It(90)},"<"),setTimeout(()=>{t.currentTime>40||(Ys.style.fontVariationSettings="'wdth' 115",gt.words.forEach(e=>{e.style.transform="none",e.style.opacity="1"}),document.querySelectorAll(".hero .sub, .hero .cta > *, .plaque, .l2").forEach(e=>{e.style.opacity="1",e.style.transform="none"}))},2600)}po();var Ks=document.getElementById("tickRun");if(Ks){let t=["Managed IT","Consulting","Security","Web","Mobile","Cloud","Continuity","Custom software"],e=()=>t.map(s=>`<span>${s}</span>`).join("");if(Ks.innerHTML=e()+e()+e(),!He){let s=()=>Ks.scrollWidth/3;Rs(Ks,{x:()=>-s(),duration:26e3,ease:"linear",loop:!0})}}var ao=document.getElementById("facStage"),Gs=document.getElementById("facTrack"),lo=document.getElementById("facBar"),Zo=matchMedia("(max-width:760px)");if(ao&&Gs&&!Zo.matches){let n=function(){let o=ao.getBoundingClientRect(),r=Math.max(1,o.height-innerHeight),c=Math.min(1,Math.max(0,-o.top/r));t.x(-c*s),e&&e.scaleX(.06+c*.94)},t=ts(Gs,{x:{duration:He?0:380,ease:"out(3)"}}),e=lo?ts(lo,{scaleX:{duration:He?0:380,ease:"out(3)"}}):null,s=0,i=()=>{let o=parseFloat(getComputedStyle(Gs).paddingLeft)||0;s=Math.max(0,Gs.scrollWidth-innerWidth+o)};i(),addEventListener("resize",()=>{i(),n()},{passive:!0}),addEventListener("scroll",n,{passive:!0}),n()}var ls=document.querySelectorAll(".rv");if(ls.length){ls.forEach(s=>{s.dataset.rvD&&(s.style.transitionDelay=s.dataset.rvD+"ms")});let t=new Set(ls),e=s=>{s.classList.add("on"),t.delete(s)};if(He||!("IntersectionObserver"in window))ls.forEach(e);else{let s=()=>{t.size&&t.forEach(n=>{n.getBoundingClientRect().top<innerHeight*.94&&e(n)})},i=new IntersectionObserver(n=>{n.forEach(o=>{o.isIntersecting&&e(o.target)}),s()},{rootMargin:"0px 0px -6% 0px"});ls.forEach(n=>i.observe(n)),addEventListener("scroll",s,{passive:!0}),addEventListener("resize",s,{passive:!0}),s(),setTimeout(s,1200)}}ho&&!He&&document.querySelectorAll(".mag").forEach(t=>{let e=ts(t,{x:{duration:340,ease:"out(3)"},y:{duration:340,ease:"out(3)"}});t.addEventListener("pointermove",s=>{let i=t.getBoundingClientRect();e.x((s.clientX-(i.left+i.width/2))*.22),e.y((s.clientY-(i.top+i.height/2))*.34)}),t.addEventListener("pointerleave",()=>{e.x(0),e.y(0)})});var Qs=document.getElementById("mwrap"),Wi=Qs&&Qs.querySelector(".win-in");Wi&&!He&&!ii&&new IntersectionObserver((t,e)=>{if(!t.some(n=>n.isIntersecting))return;e.disconnect();let s=document.createElement("video");s.className="mascot",s.muted=!0,s.defaultMuted=!0,s.loop=!0,s.autoplay=!0,s.playsInline=!0,s.setAttribute("muted",""),s.setAttribute("playsinline",""),s.setAttribute("webkit-playsinline",""),s.setAttribute("aria-hidden","true"),s.tabIndex=-1,s.preload="auto",s.poster="mascot.jpg",s.width=1152,s.height=648,[["mascot.mp4","video/mp4"],["mascot.webm","video/webm"]].forEach(([n,o])=>{let r=document.createElement("source");r.src=n,r.type=o,s.appendChild(r)}),s.addEventListener("playing",()=>{s.classList.add("on"),Wi.classList.add("playing")},{once:!0}),Wi.appendChild(s);let i=()=>{let n=s.play();n&&n.catch&&n.catch(()=>{})};i(),new IntersectionObserver(n=>{n.forEach(o=>o.isIntersecting?i():s.pause())},{threshold:0}).observe(Qs)},{rootMargin:"600px 0px"}).observe(Qs);var Js=document.getElementById("burger"),Zs=document.getElementById("navLinks");Js&&Zs&&(Js.addEventListener("click",()=>{let t=Zs.classList.toggle("open");Js.setAttribute("aria-expanded",t?"true":"false")}),Zs.addEventListener("click",t=>{t.target.closest("a")&&(Zs.classList.remove("open"),Js.setAttribute("aria-expanded","false"))}));var Hi="en",ei=document.getElementById("btnEN"),ti=document.getElementById("btnET");function si(t){if(!zs[t])return;gt&&(gt.revert(),gt=null),Hi=t,document.documentElement.lang=t;let e=zs[t];document.querySelectorAll("[data-i18n]").forEach(s=>{let i=s.getAttribute("data-i18n");e[i]!=null&&(s.textContent=e[i])}),ei&&ei.classList.toggle("active",t==="en"),ti&&ti.classList.toggle("active",t==="et");try{localStorage.setItem("bs-lang",t)}catch{}po()}ei&&ei.addEventListener("click",()=>si("en"));ti&&ti.addEventListener("click",()=>si("et"));try{let t=localStorage.getItem("bs-lang");t&&t!=="en"?si(t):!t&&(navigator.language||"").toLowerCase().startsWith("et")&&si("et")}catch{}var Lt={key:"",email:"",endpoint:"https://api.web3forms.com/submit"},qe=document.getElementById("contactForm"),cs=document.getElementById("fFail"),ji=document.getElementById("fSubmit"),co=document.getElementById("sentBox"),Qo=Date.now();function er(t){let e=t.value.trim();return!!(t.hasAttribute("required")&&!e||t.type==="email"&&e&&!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e))}function Vi(t){let e=er(t);t.classList.toggle("invalid",e);let s=t.getAttribute("aria-describedby"),i=s&&document.getElementById(s);return i&&i.classList.toggle("show",e),t.setAttribute("aria-invalid",e?"true":"false"),!e}function uo(t){cs&&(cs.textContent=t,cs.classList.add("show"))}qe&&(qe.querySelectorAll("input,textarea").forEach(t=>{t.addEventListener("blur",()=>{(t.classList.contains("invalid")||t.value.trim())&&Vi(t)}),t.addEventListener("input",()=>{t.classList.contains("invalid")&&Vi(t)})}),qe.addEventListener("submit",async t=>{if(t.preventDefault(),cs&&cs.classList.remove("show"),![...qe.querySelectorAll("[required]")].map(Vi).every(Boolean)){let r=qe.querySelector(".invalid");r&&r.focus();return}if(qe.website.value||Date.now()-Qo<2500)return;let i=zs[Hi];if(!Lt.key){uo(Lt.email?i.f_fail_email.replace("{email}",Lt.email):i.f_fail);return}let n=ji.querySelector('[data-i18n="f_send"]'),o=n?n.textContent:"";ji.setAttribute("aria-busy","true"),n&&(n.textContent=i.f_sending+"...");try{let r={access_key:Lt.key,subject:"Barsion website enquiry",from_name:"Barsion website",name:qe.name.value.trim(),email:qe.email.value.trim(),phone:qe.phone.value.trim(),company:qe.company.value.trim(),topic:qe.topic.value,message:qe.message.value.trim(),language:Hi},c=await fetch(Lt.endpoint,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(r)}),a=await c.json().catch(()=>({}));if(c.ok&&a.success!==!1)qe.style.display="none",co&&co.classList.add("show");else throw new Error("rejected")}catch{uo(Lt.email?i.f_fail_email.replace("{email}",Lt.email):i.f_fail)}finally{ji.removeAttribute("aria-busy"),n&&(n.textContent=o)}}));var Ui=document.getElementById("ftMark");Ui&&!He&&Rs(Ui,{"--fw":[86,124],duration:1400,ease:"out(3)",autoplay:Ri({sync:.25,target:Ui,enter:"top bottom",leave:"bottom top"})});})();
+/*! Bundled license information:
+
+animejs/dist/modules/core/consts.js:
+animejs/dist/modules/core/globals.js:
+animejs/dist/modules/core/helpers.js:
+animejs/dist/modules/core/transforms.js:
+animejs/dist/modules/core/colors.js:
+animejs/dist/modules/core/values.js:
+animejs/dist/modules/core/render.js:
+animejs/dist/modules/core/styles.js:
+animejs/dist/modules/core/clock.js:
+animejs/dist/modules/core/targets.js:
+animejs/dist/modules/core/units.js:
+  (**
+   * Anime.js - core - ESM
+   * @version v4.5.0
+   * @license MIT
+   * @copyright 2026 - Julian Garnier
+   *)
+
+animejs/dist/modules/adapters/registry.js:
+  (**
+   * Anime.js - adapters - ESM
+   * @version v4.5.0
+   * @license MIT
+   * @copyright 2026 - Julian Garnier
+   *)
+
+animejs/dist/modules/animation/additive.js:
+animejs/dist/modules/animation/composition.js:
+animejs/dist/modules/animation/animation.js:
+  (**
+   * Anime.js - animation - ESM
+   * @version v4.5.0
+   * @license MIT
+   * @copyright 2026 - Julian Garnier
+   *)
+
+animejs/dist/modules/engine/engine.js:
+  (**
+   * Anime.js - engine - ESM
+   * @version v4.5.0
+   * @license MIT
+   * @copyright 2026 - Julian Garnier
+   *)
+
+animejs/dist/modules/timer/timer.js:
+  (**
+   * Anime.js - timer - ESM
+   * @version v4.5.0
+   * @license MIT
+   * @copyright 2026 - Julian Garnier
+   *)
+
+animejs/dist/modules/easings/none.js:
+animejs/dist/modules/easings/eases/parser.js:
+  (**
+   * Anime.js - easings - ESM
+   * @version v4.5.0
+   * @license MIT
+   * @copyright 2026 - Julian Garnier
+   *)
+
+animejs/dist/modules/timeline/position.js:
+animejs/dist/modules/timeline/timeline.js:
+  (**
+   * Anime.js - timeline - ESM
+   * @version v4.5.0
+   * @license MIT
+   * @copyright 2026 - Julian Garnier
+   *)
+
+animejs/dist/modules/animatable/animatable.js:
+  (**
+   * Anime.js - animatable - ESM
+   * @version v4.5.0
+   * @license MIT
+   * @copyright 2026 - Julian Garnier
+   *)
+
+animejs/dist/modules/utils/number.js:
+animejs/dist/modules/utils/target.js:
+animejs/dist/modules/utils/time.js:
+animejs/dist/modules/utils/chainable.js:
+animejs/dist/modules/utils/random.js:
+animejs/dist/modules/utils/stagger.js:
+animejs/dist/modules/utils/index.js:
+  (**
+   * Anime.js - utils - ESM
+   * @version v4.5.0
+   * @license MIT
+   * @copyright 2026 - Julian Garnier
+   *)
+
+animejs/dist/modules/waapi/composition.js:
+  (**
+   * Anime.js - waapi - ESM
+   * @version v4.5.0
+   * @license MIT
+   * @copyright 2026 - Julian Garnier
+   *)
+
+animejs/dist/modules/events/scroll.js:
+  (**
+   * Anime.js - events - ESM
+   * @version v4.5.0
+   * @license MIT
+   * @copyright 2026 - Julian Garnier
+   *)
+
+animejs/dist/modules/text/split.js:
+  (**
+   * Anime.js - text - ESM
+   * @version v4.5.0
+   * @license MIT
+   * @copyright 2026 - Julian Garnier
+   *)
+
+animejs/dist/modules/index.js:
+  (**
+   * Anime.js - ESM
+   * @version v4.5.0
+   * @license MIT
+   * @copyright 2026 - Julian Garnier
+   *)
+*/

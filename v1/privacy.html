@@ -2,70 +2,68 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Notice | Barsion OÜ</title>
 <meta name="description" content="How Barsion OÜ collects, uses and protects personal data submitted through barsion.ee, and the rights you have under the GDPR.">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#090F23">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23090F23'/%3E%3Crect x='26' y='16' width='12' height='36' fill='%23A5ECF4'/%3E%3Crect x='10' y='8' width='44' height='6' fill='%23F2B24A'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23090F23'/%3E%3Cpath d='M20 12h16l-8 40H12z' fill='%23A5ECF4'/%3E%3C/svg%3E">
 <script>document.documentElement.classList.add('js')</script>
-<link rel="preload" as="font" type="font/woff2" href="fonts/archivo-latin-wdth-normal.woff2" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
-  .doc{position:relative;z-index:1;padding-top:calc(var(--hh) + clamp(64px,10vh,120px));padding-bottom:clamp(70px,10vh,120px)}
-  .doc h1{font-size:clamp(30px,4.6vw,60px);line-height:.99;font-weight:710;font-variation-settings:'wdth' 108;
-    text-transform:uppercase;letter-spacing:-.035em;margin:20px 0 20px;max-width:16ch}
-  .doc .lede{font-size:clamp(16px,1.7vw,21px);line-height:1.5;font-weight:340;font-variation-settings:'wdth' 96;
-    letter-spacing:-.02em;color:var(--wool);opacity:.86;max-width:44ch;margin-bottom:22px}
-  .doc .stamp{font-family:var(--fm);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--dim);margin-bottom:clamp(44px,7vh,80px)}
+  .doc{padding-top:calc(var(--hh) + 96px);padding-bottom:110px}
+  .doc h1{font-size:clamp(32px,5vw,64px);font-weight:200;letter-spacing:-.035em;margin-bottom:20px;max-width:16ch}
+  .doc .lede{font-family:var(--fh);font-weight:300;font-size:clamp(17px,1.9vw,21px);line-height:1.5;
+    letter-spacing:-.02em;color:rgba(255,255,255,.72);max-width:44ch;margin-bottom:24px}
+  .doc .stamp{font-family:var(--fm);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--dim);margin-bottom:64px}
   .doc-body{max-width:70ch}
-  .doc-body h2{font-size:clamp(18px,2.1vw,24px);font-weight:660;font-variation-settings:'wdth' 106;
-    text-transform:uppercase;letter-spacing:-.02em;margin:48px 0 14px;color:var(--wool)}
+  .doc-body h2{font-size:clamp(20px,2.4vw,27px);font-weight:400;letter-spacing:-.02em;margin:52px 0 14px}
   .doc-body h2:first-child{margin-top:0}
-  .doc-body p{font-size:16.5px;line-height:1.76;margin-bottom:16px;color:var(--dim)}
+  .doc-body p{font-size:16.5px;line-height:1.75;margin-bottom:16px}
   .doc-body ul{margin:0 0 16px;padding-left:0}
-  .doc-body li{position:relative;padding-left:28px;font-size:16.5px;line-height:1.76;margin-bottom:9px;color:var(--dim)}
-  .doc-body li::before{content:"";position:absolute;left:0;top:.66em;width:10px;height:3px;background:var(--amber)}
-  .doc-body strong{color:var(--wool);font-weight:600}
-  .doc-body a{color:var(--cyan);border-bottom:1px solid rgba(165,236,244,.4)}
+  .doc-body li{position:relative;padding-left:26px;font-size:16.5px;line-height:1.75;margin-bottom:9px}
+  .doc-body li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:2px;background:var(--cyan)}
+  .doc-body strong{color:#fff;font-weight:500}
+  .doc-body a{color:var(--cyan);border-bottom:1px solid rgba(165,236,244,.35);transition:border-color .24s ease}
   .doc-body a:hover{border-color:var(--cyan)}
-  .back{display:inline-flex;align-items:center;gap:10px;margin-top:clamp(44px,7vh,76px);
-    font-size:15px;font-weight:640;font-variation-settings:'wdth' 106;text-transform:uppercase;
-    letter-spacing:.04em;color:var(--night);background:var(--amber);padding:16px 26px}
-  .back:hover{background:#FFC468}
+  .back{display:inline-flex;align-items:center;gap:10px;margin-top:64px;font-family:var(--fh);
+    font-size:15.5px;color:var(--cyan)}
+  .back:hover{text-decoration:underline}
 </style>
 </head>
 <body>
 
-<canvas id="cloth" aria-hidden="true"></canvas>
-
-<header id="hdr">
+<header>
   <div class="wrap nav">
     <a class="logo" href="index.html">
       <span class="mk" aria-hidden="true"></span>
-      <span class="lw">
+      <span>
         <span class="b">BARSION</span>
         <span class="s" data-i18n="logo_s">IT services</span>
       </span>
     </a>
     <nav class="nav-links" id="navLinks">
-      <a href="index.html#solutions"><i aria-hidden="true">01</i><span data-i18n="nav_solutions">Solutions</span></a>
-      <a href="index.html#who"><i aria-hidden="true">02</i><span data-i18n="nav_about">Who We Are</span></a>
-      <a href="index.html#faq"><i aria-hidden="true">03</i><span data-i18n="nav_faq">FAQ</span></a>
-      <a href="index.html#contact"><i aria-hidden="true">04</i><span data-i18n="nav_contact">Contacts</span></a>
+      <a href="index.html#solutions" data-i18n="nav_solutions">Solutions</a>
+      <a href="index.html#who" data-i18n="nav_about">Who We Are</a>
+      <a href="index.html#faq" data-i18n="nav_faq">FAQ</a>
+      <a href="index.html#contact" data-i18n="nav_contact">Contacts</a>
     </nav>
     <div class="nav-right">
       <div class="lang" role="group" aria-label="Language">
-        <button id="btnEN" class="active" type="button">EN</button>
-        <button id="btnET" type="button">ET</button>
+        <button id="btnEN" class="active" onclick="setLang('en')">EN</button>
+        <button id="btnET" onclick="setLang('et')">ET</button>
       </div>
       <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
-<section class="doc pnl">
+<section class="doc">
   <div class="wrap">
     <h1 data-i18n="pp_h">Privacy notice</h1>
     <p class="lede" data-i18n="pp_lede">What happens to the details you send us, and the rights you have over them.</p>
