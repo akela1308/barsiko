@@ -232,13 +232,10 @@ video.mascot.on{opacity:1}
 .fac-stage{padding-bottom:clamp(70px,10vh,130px)}
 .fac-track{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.1vw,18px);
   max-width:1400px;margin:0 auto;padding:0 var(--gut)}
-.pan{display:flex;flex-direction:column;position:relative;min-height:clamp(340px,42vh,430px);
+.pan{display:flex;flex-direction:column;position:relative;min-height:clamp(250px,30vh,320px);
   background:linear-gradient(178deg,#151E40,#0D1531);
   box-shadow:inset 0 0 0 1px var(--line-2),0 30px 60px -44px #000}
-.pan-win{display:block;flex:0 0 clamp(92px,11vh,132px);position:relative;overflow:hidden;
-  border-bottom:1px solid var(--line-2);background:rgba(7,12,29,.42)}
-.pan-win svg{position:absolute;inset:0;width:100%;height:100%}
-.pan-body{flex:1;padding:clamp(20px,2vw,30px) clamp(20px,2.1vw,32px) clamp(20px,2vw,28px);
+.pan-body{flex:1;padding:clamp(26px,2.6vw,38px) clamp(22px,2.1vw,32px) clamp(22px,2.1vw,30px);
   display:flex;flex-direction:column}
 .pan i{font-family:var(--fm);font-style:normal;font-size:11px;font-weight:600;letter-spacing:.16em;
   color:var(--amber);display:block}
@@ -290,7 +287,6 @@ video.mascot.on{opacity:1}
   .hero::before{background:linear-gradient(178deg,rgba(5,9,26,.18) 0%,rgba(5,9,26,.44) 28%,rgba(5,9,26,.82) 60%,rgba(5,9,26,.92))}
   .fac-track{grid-template-columns:1fr;gap:10px}
   .pan{min-height:0}
-  .pan-win{flex:0 0 104px}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
