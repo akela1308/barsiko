@@ -150,14 +150,20 @@ header.light .nav-links i{color:#C4761A}
 .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
 
 /* ── HERO: the cloth at full scale ────────────────────────── */
-.hero{position:relative;z-index:1;min-height:100svh;display:flex;align-items:flex-end;
+.hero{position:relative;z-index:1;min-height:100svh;display:flex;align-items:flex-end;isolation:isolate;
   padding:calc(var(--hh) + 5vh) 0 clamp(84px,11vh,140px)}
+/* The sky, with nothing laid over it. The cloth begins below the fold, so the
+   page reads sky first and belt second. */
+.hero-v{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1;
+  -webkit-mask-image:linear-gradient(180deg,#000 62%,rgba(0,0,0,.55) 86%,transparent 100%);
+  mask-image:linear-gradient(180deg,#000 62%,rgba(0,0,0,.55) 86%,transparent 100%)}
 /* a scrim only where the words are, so the cloth stays visible everywhere else */
 .hero::before{content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(100deg,rgba(5,9,26,.90) 0%,rgba(5,9,26,.72) 36%,rgba(5,9,26,.22) 64%,rgba(5,9,26,0) 86%)}
-.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:38%;pointer-events:none;
-  background:linear-gradient(180deg,transparent,rgba(5,9,26,.7))}
-.hero>*{position:relative;z-index:2}
+  background:linear-gradient(100deg,rgba(5,9,26,.86) 0%,rgba(5,9,26,.6) 34%,rgba(5,9,26,.14) 62%,rgba(5,9,26,0) 84%)}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:46%;pointer-events:none;
+  background:linear-gradient(180deg,transparent,rgba(5,9,26,.5) 48%,rgba(5,9,26,.86))}
+.hero-in{position:relative;z-index:2}
+.hero .plaque{z-index:2}
 
 .plaque{position:absolute;left:var(--gut);top:calc(var(--hh) + 9vh);writing-mode:vertical-rl;
   display:flex;align-items:center;gap:14px;font-family:var(--fm);font-size:10px;font-weight:500;
@@ -218,7 +224,8 @@ video.mascot.on{opacity:1}
   letter-spacing:.24em;text-transform:uppercase;color:var(--dim)}
 
 /* ── SOLUTIONS: the belt runs past ────────────────────────── */
-.fac{position:relative;z-index:1}
+.fac{position:relative;z-index:1;background:#070C1D;
+  border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
 .fac-head{padding:clamp(70px,10vh,130px) 0 clamp(30px,5vh,58px)}
 .fac-head h2{font-size:clamp(27px,4vw,58px);line-height:.99;font-weight:710;font-variation-settings:'wdth' 108;
   text-transform:uppercase;max-width:17ch;margin-top:20px}
@@ -226,10 +233,10 @@ video.mascot.on{opacity:1}
 .fac-track{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.1vw,18px);
   max-width:1400px;margin:0 auto;padding:0 var(--gut)}
 .pan{display:flex;flex-direction:column;position:relative;min-height:clamp(340px,42vh,430px);
-  background:linear-gradient(178deg,rgba(17,26,58,.975),rgba(9,15,35,.99));
+  background:linear-gradient(178deg,#151E40,#0D1531);
   box-shadow:inset 0 0 0 1px var(--line-2),0 30px 60px -44px #000}
 .pan-win{display:block;flex:0 0 clamp(92px,11vh,132px);position:relative;overflow:hidden;
-  border-bottom:1px solid var(--line-2)}
+  border-bottom:1px solid var(--line-2);background:rgba(7,12,29,.42)}
 .pan-win svg{position:absolute;inset:0;width:100%;height:100%}
 .pan-body{flex:1;padding:clamp(20px,2vw,30px) clamp(20px,2.1vw,32px) clamp(20px,2vw,28px);
   display:flex;flex-direction:column}
@@ -243,7 +250,17 @@ video.mascot.on{opacity:1}
 
 
 /* ── STATEMENT: the cloth wide open ───────────────────────── */
-.stmt{padding:clamp(120px,22vh,260px) 0}
+.stmt{position:relative;padding:clamp(120px,22vh,260px) 0;overflow:hidden}
+/* A network of nodes behind a sentence about running someone's infrastructure.
+   The image is the client's own. */
+.stmt-nodes{position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:url(img/nodes.jpg) center/cover no-repeat;opacity:.9;
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 18%,#000 80%,transparent);
+  mask-image:linear-gradient(180deg,transparent,#000 18%,#000 80%,transparent)}
+@supports (animation-timeline:view()){
+  .stmt-nodes{animation:nodepar linear both;animation-timeline:view();animation-range:cover}
+}
+@keyframes nodepar{from{transform:scale(1.06) translateY(-2.4%)}to{transform:scale(1.06) translateY(2.4%)}}
 .stmt blockquote{max-width:none}
 .stmt p{font-size:clamp(28px,4.3vw,64px);line-height:1.06;font-weight:280;font-variation-settings:'wdth' 94;
   letter-spacing:-.04em;color:var(--wool);max-width:16ch}
@@ -269,7 +286,8 @@ video.mascot.on{opacity:1}
   .plaque{display:none}
   .hero{min-height:92svh;padding-bottom:96px}
   .hero-in{padding-left:var(--gut)}
-  .hero::before{background:linear-gradient(178deg,rgba(5,9,26,.55),rgba(5,9,26,.88) 44%,rgba(5,9,26,.94))}
+  .hero-v{object-position:50% 32%}
+  .hero::before{background:linear-gradient(178deg,rgba(5,9,26,.18) 0%,rgba(5,9,26,.44) 28%,rgba(5,9,26,.82) 60%,rgba(5,9,26,.92))}
   .fac-track{grid-template-columns:1fr;gap:10px}
   .pan{min-height:0}
   .pan-win{flex:0 0 104px}
@@ -489,7 +507,7 @@ footer::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:no
 .open{isolation:isolate}
 .open::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
   background:linear-gradient(100deg,rgba(5,9,26,.955) 0%,rgba(5,9,26,.92) 38%,rgba(5,9,26,.55) 66%,rgba(5,9,26,.12) 88%,rgba(5,9,26,0) 100%)}
-.stmt.open::before{background:linear-gradient(100deg,rgba(5,9,26,.94) 0%,rgba(5,9,26,.86) 34%,rgba(5,9,26,.5) 58%,rgba(5,9,26,.24) 78%,rgba(5,9,26,.14) 100%)}
+.stmt.open::before{background:linear-gradient(100deg,rgba(5,9,26,.93) 0%,rgba(5,9,26,.84) 32%,rgba(5,9,26,.46) 58%,rgba(5,9,26,.2) 80%,rgba(5,9,26,.1) 100%)}
 .open::after{content:"";position:absolute;left:0;right:0;top:0;height:120px;z-index:-1;pointer-events:none;
   background:linear-gradient(180deg,rgba(5,9,26,.8),transparent)}
 .contact::before{background:linear-gradient(96deg,rgba(5,9,26,.95) 0%,rgba(5,9,26,.9) 44%,rgba(5,9,26,.74) 66%,rgba(5,9,26,.56) 86%,rgba(5,9,26,.46) 100%)}
@@ -498,19 +516,3 @@ footer::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:no
 
 
 
-/* ── THE WARP: the loom before the weft goes in ───────────
-   The same shader with uWeave near zero, so only the vertical warp
-   exists and the aurora clip burns through between the threads.
-   This is where the sky is actually the sky, stars included. */
-.sky>.wrap{width:100%}
-.sky{position:relative;z-index:1;min-height:clamp(420px,72vh,760px);display:flex;align-items:flex-end;
-  padding:clamp(60px,10vh,120px) 0 clamp(48px,8vh,96px);overflow:hidden;isolation:isolate}
-#clothSky{position:absolute;inset:0;width:100%;height:100%;z-index:-2;background:var(--deep)}
-html.nogl #clothSky,.sky.nocloth #clothSky{background:url(img/sky.jpg) center/cover no-repeat}
-.sky::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background:linear-gradient(180deg,rgba(5,9,26,.97),rgba(5,9,26,.62) 16%,rgba(5,9,26,.08) 36%,rgba(5,9,26,.36) 60%,rgba(5,9,26,.72) 80%,rgba(5,9,26,.93))}
-.sky::after{content:none}
-.sky-tag{font-size:clamp(30px,5.4vw,80px);line-height:.98;font-weight:300;font-variation-settings:'wdth' 92;
-  letter-spacing:-.04em;color:var(--wool);max-width:12ch}
-.sky-sub{margin-top:22px;font-size:clamp(15.5px,1.3vw,18.5px);line-height:1.6;color:var(--wool);opacity:.82;
-  max-width:42ch}

@@ -61,26 +61,6 @@ if(faqCv){
   } else { faqCv.parentElement.classList.add('nocloth'); }
 }
 
-/* the warp band: the same cloth with almost no weft in it yet, so the clip
-   behind it is seen through vertical threads only. Nothing imitates weave
-   here either; it is the same geometry with one uniform turned down. */
-const skyCv = document.getElementById('clothSky');
-if(skyCv){
-  const sky = startCloth(skyCv,{fitParent:true, dprCap: calm ? 1 : 1.4});
-  if(!sky){ skyCv.parentElement.classList.add('nocloth'); }
-  else {
-    sky.weave = 0.045; sky.open = 1; sky.light = 1;
-    if(calm || thrifty){ skyCv.parentElement.classList.add('nocloth'); }
-    else {
-      sky.attachVideo([['aurora.mp4','video/mp4'],['aurora.webm','video/webm']]);
-      sky.still();
-      new IntersectionObserver(es=>{
-        es.forEach(e=> e.isIntersecting ? sky.play() : sky.stop());
-      },{rootMargin:'300px 0px'}).observe(skyCv.parentElement);
-    }
-  }
-}
-
 /* ══ 2. SCROLL opens the weave ═════════════════════════════ */
 let scrollRaf = 0;
 let wideOpen = 0;
