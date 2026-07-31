@@ -61,13 +61,55 @@ if(faqCv){
   } else { faqCv.parentElement.classList.add('nocloth'); }
 }
 
+/* the warp band: the same cloth with almost no weft in it yet, so the clip
+   behind it is seen through vertical threads only. Nothing imitates weave
+   here either; it is the same geometry with one uniform turned down. */
+const skyCv = document.getElementById('clothSky');
+if(skyCv){
+  const sky = startCloth(skyCv,{fitParent:true, dprCap: calm ? 1 : 1.4});
+  if(!sky){ skyCv.parentElement.classList.add('nocloth'); }
+  else {
+    sky.weave = 0.045; sky.open = 1; sky.light = 1;
+    if(calm || thrifty){ skyCv.parentElement.classList.add('nocloth'); }
+    else {
+      sky.attachVideo([['aurora.mp4','video/mp4'],['aurora.webm','video/webm']]);
+      sky.still();
+      new IntersectionObserver(es=>{
+        es.forEach(e=> e.isIntersecting ? sky.play() : sky.stop());
+      },{rootMargin:'300px 0px'}).observe(skyCv.parentElement);
+    }
+  }
+}
+
 /* ══ 2. SCROLL opens the weave ═════════════════════════════ */
 let scrollRaf = 0;
+let wideOpen = 0;
 function onScrollTick(){
   scrollRaf = 0;
   const max = Math.max(1, document.documentElement.scrollHeight - innerHeight);
   const pr = Math.min(1, scrollY/max);
-  if(cloth){ cloth.open = 0.24 + pr*0.76; cloth.light = 0.62 + pr*0.38; if(calm||thrifty) cloth.still(); }
+  if(cloth){
+    cloth.open  = Math.max(0.24 + pr*0.76, wideOpen);
+    cloth.light = Math.max(0.62 + pr*0.38, wideOpen);
+    if(calm||thrifty) cloth.still();
+  }
+}
+/* Sections marked data-wide pull the weave apart so the clip behind it reads
+   as what it is. Elsewhere the aurora is light; here it is the sky. */
+const wideSections = document.querySelectorAll('[data-wide]');
+if(wideSections.length){
+  const hit = new Set();
+  new IntersectionObserver(es=>{
+    es.forEach(e=>{ e.isIntersecting ? hit.add(e.target) : hit.delete(e.target); });
+    wideOpen = hit.size ? 1 : 0;
+    onScrollTick();
+  },{threshold:0.22}).observe ? wideSections.forEach(el=>{
+    new IntersectionObserver(es=>{
+      es.forEach(e=>{ e.isIntersecting ? hit.add(e.target) : hit.delete(e.target); });
+      wideOpen = hit.size ? 1 : 0;
+      onScrollTick();
+    },{threshold:0.22}).observe(el);
+  }) : null;
 }
 addEventListener('scroll',()=>{ if(!scrollRaf) scrollRaf = requestAnimationFrame(onScrollTick); },{passive:true});
 onScrollTick();
@@ -138,30 +180,7 @@ if(tickRun){
   }
 }
 
-/* ══ 6. THE FACADE slides past while the section is pinned ══ */
-const stage = document.getElementById('facStage');
-const track = document.getElementById('facTrack');
-const facBar = document.getElementById('facBar');
-const narrow = matchMedia('(max-width:760px)');
-if(stage && track && !narrow.matches){
-  const mover = createAnimatable(track,{x:{duration:calm?0:380,ease:'out(3)'}});
-  const barer = facBar ? createAnimatable(facBar,{scaleX:{duration:calm?0:380,ease:'out(3)'}}) : null;
-  let maxX = 0;
-  const measure = ()=>{
-    const pad = parseFloat(getComputedStyle(track).paddingLeft)||0;
-    maxX = Math.max(0, track.scrollWidth - innerWidth + pad);
-  };
-  measure(); addEventListener('resize',()=>{ measure(); update(); },{passive:true});
-  function update(){
-    const r = stage.getBoundingClientRect();
-    const span = Math.max(1, r.height - innerHeight);
-    const p = Math.min(1, Math.max(0, -r.top/span));
-    mover.x(-p*maxX);
-    if(barer) barer.scaleX(0.06 + p*0.94);
-  }
-  addEventListener('scroll',update,{passive:true});
-  update();
-}
+/* ══ 6. (the solutions grid needs no script) ══════════════ */
 
 /* ══ 7. REVEALS ═══════════════════════════════════════════
    Deliberately NOT run through the animation engine. A reveal

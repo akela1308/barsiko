@@ -87,7 +87,7 @@ void main(){
   float woven = smoothstep(uWeave + 0.03, uWeave - 0.14, 1.0 - uv.y);
 
   /* thread half-widths. 0.5 means the threads touch. */
-  float tw = mix(0.452, 0.315, clamp(uOpen + dent*0.9, 0.0, 1.0));
+  float tw = mix(0.452, 0.268, clamp(uOpen + dent*0.9, 0.0, 1.0));
   float ex = abs(gf.x - 0.5) / tw;
   float ey = abs(gf.y - 0.5) / tw;
 
@@ -111,7 +111,7 @@ void main(){
   vec3  back = vec3(0.020,0.031,0.070);
   if(uTexOn > 0.5){
     vec3 t = texture(uTex, clamp(uv + par, 0.001, 0.999)).rgb;
-    back = mix(back, t*1.55, 0.94);
+    back = mix(back, t*2.15, 0.96);
   }
   back *= mix(0.35, 1.0, uLight);
 
@@ -150,7 +150,7 @@ void main(){
   /* light leaking around every thread it passes: this is what makes the
      cloth read as lit from behind rather than printed */
   float rim = pow(1.0 - cov, 2.2) * step(0.02, cov);
-  thread += back * rim * 1.05 * (1.0 - uRev);
+  thread += back * rim * 1.35 * (1.0 - uRev);
 
   vec3 col = mix(mix(back, vec3(0.836,0.849,0.878), uRev), thread, smoothstep(0.0, 0.16, cov));
   col *= mix(mix(1.0, 0.74, uOpen), 1.0, uRev);   /* the weave calms as the page fills with text */

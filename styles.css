@@ -196,20 +196,25 @@ h1 .l2{display:inline-block;margin-top:.15em;font-size:.5em;font-weight:360;font
 .m-list i{font-family:var(--fm);font-style:normal;font-size:10px;font-weight:600;color:var(--amber);flex:none}
 
 .win{position:relative}
-.win-in{position:relative;background:var(--night);overflow:hidden;
-  box-shadow:inset 0 0 0 1px var(--line),0 34px 74px -44px #000}
-.win-in::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;
-  box-shadow:inset 0 0 92px 22px rgba(9,15,35,.72)}
+.win-in{position:relative;isolation:isolate}
+/* The clip's black point was encoded to match --night, so the trick is to put
+   solid --night directly behind the cat and let it fall off to nothing before
+   it reaches any edge. No border, no overflow clip: nothing to read as a box. */
+.win-in::before{content:"";position:absolute;inset:-16% 0 -20%;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 58% 60% at 54% 48%,var(--night) 42%,rgba(9,15,35,.84) 64%,rgba(9,15,35,0) 100%),
+    radial-gradient(ellipse 42% 42% at 38% 72%,var(--night) 36%,rgba(9,15,35,0) 100%)}
+.win-in>*{position:relative;z-index:1}
 .mascot{width:100%;height:auto;
   mask-image:linear-gradient(180deg,#000 88%,rgba(0,0,0,.35) 94%,transparent 100%),radial-gradient(ellipse 26% 42% at 63% 48%,#000 52%,transparent 100%),radial-gradient(ellipse 33% 32% at 42% 70%,#000 50%,transparent 100%);
   mask-composite:intersect,add,add}
 @supports not (mask-composite: intersect){
   .mascot{-webkit-mask-image:linear-gradient(180deg,#000 88%,rgba(0,0,0,.35) 94%,transparent 100%),radial-gradient(ellipse 26% 42% at 63% 48%,#000 52%,transparent 100%),radial-gradient(ellipse 33% 32% at 42% 70%,#000 50%,transparent 100%);-webkit-mask-composite:source-in,source-over}
 }
-video.mascot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;z-index:1}
+video.mascot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;z-index:2}
 video.mascot.on{opacity:1}
 .playing img.mascot{visibility:hidden}
-.win-cap{position:absolute;right:0;bottom:-30px;font-family:var(--fm);font-size:9.5px;font-weight:500;
+.win-cap{position:absolute;right:0;bottom:-26px;z-index:2;font-family:var(--fm);font-size:9.5px;font-weight:500;
   letter-spacing:.24em;text-transform:uppercase;color:var(--dim)}
 
 /* ── SOLUTIONS: the belt runs past ────────────────────────── */
@@ -217,14 +222,13 @@ video.mascot.on{opacity:1}
 .fac-head{padding:clamp(70px,10vh,130px) 0 clamp(30px,5vh,58px)}
 .fac-head h2{font-size:clamp(27px,4vw,58px);line-height:.99;font-weight:710;font-variation-settings:'wdth' 108;
   text-transform:uppercase;max-width:17ch;margin-top:20px}
-.fac-stage{height:420vh}
-.fac-pin{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
-.fac-track{display:flex;gap:clamp(14px,1.5vw,26px);padding:0 var(--gut);will-change:transform}
-.pan{flex:0 0 clamp(258px,26vw,364px);display:flex;flex-direction:column;position:relative;
-  min-height:clamp(384px,58vh,540px);
+.fac-stage{padding-bottom:clamp(70px,10vh,130px)}
+.fac-track{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.1vw,18px);
+  max-width:1400px;margin:0 auto;padding:0 var(--gut)}
+.pan{display:flex;flex-direction:column;position:relative;min-height:clamp(340px,42vh,430px);
   background:linear-gradient(178deg,rgba(17,26,58,.975),rgba(9,15,35,.99));
   box-shadow:inset 0 0 0 1px var(--line-2),0 30px 60px -44px #000}
-.pan-win{display:block;flex:0 0 clamp(112px,16vh,186px);position:relative;overflow:hidden;
+.pan-win{display:block;flex:0 0 clamp(92px,11vh,132px);position:relative;overflow:hidden;
   border-bottom:1px solid var(--line-2)}
 .pan-win svg{position:absolute;inset:0;width:100%;height:100%}
 .pan-body{flex:1;padding:clamp(20px,2vw,30px) clamp(20px,2.1vw,32px) clamp(20px,2vw,28px);
@@ -236,8 +240,7 @@ video.mascot.on{opacity:1}
 .pan p{font-size:14.5px;line-height:1.6;color:var(--dim)}
 .pan-tag{margin-top:auto;padding-top:20px;border-top:1px solid var(--line-2);font-family:var(--fm);
   font-size:9.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);line-height:1.9}
-.fac-rail{margin:clamp(22px,3vh,40px) var(--gut) 0;height:3px;background:rgba(165,236,244,.14)}
-.fac-rail span{display:block;height:100%;width:100%;background:var(--amber);transform-origin:0 50%;transform:scaleX(.06)}
+
 
 /* ── STATEMENT: the cloth wide open ───────────────────────── */
 .stmt{padding:clamp(120px,22vh,260px) 0}
@@ -252,7 +255,7 @@ video.mascot.on{opacity:1}
 .js .rv{opacity:0;transform:translateY(24px)}
 .js .rv.on{opacity:1;transform:none}
 
-@media(max-width:1020px){ .mani-in{grid-template-columns:1fr;gap:44px} }
+@media(max-width:1020px){ .mani-in{grid-template-columns:1fr;gap:44px} .fac-track{grid-template-columns:repeat(2,1fr)} }
 @media(max-width:760px){
   :root{--hh:64px}
   .nav-links{position:fixed;top:var(--hh);left:0;right:0;flex-direction:column;gap:0;background:var(--deep);
@@ -267,15 +270,9 @@ video.mascot.on{opacity:1}
   .hero{min-height:92svh;padding-bottom:96px}
   .hero-in{padding-left:var(--gut)}
   .hero::before{background:linear-gradient(178deg,rgba(5,9,26,.55),rgba(5,9,26,.88) 44%,rgba(5,9,26,.94))}
-  /* the belt still runs past, under the thumb instead of the scrollbar */
-  .fac-stage{height:auto}
-  .fac-pin{position:static;height:auto;overflow:visible}
-  .fac-track{gap:12px;padding:0 var(--gut) 6px;overflow-x:auto;scroll-snap-type:x mandatory;
-    -webkit-overflow-scrolling:touch;scrollbar-width:none}
-  .fac-track::-webkit-scrollbar{display:none}
-  .pan{flex:0 0 min(78vw,320px);scroll-snap-align:center;min-height:clamp(360px,62vh,480px)}
-  .fac-rail{display:block;margin-top:18px}
-  .fac-hint{display:flex}
+  .fac-track{grid-template-columns:1fr;gap:10px}
+  .pan{min-height:0}
+  .pan-win{flex:0 0 104px}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -492,13 +489,28 @@ footer::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:no
 .open{isolation:isolate}
 .open::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
   background:linear-gradient(100deg,rgba(5,9,26,.955) 0%,rgba(5,9,26,.92) 38%,rgba(5,9,26,.55) 66%,rgba(5,9,26,.12) 88%,rgba(5,9,26,0) 100%)}
+.stmt.open::before{background:linear-gradient(100deg,rgba(5,9,26,.94) 0%,rgba(5,9,26,.86) 34%,rgba(5,9,26,.5) 58%,rgba(5,9,26,.24) 78%,rgba(5,9,26,.14) 100%)}
 .open::after{content:"";position:absolute;left:0;right:0;top:0;height:120px;z-index:-1;pointer-events:none;
   background:linear-gradient(180deg,rgba(5,9,26,.8),transparent)}
 .contact::before{background:linear-gradient(96deg,rgba(5,9,26,.95) 0%,rgba(5,9,26,.9) 44%,rgba(5,9,26,.74) 66%,rgba(5,9,26,.56) 86%,rgba(5,9,26,.46) 100%)}
 .band.open::before,.band.open::after{content:none}
 
 
-/* a swipe needs to announce itself */
-.fac-hint{display:none;align-items:center;gap:10px;margin:14px var(--gut) 0;font-family:var(--fm);
-  font-size:9.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
-.fac-hint::after{content:"";width:26px;height:2px;background:var(--amber)}
+
+
+/* ── THE WARP: the loom before the weft goes in ───────────
+   The same shader with uWeave near zero, so only the vertical warp
+   exists and the aurora clip burns through between the threads.
+   This is where the sky is actually the sky, stars included. */
+.sky>.wrap{width:100%}
+.sky{position:relative;z-index:1;min-height:clamp(420px,72vh,760px);display:flex;align-items:flex-end;
+  padding:clamp(60px,10vh,120px) 0 clamp(48px,8vh,96px);overflow:hidden;isolation:isolate}
+#clothSky{position:absolute;inset:0;width:100%;height:100%;z-index:-2;background:var(--deep)}
+html.nogl #clothSky,.sky.nocloth #clothSky{background:url(img/sky.jpg) center/cover no-repeat}
+.sky::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(5,9,26,.97),rgba(5,9,26,.62) 16%,rgba(5,9,26,.08) 36%,rgba(5,9,26,.36) 60%,rgba(5,9,26,.72) 80%,rgba(5,9,26,.93))}
+.sky::after{content:none}
+.sky-tag{font-size:clamp(30px,5.4vw,80px);line-height:.98;font-weight:300;font-variation-settings:'wdth' 92;
+  letter-spacing:-.04em;color:var(--wool);max-width:12ch}
+.sky-sub{margin-top:22px;font-size:clamp(15.5px,1.3vw,18.5px);line-height:1.6;color:var(--wool);opacity:.82;
+  max-width:42ch}
