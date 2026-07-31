@@ -358,6 +358,17 @@ footer{background:var(--void);color:var(--text);padding:96px 0 0;font-size:15.5p
 .ft-mark i{flex:1;height:1px;background:var(--line);min-width:20px}
 .ft-bottom{border-top:1px solid var(--line-soft);padding:26px 0;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   font-family:var(--fm);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+/* Agency credit. Deliberately quiet — small, wide-tracked, low in the page — but the
+   colour still clears 4.5:1 on the footer, because this is a real text link and
+   dimming it further would be an accessibility failure rather than restraint.
+   It recedes through size and spacing, and comes to full strength on hover. */
+.pb{display:flex;align-items:center;justify-content:center;gap:9px;padding:0 0 30px;
+  font-family:var(--fm);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  color:#6E7899;width:fit-content;margin:0 auto;transition:color var(--d-hover) ease}
+.pb img{height:12px;width:auto;opacity:.72;transition:opacity var(--d-hover) ease}
+.pb:hover{color:#A3ACC8}
+.pb:hover img{opacity:1}
+.pb:focus-visible{outline-offset:6px}
 
 /* ── hover motion: gated so a tap never leaves a stuck state ── */
 @media (hover:hover) and (pointer:fine){
